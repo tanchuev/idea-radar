@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea Radar v2</title>
+<style>
+:root{ color-scheme: light; --bg:#f6f7f9; --card:#fff; --ink:#1d2330; --muted:#6b7280; --line:#e6e8ec; --accent:#3b5bdb; --hi:#1e9e6a; --mid:#d9920a; --lo:#9aa1ad; --chip:#eef1f6; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;line-height:1.45;font-size:14px}
+.wrap{max-width:1200px;margin:0 auto;padding:20px 18px 60px}
+h1{font-size:22px;margin:0 0 2px;letter-spacing:-.2px}
+.sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+.statbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 15px;min-width:115px;flex:1}
+.stat .n{font-size:23px;font-weight:700}
+.stat .l{font-size:12px;color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.panel h2{font-size:13px;margin:0 0 10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:16px}
+.controls select,.controls input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}
+.controls input{flex:1;min-width:150px}
+.btn{font:inherit;padding:8px 14px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:9px;cursor:pointer;font-weight:600}
+.btn.ghost{background:#fff;color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(335px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:9px}
+.card.fav{border-color:#1e9e6a;box-shadow:0 0 0 2px #1e9e6a22}
+.card.down{opacity:.55}
+.ctop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.title{font-weight:700;font-size:15px;margin:0}
+.score{flex:0 0 auto;width:48px;height:48px;border-radius:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#fff;line-height:1}
+.score small{font-size:8px;font-weight:600;opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:11px;background:var(--chip);color:#3a4252;border-radius:20px;padding:3px 9px;font-weight:600}
+.chip.niche{background:#e7ecfb;color:#2a3f9e}
+.chip.method{background:#eee9fb;color:#6a3fb0}
+.chip.hi{background:#e3f4ec;color:var(--hi)}
+.chip.mid{background:#fbf1dd;color:var(--mid)}
+.chip.lo{background:#eef0f2;color:var(--lo)}
+.jtbd{font-style:italic;color:#36405a;background:#f7f9fc;border-left:3px solid var(--accent);padding:8px 10px;border-radius:0 8px 8px 0;font-size:13px}
+.lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;margin-bottom:2px}
+.txt{font-size:13px;color:#2b3344}
+.demand{font-size:12.5px;color:#2b3344;background:#fff7ed;border:1px solid #f3e0c2;border-radius:9px;padding:8px 10px}
+.idea{background:#f3f7f4;border:1px dashed #cfe3d6;border-radius:9px;padding:9px 11px;font-size:13px}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:3px 14px;margin-top:2px}
+.bar{display:flex;align-items:center;gap:7px;font-size:10.5px;color:var(--muted)}
+.bar .bl{width:62px;flex:0 0 auto}
+.track{flex:1;height:6px;background:#eef0f3;border-radius:5px;overflow:hidden}
+.fill{height:100%;border-radius:5px}
+.ev{font-size:12px;color:#475065}
+.ev summary{cursor:pointer;color:var(--accent);font-weight:600}
+.ev blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid var(--line);color:#3a4456;background:#fafbfc;border-radius:0 6px 6px 0}
+.ev a{color:var(--accent);text-decoration:none;word-break:break-all}
+.ev a:hover{text-decoration:underline}
+.rt{font-size:12px;color:#9a3b3b;background:#fdf2f2;border:1px solid #f3d6d6;border-radius:8px;padding:6px 9px}
+.fb{display:flex;gap:8px;margin-top:2px}
+.fb button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}
+.fb button.on{background:#e3f4ec;border-color:#1e9e6a}
+.fb button.on.dn{background:#fdeaea;border-color:#c0392b}
+.foot{color:var(--muted);font-size:12px;margin-top:18px;text-align:center}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
+svg{width:100%;height:auto;display:block}
+.tipbox{font-size:11px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Idea Radar <span style="color:var(--muted);font-weight:600;font-size:14px">v2</span></h1>
+  <div class="sub">Поиск «алмазов»: растущий спрос × слабое предложение. Источники — реальные пользователи открытой сети. Скоринг Diamond Score. Обновляется ежедневно по будням.</div>
+
+  <div class="statbar" id="statbar"></div>
+
+  <div class="controls">
+    <input id="q" type="text" placeholder="Поиск по тексту…">
+    <select id="fniche"></select>
+    <select id="fmethod">
+      <option value="">Все методы</option>
+      <option value="спрос">Метод: спрос (demand-first)</option>
+      <option value="боль">Метод: боль (pain-mining)</option>
+      <option value="идея">Метод: идея (Ideator)</option>
+    </select>
+    <select id="fconf">
+      <option value="">Все по доверию</option>
+      <option value="high">Доверие: high</option>
+      <option value="medium">Доверие: medium</option>
+    </select>
+    <select id="sort">
+      <option value="score">Сорт.: Diamond Score</option>
+      <option value="trend">Сорт.: рост спроса</option>
+      <option value="ease">Сорт.: простота сборки</option>
+      <option value="reach">Сорт.: охват</option>
+      <option value="fav">Сорт.: избранное</option>
+    </select>
+    <button class="btn ghost" id="runbtn" title="Запустить прогон вручную">↻ Прогон</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="panel" style="margin-top:16px">
+    <h2>Карта возможностей — спрос растёт ↑ / предложение слабое →</h2>
+    <div id="map"></div>
+    <div class="legend" id="legend"></div>
+    <div class="sub" style="margin:8px 0 0">Правый верх = слабое предложение + растущий спрос = зона «алмазов». Размер точки — Diamond Score.</div>
+  </div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+let RAW = [];
+
+// ---- Diamond Score ----
+const W={gap:.18,reach:.16,trend:.16,wtp:.16,ease:.14,severity:.12,frequency:.08};
+function diamond(s){return Math.round((s.gap*W.gap+s.reach*W.reach+s.trend*W.trend+s.wtp*W.wtp+s.ease*W.ease+s.severity*W.severity+s.frequency*W.frequency)*20);}
+
+
+const $=s=>document.querySelector(s);
+const scoreColor=v=>v>=82?'#1e9e6a':v>=74?'#3b5bdb':v>=68?'#d9920a':'#9aa1ad';
+const confClass=c=>c==='high'?'hi':c==='medium'?'mid':'lo';
+let niches=[];
+let palette={};const cols=['#3b5bdb','#1e9e6a','#d9920a','#b0468c','#2aa1b3','#8a5cf0','#d95a3b','#5a8a3b','#c0392b','#0a7d8c','#7d5a2b'];
+
+
+const PK='idearadar2_prefs', FB='idearadar2_fb';
+let prefs={q:'',niche:'',method:'',conf:'',sort:'score'};
+let fb={};
+try{const s=localStorage.getItem(PK);if(s)prefs={...prefs,...JSON.parse(s)};}catch(e){}
+try{const s=localStorage.getItem(FB);if(s)fb=JSON.parse(s)||{};}catch(e){}
+function savePrefs(){try{localStorage.setItem(PK,JSON.stringify(prefs));}catch(e){}}
+function saveFb(){try{localStorage.setItem(FB,JSON.stringify(fb));}catch(e){}}
+
+function init(){
+  try{
+    niches=[...new Set(RAW.map(d=>d.niche))].sort();
+    niches.forEach((n,i)=>palette[n]=cols[i%cols.length]);
+    const fn=$('#fniche');
+    fn.innerHTML='<option value="">Все ниши</option>'+niches.map(n=>'<option value="'+n+'">'+n+'</option>').join('');
+    $('#q').value=prefs.q; fn.value=prefs.niche; $('#fmethod').value=prefs.method; $('#fconf').value=prefs.conf; $('#sort').value=prefs.sort;
+    $('#legend').innerHTML=niches.map(n=>'<span><i class="dot" style="background:'+palette[n]+'"></i>'+n+'</span>').join('');
+    $('#q').addEventListener('input',e=>{prefs.q=e.target.value;savePrefs();render();});
+    fn.addEventListener('change',e=>{prefs.niche=e.target.value;savePrefs();render();});
+    $('#fmethod').addEventListener('change',e=>{prefs.method=e.target.value;savePrefs();render();});
+    $('#fconf').addEventListener('change',e=>{prefs.conf=e.target.value;savePrefs();render();});
+    $('#sort').addEventListener('change',e=>{prefs.sort=e.target.value;savePrefs();render();});
+    $('#runbtn').addEventListener('click',()=>{
+      if(window.cowork&&window.cowork.runScheduledTask){window.cowork.runScheduledTask('idea-radar-weekly');$('#runbtn').textContent='✓ Запущен';setTimeout(()=>{$('#runbtn').textContent='↻ Прогон';},4000);}
+      else{alert('Запуск прогона доступен в Cowork. Прогон также стартует автоматически по будням.');}
+    });
+    statbar();render();
+  }catch(e){document.getElementById('grid').innerHTML='<div class="empty">Ошибка инициализации: '+e.message+'</div>';}
+}
+
+function statbar(){
+  const n=RAW.length;
+  const avg=Math.round(RAW.reduce((a,d)=>a+d.score,0)/n);
+  const dia=RAW.filter(d=>d.score>=80).length;
+  const favs=Object.values(fb).filter(v=>v==='up').length;
+  $('#statbar').innerHTML=
+    '<div class="stat"><div class="n">'+n+'</div><div class="l">возможностей в базе</div></div>'+
+    '<div class="stat"><div class="n">'+dia+'</div><div class="l">«алмазов» (score ≥ 80)</div></div>'+
+    '<div class="stat"><div class="n">'+avg+'</div><div class="l">средний Diamond Score</div></div>'+
+    '<div class="stat"><div class="n">'+favs+'</div><div class="l">в избранном (👍)</div></div>';
+}
+
+function filtered(){
+  let arr=RAW.filter(d=>{
+    if(prefs.niche&&d.niche!==prefs.niche)return false;
+    if(prefs.method&&d.method!==prefs.method)return false;
+    if(prefs.conf&&d.conf!==prefs.conf)return false;
+    if(prefs.q){const q=prefs.q.toLowerCase();const blob=(d.title+d.pain+d.idea+d.segment+d.jtbd+(d.demand||'')).toLowerCase();if(!blob.includes(q))return false;}
+    return true;
+  });
+  const k=prefs.sort;
+  if(k==='fav') arr.sort((a,b)=>(fb[b.id]==='up'?1:0)-(fb[a.id]==='up'?1:0)||b.score-a.score);
+  else if(k==='score') arr.sort((a,b)=>b.score-a.score);
+  else arr.sort((a,b)=>b.s[k]-a.s[k]);
+  return arr;
+}
+
+function bar(label,v){const c=v>=4?'#1e9e6a':v>=3?'#3b5bdb':'#c9a23b';return '<div class="bar"><span class="bl">'+label+'</span><span class="track"><span class="fill" style="width:'+(v*20)+'%;background:'+c+'"></span></span><span>'+v+'</span></div>';}
+
+function render(){
+  const arr=filtered();
+  drawMap(arr);
+  const g=$('#grid');
+  if(!arr.length){g.innerHTML='<div class="empty">Ничего не найдено под фильтры.</div>';$('#foot').textContent='';return;}
+  g.innerHTML=arr.map(d=>{
+    const f=fb[d.id];
+    const demandBlock=d.demand?'<div class="demand"><div class="lbl">Сигнал спроса</div>'+d.demand+'</div>':'';
+    return '<div class="card'+(f==='up'?' fav':'')+(f==='down'?' down':'')+'">'+
+      '<div class="ctop"><h3 class="title">'+d.title+'</h3><div class="score" style="background:'+scoreColor(d.score)+'">'+d.score+'<small>DIAMOND</small></div></div>'+
+      '<div class="chips"><span class="chip niche">'+d.niche+'</span><span class="chip method">метод: '+d.method+'</span><span class="chip '+confClass(d.conf)+'">доверие: '+d.conf+'</span><span class="chip">Kano: '+d.kano+'</span><span class="chip">'+d.status+'</span></div>'+
+      '<div class="jtbd">'+d.jtbd+'</div>'+
+      '<div><div class="lbl">Сегмент</div><div class="txt">'+d.segment+'</div></div>'+
+      '<div><div class="lbl">Боль</div><div class="txt">'+d.pain+'</div></div>'+
+      demandBlock+
+      '<div><div class="lbl">Что есть сейчас</div><div class="txt">'+d.existing+'</div></div>'+
+      '<div class="idea"><div class="lbl">Гипотеза продукта</div>'+d.idea+'</div>'+
+      '<div class="bars">'+bar('боль',d.s.severity)+bar('частота',d.s.frequency)+bar('плата',d.s.wtp)+bar('охват',d.s.reach)+bar('слаб.реш.',d.s.gap)+bar('тренд',d.s.trend)+bar('простота',d.s.ease)+'</div>'+
+      '<div class="ev"><details><summary>Доказательства ('+d.ev.length+')</summary>'+d.ev.map(e=>'<blockquote>«'+e.q+'»<br><a href="'+e.u+'" target="_blank" rel="noopener">'+e.t+' →</a></blockquote>').join('')+'</details></div>'+
+      '<div class="fb"><button class="'+(f==='up'?'on':'')+'" data-id="'+d.id+'" data-v="up">👍 алмаз</button><button class="dn '+(f==='down'?'on dn':'')+'" data-id="'+d.id+'" data-v="down">👎 мимо</button></div>'+
+    '</div>';
+  }).join('');
+  g.querySelectorAll('.fb button').forEach(b=>b.addEventListener('click',()=>{
+    const id=b.getAttribute('data-id'),v=b.getAttribute('data-v');
+    fb[id]=(fb[id]===v)?undefined:v; if(!fb[id])delete fb[id];
+    saveFb();statbar();render();
+  }));
+  $('#foot').textContent='Показано '+arr.length+' из '+RAW.length+'. Метки 👍/👎 запоминаются и подсказывают оркестратору твой вкус на «алмазы».';
+}
+
+function drawMap(arr){
+  const W2=1100,H=380,P=54;
+  const xs=v=>P+((v-0.5)/5)*(W2-P-20);
+  const ys=v=>H-P-((v-0.5)/5)*(H-P-20);
+  let g='<svg viewBox="0 0 '+W2+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img">';
+  g+='<rect x="0" y="0" width="'+W2+'" height="'+H+'" fill="#fff"/>';
+  g+='<rect x="'+xs(3.5)+'" y="'+ys(5.5)+'" width="'+(xs(5.5)-xs(3.5))+'" height="'+(ys(3.5)-ys(5.5))+'" fill="#1e9e6a11"/>';
+  for(let i=1;i<=5;i++){
+    g+='<line x1="'+xs(i)+'" y1="'+ys(0.5)+'" x2="'+xs(i)+'" y2="'+ys(5.5)+'" stroke="#eef0f3"/>';
+    g+='<line x1="'+xs(0.5)+'" y1="'+ys(i)+'" x2="'+xs(5.5)+'" y2="'+ys(i)+'" stroke="#eef0f3"/>';
+    g+='<text x="'+xs(i)+'" y="'+(H-P+18)+'" font-size="11" fill="#9aa1ad" text-anchor="middle">'+i+'</text>';
+    g+='<text x="'+(P-12)+'" y="'+(ys(i)+4)+'" font-size="11" fill="#9aa1ad" text-anchor="end">'+i+'</text>';
+  }
+  g+='<text x="'+(W2/2)+'" y="'+(H-12)+'" font-size="12" fill="#6b7280" text-anchor="middle">Слабость предложения (Gap) →</text>';
+  g+='<text x="16" y="'+(H/2)+'" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90 16 '+(H/2)+')">Рост спроса (Trend) →</text>';
+  g+='<text x="'+xs(5.2)+'" y="'+ys(5.3)+'" font-size="11" fill="#1e9e6a" text-anchor="end" font-weight="700">зона «алмазов»</text>';
+  const seen={};
+  arr.forEach(d=>{
+    const key=d.s.gap+'_'+d.s.trend; seen[key]=(seen[key]||0)+1; const k=seen[key]-1;
+    const ang=k*2.4, rad=k? 7+k*2:0;
+    const cx=xs(d.s.gap)+Math.cos(ang)*rad, cy=ys(d.s.trend)+Math.sin(ang)*rad;
+    const r=5+d.score/14;
+    g+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+palette[d.niche]+'cc" stroke="'+palette[d.niche]+'" stroke-width="1"><title>'+d.title.replace(/&/g,'&amp;').replace(/</g,'&lt;')+' — score '+d.score+'</title></circle>';
+  });
+  g+='</svg>';
+  $('#map').innerHTML=g;
+}
+
+function boot(){
+  fetch('findings.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
+    RAW=(j.findings||j); RAW.forEach(d=>{d.score=diamond(d.s);}); init();
+  }).catch(e=>{var g=document.getElementById('grid');if(g)g.innerHTML='<div class="empty">Не удалось загрузить findings.json ('+e+'). На GitHub Pages работает; локально откройте через http-сервер, не file://.</div>';});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+</script>
+</body>
+</html>

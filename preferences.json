@@ -1,0 +1,8 @@
+{
+  "schema": "idea-radar-preferences-v1",
+  "note": "Оркестратор Routine пишет сюда твой вкус на основе отметок 👍/👎 в дашборде. up = «алмаз», down = «мимо». Учитывается при выборе ниш/методов в следующем прогоне.",
+  "liked_niches": [],
+  "disliked_niches": [],
+  "liked_methods": [],
+  "feedback": []
+}

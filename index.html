@@ -95,7 +95,7 @@ svg{width:100%;height:auto;display:block}
       <option value="reach">Сорт.: охват</option>
       <option value="fav">Сорт.: избранное</option>
     </select>
-    <button class="btn ghost" id="runbtn" title="Запустить прогон вручную">↻ Прогон</button>
+    <button class="btn ghost" id="runbtn" title="Открыть Routines и запустить прогон вручную (Run now)">↻ Прогон</button>
   </div>
 
   <div class="grid" id="grid"></div>
@@ -147,8 +147,8 @@ function init(){
     $('#fconf').addEventListener('change',e=>{prefs.conf=e.target.value;savePrefs();render();});
     $('#sort').addEventListener('change',e=>{prefs.sort=e.target.value;savePrefs();render();});
     $('#runbtn').addEventListener('click',()=>{
-      if(window.cowork&&window.cowork.runScheduledTask){window.cowork.runScheduledTask('idea-radar-weekly');$('#runbtn').textContent='✓ Запущен';setTimeout(()=>{$('#runbtn').textContent='↻ Прогон';},4000);}
-      else{alert('Запуск прогона доступен в Cowork. Прогон также стартует автоматически по будням.');}
+      window.open('https://claude.ai/code/routines','_blank','noopener');
+      $('#runbtn').textContent='↗ Routines';setTimeout(()=>{$('#runbtn').textContent='↻ Прогон';},4000);
     });
     statbar();render();
   }catch(e){document.getElementById('grid').innerHTML='<div class="empty">Ошибка инициализации: '+e.message+'</div>';}

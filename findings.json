@@ -6,7 +6,7 @@
   "личные финансы",
   "учёт бюджета"
  ],
- "count": 25,
+ "count": 59,
  "findings": [
   {
    "id": 1,
@@ -804,6 +804,1266 @@
      "q": "В 2024–2025 суды с WB в 65% случаев выносят решение в пользу продавца при наличии документации об отгрузке.",
      "u": "https://vc.ru/marketplace/1801103-chto-delat-v-sluchae-poteri-tovara-na-wildberries-poshagovoe-rukovodstvo-dlya-sellerov",
      "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "niche": "простые продукты",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Локальный филлер PDF-форм без подписки за «Сохранить»",
+   "segment": "Люди, которым нужно быстро заполнить и распечатать/сохранить PDF-форму (госбланки, заявления, договоры) прямо в браузере, без тяжёлого софта",
+   "jtbd": "Когда у меня PDF-форма, я хочу вписать текст, галочки и подпись и сразу сохранить или распечатать готовый файл — бесплатно и за минуту, чтобы не упираться в пэйволл на базовом действии.",
+   "pain": "Самое популярное расширение для заполнения PDF даёт заполнить форму бесплатно, но требует платную подписку и регистрацию именно на шаге «сохранить/распечатать» — пользователь тратит время и упирается в пэйволл на базовом действии.",
+   "demand": "«PDF Editor for Chrome» (pdfFiller) — 200 000 пользователей в Chrome Web Store при рейтинге всего 2.3★ (800 оценок); десятки расширений-конкурентов на работу с PDF суммарно на сотни тысяч установок подтверждают массовый спрос.",
+   "existing": "pdfFiller (200k юзеров, 2.3★): заполнение бесплатно, но сохранение/печать только по подписке после регистрации и триала; масса жалоб 1-2★ на скрытый пэйволл и невозможность сохранить локальный файл.",
+   "idea": "Расширение/микро-SaaS: открыть любой PDF (включая локальный), наложить текст, чекбоксы и подпись прямо в браузере и сохранить/распечатать БЕЗ регистрации, подписки и водяных знаков; обработка локально (privacy-first). Монетизация — необязательный one-time Pro (батч, OCR полей).",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 5,
+    "gap": 4,
+    "trend": 4,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "200,000 users ... 2.3 out of 5 ... 800 ratings",
+     "u": "https://chromewebstore.google.com/detail/pdf-editor-for-chromeedit/gphandlahdpffmccakmbngmbjnjiiahp",
+     "t": "стор"
+    },
+    {
+     "q": "You must register a pdfFiller account to start a free pdfFiller trial and save your edited PDF document. A paid subscription plan is required to use pdfFiller's comprehensive document management solution.",
+     "u": "https://chromewebstore.google.com/detail/pdf-editor-for-chromeedit/gphandlahdpffmccakmbngmbjnjiiahp",
+     "t": "стор"
+    },
+    {
+     "q": "Spend hour filling a pdf and then right about to print it they asked for money",
+     "u": "https://chromewebstore.google.com/detail/pdf-editor-for-chromeedit/gphandlahdpffmccakmbngmbjnjiiahp/reviews",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "niche": "простые продукты",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Безлимитный локальный сейвер вкладок и сессий без подписки (замена опаунившемуся Toby)",
+   "segment": "Пользователи Chrome/Firefox с десятками-сотнями вкладок: исследователи, дизайнеры, разработчики, студенты, копившие коллекции вкладок в Toby",
+   "jtbd": "Когда у меня открыты десятки вкладок, я хочу одним кликом сохранить и сгруппировать сессию, чтобы вернуться к ней потом — без лимитов, обязательной регистрации и риска потерять данные.",
+   "pain": "Лидер ниши Toby внезапно запаунил базовую функцию — сохранение вкладок — лимитом 60 карточек, требует карту сразу после регистрации и угрожает удалением накопленных закладок без оплаты; пользователи в ярости и массово ищут замену.",
+   "demand": "Toby: 300 000 пользователей в Chrome Web Store, рейтинг 4.2★ при 3.3K оценок; ещё тысячи активных в Firefox. Ниша tab-менеджеров устойчиво в топе категории «Продуктивность».",
+   "existing": "Toby (60-карточный лимит + подписка + принудительная карта), Workona (платные лимиты, жалобы на потерю вкладок), OneTab/Session Buddy (тормозят на 1000+ вкладок, потеря данных после сбоев).",
+   "idea": "Расширение, делающее базу даром и навсегда: безлимитное сохранение вкладок/сессий, визуальные коллекции, локальное хранение (экспорт в JSON), опциональный платный слой только за облачный синк/шеринг. Позиционирование: «то, чем Toby был до подписки»; вход — «импорт из Toby в 1 клик».",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "300,000 users",
+     "u": "https://chromewebstore.google.com/detail/toby-tab-management-tool/hddnkoipeenegfoeaoibdmnaalmgkpip",
+     "t": "стор"
+    },
+    {
+     "q": "The Toby team have become increasingly greedy and are now pay-walling the core feature of the app: Saving tabs. You will only be able to save 60 tabs without a subscription. Literal killobytes of data. What a joke.",
+     "u": "https://addons.mozilla.org/en-US/firefox/addon/toby-for-tabs/",
+     "t": "отзыв"
+    },
+    {
+     "q": "Right after creating the account you are prompted for a credit card to trial their Pro plan. Immediately hit with an upsell is a large red alert.",
+     "u": "https://addons.mozilla.org/en-US/firefox/addon/toby-for-tabs/",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "niche": "простые продукты",
+   "method": "спрос",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Браузерное расширение для заметок со встреч без лимита минут и AI-кредитов (BYO-ключ / локально)",
+   "segment": "Удалёнщики, фрилансеры и малые команды на Google Meet / Zoom / Teams, у кого 10-20 созвонов в неделю и нет корпоративного Workspace",
+   "jtbd": "Когда я выхожу с рабочего созвона, я хочу автоматически получать полный транскрипт и AI-резюме без счётчика минут и кредитов, чтобы не выбирать, какую встречу расшифровать, и не платить $20/мес за базовую функцию.",
+   "pain": "Спрос на AI-нотетейкеры огромный, но предложение хищное: бесплатный тариф = по сути триал. У Tactiq free всего 10 транскриптов и 5 AI-кредитов в месяц, у Fathom — 5 резюме/мес, у tl;dv — 10 AI-отчётов/мес, у Otter — 300 мин/мес и срез на 30 мин. Плюс трение при отмене и приватность (аудио уходит в облако).",
+   "demand": "Tactiq — более 1 млн пользователей; tl;dv — 1 000 000+ команд; категория массовая и растущая (десятки тулов).",
+   "existing": "Tactiq (10 транскриптов + 5 AI-кредитов/мес), tl;dv (10 AI-отчётов/мес), Fathom (5 резюме/мес), Otter (300 мин/мес, кэп 30 мин), MeetGeek. Все метят базовую функцию кредитами/минутами; единственное локальное расширение — Kai (только английский, v1).",
+   "idea": "Лёгкое Chrome/Edge-расширение, читающее нативные субтитры Meet/Zoom/Teams и делающее БЕЗЛИМИТНЫЕ транскрипты и AI-резюме: на своём API-ключе пользователя (без наценки за кредиты) либо локально (Whisper/WebGPU). Без ботов, без лимитов минут, плоская цена $5-7/мес или разовый платёж.",
+   "s": {
+    "severity": 3,
+    "frequency": 5,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "Tactiq's free plan is free forever with 10 transcripts/month and 5 AI credits/month, plus AI-generated insights. It's great to try live transcription and basic AI features, but the limited AI credits restrict heavy automation.",
+     "u": "https://meetgeek.ai/blog/tactiq-pricing",
+     "t": "обзор"
+    },
+    {
+     "q": "With over 1 million users and support for 60+ languages, Tactiq stands out by delivering real-time",
+     "u": "https://coldiq.com/tools/tactiqio",
+     "t": "обзор"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "niche": "простые продукты",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Email-трекер для Gmail без водяного знака в письме",
+   "segment": "Фрилансеры, продажники и SMB, отслеживающие открытия писем в Gmail",
+   "jtbd": "Когда я отправляю важное письмо клиенту, я хочу знать, открыли ли его и кликнули ли по ссылке, не превращая письмо в рекламу чужого сервиса.",
+   "pain": "Бесплатные трекеры дописывают в каждое письмо подпись-водяной знак «Sent with Mailtrack», что выглядит непрофессионально перед клиентами; убрать можно только за деньги, а трекинг кликов в бесплатном тарифе ограничен. Пользователи ставят хаки-расширения, лишь бы стереть подпись.",
+   "demand": "Mailsuite/Mailtrack на официальном сайте заявляет более 3M пользователей и 11.5K отзывов; вокруг одной только проблемы водяного знака энтузиасты выпустили 6+ независимых GitHub-проектов для его удаления.",
+   "existing": "Mailtrack/Mailsuite (бесплатно — водяной знак + лимит трекинга кликов, снятие брендинга от $4.99/мес), MailTracker by Hunter (без подписи, но free лимит 20 писем/мес), Streak, Yesware (хранит данные 24 ч). Бесплатного трекера открытий+кликов без водяного знака в массовом сегменте нет.",
+   "idea": "Лёгкое Chrome-расширение для Gmail: трекинг открытий и кликов без подписи/водяного знака, щедрый бесплатный лимит, чистые уведомления. Монетизация — командные функции/аналитика/CRM-интеграции, а не «плати, чтобы убрать рекламу из своего же письма».",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 3,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "+11.5K reviews Trusted by +3M users Used by professionals",
+     "u": "https://mailsuite.com/en/features/mailtrack",
+     "t": "стор"
+    },
+    {
+     "q": "Clears the annoying signature of Mailtrack.",
+     "u": "https://github.com/Lifka/mailtrack-signature-remover",
+     "t": "github"
+    },
+    {
+     "q": "Automatic mailtrack signature remover",
+     "u": "https://github.com/medartus/mailtrack-signature-remover",
+     "t": "github"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "niche": "AI/LLM",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "CI-движок надёжности tool-calling для MCP-серверов и агентов",
+   "segment": "Команды, разрабатывающие MCP-серверы и агентов на их основе (особенно с локальными/мелкими моделями)",
+   "jtbd": "Когда я меняю описания/параметры тулзов или модель, я хочу автоматически убедиться, что агент по-прежнему стабильно и правильно вызывает нужные инструменты, чтобы не ловить регрессии в проде.",
+   "pain": "Нет автоматического способа валидировать, что MCP tool-calls срабатывают надёжно по разным моделям, конфигурациям промптов и сложности тулзов. Точность подбора тулза и форматирование параметров деградируют на мелких моделях, но отслеживать это нечем. Качество описаний тулзов оценивается субъективно.",
+   "demand": "GAIA (AMD) завёл issue о полном отсутствии такого фреймворка; существующие OSS-решения крошечные и сырые: mcp-server-tester (10★, WIP), mcp-eval (25★), mcp-testing-framework (29★).",
+   "existing": "mcp-server-tester (10★, WIP), lastmile-ai/mcp-eval (25★), L-Qun/mcp-testing-framework (29★), Accenture/mcp-bench (бенчмарк, не CI-gate), Confident AI/Braintrust (общая eval-платформа). Зрелого CI-gate под надёжность tool-calling нет.",
+   "idea": "CI-нативный сервис: даёт тулзам и MCP-серверу набор реалистичных сценариев, прогоняет их через несколько моделей, меряет accuracy подбора тулза/параметров и устойчивость к перефразированию, даёт quality-gate (блок merge при просадке). «pytest для MCP» в GitHub Actions.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "There is no automated way to validate that MCP tool calls succeed reliably across different models, prompt configurations, and tool complexities.",
+     "u": "https://github.com/amd/gaia/issues/709",
+     "t": "github"
+    },
+    {
+     "q": "Automated testing tool for Model Context Protocol (MCP) servers - WORK IN PROGRESS",
+     "u": "https://github.com/r-huijts/mcp-server-tester",
+     "t": "github"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "niche": "AI/LLM",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Портируемый слой памяти агентов без вендор-лока (экспорт/миграция между провайдерами)",
+   "segment": "Разработчики LLM-приложений на хостед-памяти (Mem0/Zep/Letta), боящиеся привязки к провайдеру",
+   "jtbd": "Когда я строю продукт на чужом слое памяти, я хочу иметь возможность забрать память пользователей и переехать на другого провайдера или self-host без потери данных и переписывания кода.",
+   "pain": "Память хранится в проприетарном формате провайдера; неясно, как перенести её на другую платформу или self-host, документация по экспорту непонятна. Это базовый страх (data ownership/lock-in), блокирующий внедрение в проде.",
+   "demand": "Mem0 — 59.6k★, «Universal memory layer for AI Agents»; в discussions/issues прямо спрашивают про lock-in и миграцию (#1679, #3697) — повторяющаяся тема у самого популярного игрока ниши.",
+   "existing": "Mem0, Zep (проприетарный граф, не экспортируется), Letta, OpenMemory. Экспорт у Mem0 есть, но пользователи не понимают, как им пользоваться для миграции; кросс-провайдерного нейтрального формата/слоя нет.",
+   "idea": "Нейтральный open-протокол + адаптеры: единый формат памяти (факты+эмбеддинги+граф+провенанс) и коннекторы для импорта/экспорта между Mem0/Zep/Letta/self-host. «Memory portability layer» как страховка/compliance-инструмент.",
+   "s": {
+    "severity": 3,
+    "frequency": 3,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "If I use the hosted cloud version, is there any kind of lock in? What if I need to change solutions later? What will happen to all of my user's 'memories'? Will I be able to easily transfer these to a similar provider?",
+     "u": "https://github.com/mem0ai/mem0/discussions/1679",
+     "t": "github"
+    },
+    {
+     "q": "I would like to know if there is any documentation or guide available regarding the migration of user memories between the Hosted Platform and the Self-Hosted platform, and vice versa.",
+     "u": "https://github.com/mem0ai/mem0/issues/3697",
+     "t": "github"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "niche": "AI/LLM",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Preemptive/стриминговый слой ответа для голосовых агентов (срезать VAD-задержку)",
+   "segment": "Разработчики реалтайм голосовых агентов на Pipecat/LiveKit и подобных",
+   "jtbd": "Когда пользователь договорил, я хочу, чтобы агент отвечал в пределах ~300-800мс, не дожидаясь подтверждения тишины от VAD, чтобы разговор не висел и звонящий не клал трубку.",
+   "pain": "Фреймворк ждёт end-of-speech от VAD до начала генерации ответа, хотя STT уже выдал финальный транскрипт — лишняя задержка на каждом ходе. Превышение ~200-800мс ломает естественность диалога; команды видят жалобы «агент завис посреди фразы».",
+   "demand": "Pipecat — 13.1k★, «Open Source framework for voice and multimodal conversational AI»; issue #3321 о преэмптивной генерации; тема latency/turn-detection повторяется в десятках issue.",
+   "existing": "Pipecat (Smart Turn v3), LiveKit, Daily, Retell. Встроенный turn-detection есть, но preemptive-генерация на частичном транскрипте — недостающий примитив; решается каждой командой вручную через хаки.",
+   "idea": "Подключаемый модуль «predictive turn + speculative response»: начинает синтез ответа на частичном транскрипте/предсказании конца хода, откатывает при перебивании. Drop-in для Pipecat/LiveKit, как latency-pack для голосовых агентов.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 3,
+    "gap": 4,
+    "trend": 5,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "Pipecat waits for the user to complete their turn (end of speech detected by VAD) before starting response generation. This creates a noticeable delay between when users finish speaking and when they hear the agent's response.",
+     "u": "https://github.com/pipecat-ai/pipecat/issues/3321",
+     "t": "github"
+    },
+    {
+     "q": "Open Source framework for voice and multimodal conversational AI",
+     "u": "https://github.com/pipecat-ai/pipecat",
+     "t": "github"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "niche": "AI/LLM",
+   "method": "боль",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Регресс-тесты для агентов: семантические assert'ы вместо exact-match в CI",
+   "segment": "QA-инженеры и LLM-разработчики, встраивающие проверку агентов/LLM-выводов в CI/CD",
+   "jtbd": "Когда я меняю промпт/модель/тулзы, я хочу в CI ловить регрессии качества при недетерминированном выводе, без флака и без ручного просмотра прогонов.",
+   "pain": "LLM недетерминированы: exact-match assert'ы падают, тесты флакают. Нужны семантическая близость, статзначимость дельты и усреднение по N прогонам — но это не поддержано первоклассно в обычных тест-раннерах, каждый собирает велосипед.",
+   "demand": "Множество гайдов 2026 (TestQuality, Testriq, SitePoint, arxiv AgentAssay) описывают одну и ту же боль и одинаковый набор воркэраундов — признак неудовлетворённого спроса.",
+   "existing": "DeepEval/Confident AI, Braintrust, MLflow LLM eval, promptfoo — частично закрывают, но фокус на eval-дашбордах, а не на лёгком CI-gate с семантическими assert'ами и статзначимостью из коробки в pytest/jest.",
+   "idea": "Лёгкая тест-библиотека: assert_semantic_match / assert_no_regression со встроенной статистикой (N прогонов, порог значимости над шумом), нативно в pytest/jest и GitHub Actions. «Jest-matchers для LLM-выводов».",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 2,
+    "reach": 4,
+    "gap": 3,
+    "trend": 4,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "MCP tool selection accuracy and parameter formatting degrade significantly on smaller models ... there exists no systematic framework to measure or track this degradation",
+     "u": "https://github.com/amd/gaia/issues/709",
+     "t": "github"
+    },
+    {
+     "q": "Lightweight eval framework for MCP servers, built on mcp-agent",
+     "u": "https://github.com/lastmile-ai/mcp-eval",
+     "t": "github"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "niche": "здоровье",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "GLP-1: что есть, а не только когда колоть — еда против потери мышц",
+   "segment": "Взрослые на GLP-1 (Ozempic/Wegovy/Mounjaro/Zepbound), худеющие; ~11 млн уникальных пациентов в США",
+   "jtbd": "Когда я на GLP-1 и аппетит подавлен, я хочу понимать, что именно съесть, чтобы добрать белок и не терять мышцы, а не просто отмечать дату укола.",
+   "pain": "Топовые GLP-1-приложения — это трекеры уколов и веса; еда в них вторична: мало продуктов в базе, сканер не работает, нет жира в макросах. Реальная клиническая проблема — 25–40% потерянного веса приходится на мышцы, а приложения это не ведут.",
+   "demand": "GLP-1 принимают ~11 млн+ уникальных пациентов в США (Q2 2025), доля взрослых удвоилась до ~12% — быстрорастущий сегмент.",
+   "existing": "Pep, Shotsy, Pokii, GlucoPal — сильны в трекинге дозы/места укола, слабы в питании (база продуктов, сканер, протеин-таргет, защита мышц). MyFitnessPal добавил GLP-1-режим, но это общий калорийник без логики препарата.",
+   "idea": "Приложение-компаньон GLP-1 с фокусом на «защиту мышц»: дневной таргет белка по массе тела (1.2–2 г/кг), быстрый лог высокобелковой еды под сниженный аппетит и тошноту, подсказки «что съесть при тошноте», связка с силовой. Трекер укола — вторично.",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 4,
+    "reach": 5,
+    "gap": 4,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "I'm hoping they continue to improve the food logging and it would be nice if they added fat to the macros. The food logging is a little clunky so I use a different app for that",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/id=6504788281/sortBy=mostRecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "participants taking GLP-1 receptor agonists typically experienced 25 to 40% of their weight loss from lean mass",
+     "u": "https://www.acefitness.org/continuing-education/certified/june-2025/8892/glp-1s-and-lean-mass-what-the-research-shows/",
+     "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "niche": "здоровье",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Доверять ли ресторану при аллергии: свежесть и охват данных вместо чужих отзывов",
+   "segment": "Люди с пищевой аллергией/целиакией и родители аллергиков; в США аллергия у ~6.7% взрослых",
+   "jtbd": "Когда я ем вне дома или путешествую, я хочу быстро понять, безопасно ли это конкретное место рядом со мной прямо сейчас, чтобы не рисковать анафилаксией и не звонить в каждый ресторан.",
+   "pain": "Краудсорс-приложения хороши как комьюнити, но плотность данных дырявая: рядом ничего нет, показывают места на другом конце мира, отзывы 2–3-летней давности про закрывшиеся бренды, фильтры по аллергенам срабатывают грубо. Нет проверки актуальности ингредиентов и покрытия за пределами крупных городов.",
+   "demand": "В США аллергия у ~6.7% взрослых, едят вне дома регулярно, тревога вокруг каждого визита; категория устойчивая.",
+   "existing": "Spokin (комьюнити-отзывы, слаб в локальном охвате и свежести), AllergyEats, Fig, Alleri. Ни одно не валидирует данные с рестораном и не гарантирует синхронность меню/сайта/приложения.",
+   "idea": "Сервис свежести и охвата: парсинг актуальных меню + подтверждение от заведения + сигнал «когда последний раз проверено», плотное покрытие вне топ-городов, честный статус «данных мало — позвоните». Монетизация — заведениям за верифицированный профиль аллергенов.",
+   "s": {
+    "severity": 5,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 3,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "The first product I was interested in was from a company that had went out of business a month earlier. The reviews were from 2 and 3 years ago. So I am now asking myself where is the App Support?",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/id=1201909035/sortBy=mostRecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "There hasn't been anything in the app near us anywhere in Spain. Maybe it works in the US?",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/id=1201909035/sortBy=mostRecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "7.7% have eczema, and 6.7% have a food allergy",
+     "u": "https://www.cdc.gov/nchs/pressroom/releases/20260108.html",
+     "t": "отчёт"
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "niche": "здоровье",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "delight",
+   "status": "NEW",
+   "title": "ARFID у взрослых и детей: один крошечный список безопасной еды держит весь спрос",
+   "segment": "Подростки и взрослые с ARFID/избирательным питанием и родители таких детей",
+   "jtbd": "Когда я живу с ARFID, я хочу вести и расширять список безопасных продуктов и готовиться к визиту к врачу/диетологу, чтобы понимать прогресс и не чувствовать себя одиноким.",
+   "pain": "Категория почти пуста: люди годами вели списки безопасной/небезопасной еды в заметках, пока случайно не нашли единственное приложение. Само приложение (Pitaya, ~28 отзывов) перегружено, нельзя добавить свои продукты, нет уведомлений, нет фото-опор.",
+   "demand": "В общей популяции США/UK до 26% дали положительный скрининг на симптомы ARFID — огромный неудовлетворённый спрос на нормальный инструмент.",
+   "existing": "Pitaya (ARFID & Picky Eaters) — фактически единственный нишевый; дезорганизован, без кастомных продуктов и напоминаний. Общие детские picky-eater приложения — про родителей малышей, не про взрослых с ARFID и не про трекинг прогресса.",
+   "idea": "Структурированный трекер ARFID: категории и поиск без перегруза, добавление своих продуктов с фото, статусы «нравится/терплю/зависит/не пробовал», цели и напоминания экспозиции, экспорт для врача. Для взрослых + режим «родитель ребёнка».",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 5,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "I was writing down a list of safe & unsafe foods in my notes app for a while until I tried looking up ARFID apps, I found this one & I tried it.",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/id=6448952961/sortBy=mostRecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "the structure of the list of foods is incredibly disorganized... i would love if i had the ability to add foods that aren't listed on the app",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/id=6448952961/sortBy=mostRecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "Among 4002 participants (mean age 47.1 years, 50% female), 26.0% screened positive for ARFID.",
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12884231/",
+     "t": "отчёт"
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "niche": "быт",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Уход за домашними растениями без хищной подписки и с честной диагностикой",
+   "segment": "Владельцы комнатных растений (преим. миллениалы); ~66% домохозяйств США держат хотя бы одно растение",
+   "jtbd": "Когда я завожу комнатные растения и боюсь их загубить, я хочу вовремя получать напоминания о поливе/подкормке и точную диагностику болезни, чтобы растения выживали без лишних трат.",
+   "pain": "Лидеры рынка берут $7-8 в неделю, при этом ключевые фичи (напоминания, диагностика) не работают, отмена подписки не срабатывает и продолжает списывать, идентификация ошибается на базовых растениях.",
+   "demand": "~66% домохозяйств США имеют комнатное растение; Planta заявляет 10 млн пользователей и 40 млн растений; рынок комнатных растений ~$20-21 млрд (2025), CAGR ~5.4%.",
+   "existing": "PlantIn ($7.99/нед, отмена не срабатывает, уведомления не приходят, ID путает алоэ с ананасом), PictureThis (точный ID, дорогая подписка), Planta, Plant Parent (баговая диагностика).",
+   "idea": "Plant-care с разовой оплатой/честной годовой ценой: надёжные локальные напоминания, офлайн-ID + диагностика по фото с указанием уверенности и источника, прозрачная отмена.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "I scanned a sick Aloe vera plant and PlantIn identified it as a pineapple plant. I tried several times from different angles and got the same result... I will throw the plant away and get a new one before I pay $7.99 a week!!!",
+     "u": "https://justuseapp.com/en/app/1527399597/plantin-plant-identifier/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "When you cancel a subscription during the trial period, it should NOT keep charging you!!! ... They have still been fraudulently charging me $8 a WEEK for an app that was of NO USE to me",
+     "u": "https://justuseapp.com/en/app/1527399597/plantin-plant-identifier/reviews",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "niche": "быт",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Учёт продуктов и сроков годности с реально работающим штрихкод-сканером",
+   "segment": "Семьи, ведущие запасы в холодильнике/кладовке и теряющие деньги на испорченной еде",
+   "jtbd": "Когда я храню продукты, я хочу быстро вносить их сканированием и видеть, что скоро испортится, чтобы меньше выбрасывать еду и денег.",
+   "pain": "Существующие приложения теряют весь инвентарь при обновлениях/смене сервера, поддержка не отвечает, а штрихкод-сканер находит лишь треть продуктов — всё приходится вбивать руками, и люди возвращаются к Google-таблице.",
+   "demand": "Средняя семья из 4 человек теряет $1500-2913/год на несъеденной еде (~$56/нед); домохозяйства дают 40-50% пищевых отходов США (~26.5 млн тонн/год).",
+   "existing": "NoWaste (потеря инвентаря при миграции, сканер редко работает), KitchenPal (штрихкод находит 1/3, неверные картинки), CozZo (потеря данных), Pantry Check (лимит 200).",
+   "idea": "Pantry-трекер с упором на надёжность: офлайн-база штрихкодов с краудсорс-дополнением, гарантированный бэкап/экспорт без потерь при апдейтах, OCR срока годности, уведомления «съешь сначала».",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "the developer decided to move the database to a new server this month, and in the process MANY users' food was lost, including mine... The barcode scanning feature seldom works for our food, anyway.",
+     "u": "https://justuseapp.com/en/app/926211004/nowaste-food-inventory-list/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "I am scanning barcodes and only 1/3 of my products are found. What was supposed to be a time saver is time consuming since I have to add most things myself. I am using normal name brand products as well.",
+     "u": "https://justuseapp.com/en/app/1084982489/kitchenpal-pantry-recipes/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "the average American family of four loses $1,500 to uneaten food... For a household of four, the annual cost is $2,913, with an average weekly cost of $56",
+     "u": "https://www.epa.gov/land-research/estimating-cost-food-waste-american-consumers",
+     "t": "отчёт"
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "niche": "быт",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Архив мануалов, гарантий и отзывных кампаний техники (на замену закрывшемуся Centriq)",
+   "segment": "Домовладельцы с десятками приборов, ведущие мануалы/гарантии/ТО",
+   "jtbd": "Когда у меня дома десятки приборов, я хочу по фото шильдика хранить мануалы, гарантии и сроки обслуживания и узнавать об отзывах (recall), чтобы не терять документы и вовремя реагировать.",
+   "pain": "Лидер ниши Centriq закрылся и удалил аккаунты; окно экспорта короткое, CSV без фото и документов (выгрузка по одному). Пользователи с многолетней рутиной на сканировании шильдиков и recall-алертах остались без данных.",
+   "demand": "Десятилетие пользователей Centriq внезапно осталось без инструмента; конкуренты (Homer, Dib) спешно выпустили миграторы CSV — явный всплеск спроса на замену.",
+   "existing": "Centriq (закрылся, данные удалены), HomeZada (жалобы на биллинг/поддержку, веб > приложение), Homer (миграция CSV), Dib (AI, free-to-start). Слабости: внезапные закрытия с потерей данных, переусложнённость.",
+   "idea": "Архив техники с приоритетом сохранности: фото шильдика -> мануал/части, recall-алерты, напоминания по ТО, и главное — всегда доступный полный офлайн-экспорт с фото и документами (anti-lock-in как продающая фича). Канал первых юзеров — бывшие пользователи Centriq.",
+   "s": {
+    "severity": 3,
+    "frequency": 2,
+    "wtp": 3,
+    "reach": 3,
+    "gap": 4,
+    "trend": 4,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "That is when Centriq shut down, deleted user accounts, and ended a decade of nameplate-scanning, manual-retrieval, and recall-alert features that homeowners had built routines around.",
+     "u": "https://realestateledger.io/comparisons/homezada-vs-centriq",
+     "t": "статья"
+    },
+    {
+     "q": "The export window was tight, the CSV did not include photos or attached documents, and after the deadline everything was deleted... Photos and documents had to be downloaded one by one. There was no bulk export.",
+     "u": "https://homebeacon.app/alternatives/centriq-alternative",
+     "t": "обзор"
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "niche": "быт",
+   "method": "боль",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Опись вещей для переезда без подписочной ловушки и с надёжной миграцией данных",
+   "segment": "Люди в процессе переезда (DIY-сегмент); >15 млн переездов/год в США",
+   "jtbd": "Когда я переезжаю, я хочу быстро описать коробки (что в какой) и потом мгновенно находить вещи, не вскрывая всё, чтобы не потеряться в десятках коробок.",
+   "pain": "Приложение нужно интенсивно один раз и редко потом, но навязывают годовую подписку $25-48 — люди уходят сразу. При апгрейде/миграции данные не читаются: грузятся не те фото, отписка не срабатывает.",
+   "demand": "В 2025 переехало >15 млн человек (~5% населения США); внутри штата — 78.5% (DIY-сегмент). Объём большой, но тренд числа переездов снижается.",
+   "existing": "Under My Roof (subscription-only, $25-48/год, миграция ломает данные), MOVINGBOXES, BoxOrganizer, Sortly. Слабости: подписка на разовый сценарий, потеря/порча данных, тедиозный ввод.",
+   "idea": "Опись коробок с разовой оплатой (или бесплатно + дешёвый moving pass): фото коробки -> QR-наклейка -> поиск вещи; быстрый ввод «коробка за 60 сек», надёжный локальный бэкап и шаринг с семьёй.",
+   "s": {
+    "severity": 3,
+    "frequency": 2,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 3,
+    "trend": 2,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "Subscription Only = No Thanks. Developers that think subscription model should automatically apply to them can kick rocks. There's no reason UnderMyRoofHomeInventory should cost $25-48 PER YEAR.",
+     "u": "https://justuseapp.com/en/app/1524335878/under-my-roof-home-inventory/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "In 2025, over 15 million individuals relocated, which is slightly less than 5% of the total population",
+     "u": "https://www.rubyhome.com/blog/moving-stats/",
+     "t": "отчёт"
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "niche": "путешествия",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Надёжный travel-eSIM с честным возвратом и живой поддержкой",
+   "segment": "Соло- и частые международные путешественники, диджитал-номады",
+   "jtbd": "Когда я прилетаю в чужую страну, я хочу сразу получить работающий интернет и при сбое быстро вернуть деньги, чтобы не остаться без связи и без денег.",
+   "pain": "eSIM не подключается/отваливается, поддержка — только AI-бот, отказы в возврате, троттлинг безлимита. У лидера рейтинг ниже конкурентов при огромной базе.",
+   "demand": "30 млн клиентов Airalo (06.2026); travel-eSIM траты ~$3.3 млрд к 2025, +165% к 2023 (Kaleido).",
+   "existing": "Airalo (AI-поддержка, отказы в возврате, 4.58★/96 961), Saily, Nomad, Holafly — нет живых людей в момент сбоя и гарантии возврата.",
+   "idea": "eSIM с SLA авто-возврата, живым чатом 24/7 и резервным оператором (multi-IMSI), чтобы при отказе связи деньги возвращались автоматически.",
+   "s": {
+    "severity": 5,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 5,
+    "gap": 3,
+    "trend": 5,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "eSIM has zero coverage in London ... they will not refund. So I spent an additional $20 with Sailey for one that actually works.",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1475911720/sortby=mostrecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "Airalo Surpasses 30 Million Customers as Global eSIM Adoption Accelerates",
+     "u": "https://www.businesswire.com/news/home/20260602772531/en/Airalo-Surpasses-30-Million-Customers-as-Global-eSIM-Adoption-Accelerates",
+     "t": "новости"
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "niche": "путешествия",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Честные офлайн-карты для путешествий без подписки и поп-апов",
+   "segment": "Путешественники без данных за границей, треккеры, бэкпекеры",
+   "jtbd": "Когда я за границей без интернета, я хочу скачать карту и проложить маршрут офлайн, чтобы не заблудиться и не платить за роуминг.",
+   "pain": "Бывшее бесплатное приложение закрыло базовую навигацию подпиской, поп-апы Pro, тёмные паттерны, потеря скачанных карт даже у купивших Pro.",
+   "demand": "Maps.me — 77 638 оценок; форк Organic Maps достиг 6 млн установок к 12.2025 (массовая миграция на бесплатное).",
+   "existing": "Maps.me (подписка+поп-апы), CityMaps2Go $11.99; Organic Maps/OsmAnd бесплатны, но UX заточен под хайкинг.",
+   "idea": "Лёгкое тур-приложение на OSM: скачивание города в 1 тап, монетизация гид-контентом, а не блокировкой карты.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 3,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "The interface uses anti-patterns everywhere to frustrate you or make you mis-click into their payment flow.",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=510623322/sortby=mostrecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "In December 2025, Organic Maps reached 6M installs.",
+     "u": "https://beyondbaggage.com/2026/02/24/best-offline-maps-apps-travel-2026/",
+     "t": "обзор"
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "niche": "путешествия",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Офлайн-конвертер валют для путешествий без рекламы и трекинга",
+   "segment": "Туристы у кассы/на рынке за границей",
+   "jtbd": "Когда я стою у кассы в чужой стране, я хочу за секунду перевести цену в свою валюту, чтобы не переплатить и не залипать в рекламе.",
+   "pain": "Лидеры категории заваливают полноэкранной несбрасываемой рекламой (включая порно), требуют согласия на трекинг и показывают неверные курсы — базовая функция утоплена в монетизации.",
+   "demand": "My Currency Converter 125 982 оценки, Xe 121 887, Currency 78 084, Calculator 68 482 — массовый спрос на функцию.",
+   "existing": "My Currency Converter (4.85★/125 982), Currency Converter Calculator (реклама-помойка), Xe (уклон в переводы) — агрессивная монетизация базовой функции.",
+   "idea": "Минималистичный офлайн-конвертер: кэш курсов на день, ноль рекламы/трекинга, разовая покупка $1-2.",
+   "s": {
+    "severity": 3,
+    "frequency": 5,
+    "wtp": 2,
+    "reach": 5,
+    "gap": 3,
+    "trend": 3,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "Ad comes up and never goes away. Will just use Google,",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1457309557/sortby=mostrecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "Inundated with Ads! ... nonstop ads that freeze your phone before you can even do one conversion..or even exit the app.",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1457309557/sortby=mostrecent/json",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "niche": "путешествия",
+   "method": "спрос",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Планировщик маршрута с офлайн-картой и экспортом без подписки",
+   "segment": "Самостоятельные путешественники и группы, планирующие роуд-трипы",
+   "jtbd": "Когда я еду по плану без стабильного интернета, я хочу видеть маршрут офлайн и экспортировать его в Google Maps, чтобы не зависеть от связи и подписки.",
+   "pain": "Офлайн-доступ, экспорт и трекинг рейсов заперты в Pro ($49.99/год); конкурент блокирует доступ из-под VPN в поездке и прячет отмену подписки.",
+   "demand": "Рынок планировщиков ~$3.07 млрд (2024) -> ~$3.42 млрд (2025), CAGR ~11.3%; установки топ-10 +28%/год; TripIt — 304 723 оценки.",
+   "existing": "Wanderlog (офлайн/экспорт в Pro, объективно сильный 4.9★), TripIt (блок VPN, отмена подписки), Tripsy. Рынок самый конкурентный из travel-находок — дифференциация только на офлайн/анти-VPN боли.",
+   "idea": "Бесплатные офлайн-карта маршрута и экспорт в Google Maps из коробки, без блокировки VPN; монетизация на AI/коллаборации.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 2,
+    "trend": 4,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "They recently started banning access from VPNs. They lock you out of your account when you need to get critical information about your trip.",
+     "u": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=311035142/sortby=mostrecent/json",
+     "t": "отзыв"
+    },
+    {
+     "q": "Paywalled features include offline access (a major point of contention), export to Google Maps, and flight tracking.",
+     "u": "https://tripstone.app/blog/wanderlog-vs-tripit",
+     "t": "обзор"
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "niche": "хобби/креаторы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "GROWING",
+   "title": "Поиск нужного звука в разросшейся библиотеке сэмплов",
+   "segment": "Бедрум-продюсеры и звукорежиссёры с десятками тысяч сэмплов/лупов/MIDI, накопленных за годы",
+   "jtbd": "Когда я в творческом потоке и мне нужен конкретный звук, я хочу найти его за секунды, чтобы не выпадать из процесса и не рыться вручную по десяткам папок.",
+   "pain": "Сэмплы разбросаны по дискам и хаотичным папкам; папочная структура быстро перестаёт работать; продюсер теряет время в поисках одного звука. Существующие менеджеры на больших коллекциях тормозят и падают.",
+   "demand": "Спрос подтверждён запуском платного конкурента Tuva (€25 lifetime, апрель 2026) с AI-тегированием и парсингом DAW-проектов — рынок считают живым и недоокученным.",
+   "existing": "ADSR Sample Manager (бесплатный, но репутация нестабильного на больших библиотеках), Sononym (AI-группировка, медленная), XLN XO/Algonaut Atlas 2 (только драм-ваншоты), Splice (облако/подписка, про чужой контент).",
+   "idea": "Локальный (on-device) DAW-агностичный менеджер: авто-теги по типу/темпу, поиск по похожести, превью волной и — ключевое — устойчивость и скорость на коллекциях 50k+ файлов + индексирование DAW-проектов. Прайс one-time, без подписки.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 3,
+    "trend": 4,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "Musicians often lose time combing through poorly named project directories and audio files, searching for a specific sample or idea.",
+     "u": "https://www.audiocipher.com/post/sample-manager",
+     "t": "статья"
+    },
+    {
+     "q": "If, like me, you've accumulated tens of thousands of files over the years (downloaded sample packs, old project files, MIDI sketches saved for later), you know how quickly your impromptu folder structures can stop being useful.",
+     "u": "https://bedroomproducersblog.com/2026/04/02/tuva-app/",
+     "t": "обзор"
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "niche": "хобби/креаторы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "GROWING",
+   "title": "Нашествие спам/скам-ботов в комментариях YouTube, удалять нечем",
+   "segment": "Каналы 1k–500k подписчиков без выделенного модератора",
+   "jtbd": "Когда под моими видео массово появляются боты-имперсонаторы и скам-реплаи, я хочу одним действием вычистить их со всего канала и не пускать впредь, чтобы не убивать настоящую дискуссию.",
+   "pain": "Нативная модерация YouTube ловит очевидный крипто-спам, но не справляется с порн-ботами и поумневшими ботнетами, которые дробят контакты по нескольким реплаям. Массового удаления всех комментов одного юзера в YouTube нет — удалять приходится по одному.",
+   "demand": "Топ-инструмент ThioJoe/YT-Spammer-Purge популярен, но это Python-скрипт; вокруг проблемы — issue-треды и расширения, при этом боты «поумнели» — растущий тренд.",
+   "existing": "ThioJoe/YT-Spammer-Purge — Python-скрипт: требует Python, проект в Google Cloud, client_secret.json и квоту Data API; нетехнический автор не осилит, и сам не предотвращает спам. xenova/commentblock — лишь скрывает комменты у самого зрителя клиентски.",
+   "idea": "SaaS-модерация комментариев в один клик через OAuth (без Python/GCP): LLM-классификатор имперсонаторов/скама/порн-ботов поверх Data API, массовое удаление+бан всех реплаев бота по каналу, авто-правила и фон-скан новых комментов.",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "IT DOES NOT PREVENT SPAMMERS - It only makes it easier to delete them when they show up!",
+     "u": "https://raw.githubusercontent.com/ThioJoe/YT-Spammer-Purge/main/README.md",
+     "t": "github"
+    },
+    {
+     "q": "Recently, there has been a massive infestation of spam on YouTube where fake impersonator accounts leave spam/scam replies to hundreds of users on a creator's videos.",
+     "u": "https://raw.githubusercontent.com/ThioJoe/YT-Spammer-Purge/main/README.md",
+     "t": "github"
+    },
+    {
+     "q": "CommentBlock is an open-source browser extension that automatically blocks spam/scam YouTube comments.",
+     "u": "https://github.com/xenova/commentblock",
+     "t": "github"
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "niche": "хобби/креаторы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "AI-клипорезка, которая режет по смыслу: цельные мысли вместо рандомных 30 секунд",
+   "segment": "Подкастеры и ютуберы с длинными выпусками, которые нарезают шортсы/Reels/TikTok",
+   "jtbd": "Когда я выпускаю часовой подкаст и хочу нарезать короткие вертикальные клипы, я хочу, чтобы AI выбирал законченные мысли и ставил точные субтитры, чтобы не тратить на правку больше времени, чем заняла бы ручная нарезка.",
+   "pain": "AI-клипперы выбирают контекстно неполные моменты, не понимают тайминг шутки, путают субтитры и накладывают свои поверх вшитых. Креаторы выбрасывают 20-40% сгенерированного и правят больше, чем сделали бы вручную.",
+   "demand": "Тема растущая (вертикальный контент); вокруг боли — фича-реквесты и активные OSS-проекты под нарезку подкастов в шортсы.",
+   "existing": "Opus Clip, Submagic, Captions, Vizard — AI не ловит контекст/юмор, неточные субтитры, неудобный редактор, нет ручной нарезки полного видео, накладывает капшены поверх вшитых.",
+   "idea": "Клиппер с приоритетом на семантические границы (детекция законченной мысли по транскрипту + просодии), редактор с быстрой правкой капшенов на таймлайне, автодетект вшитых субтитров и режим «не дублировать».",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 4,
+    "trend": 5,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "expect to discard somewhere between 20 and 40 percent of what gets generated — either because the AI picked a contextually incomplete moment or because the caption alignment drifted",
+     "u": "https://www.eesel.ai/blog/opusclip-reviews",
+     "t": "обзор"
+    },
+    {
+     "q": "when it comes to adding the missing captions, it's like pulling teeth trying to add them in ... the AI doesn't detect whole sections of videos (10+ seconds)",
+     "u": "https://opusclip.canny.io/feature-requests/p/captions-missing-problem",
+     "t": "форум"
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "niche": "хобби/креаторы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Надёжный массовый редактор листингов Etsy без потери порядка фото и без скрытых списаний",
+   "segment": "Хендмейд/принт-он-деманд продавцы Etsy с десятками-сотнями листингов",
+   "jtbd": "Когда мне нужно поменять тег, цену или вариацию сразу на 200 листингах, я хочу делать это надёжно в пару кликов, чтобы не проверять вручную каждый товар на сломанный порядок фото и не бояться скрытых списаний после отмены.",
+   "pain": "Нативный Etsy не даёт массово менять заголовки/теги/описания/фото — только по одному. Сторонние тулы ломают порядок изображений и остатки при синхронизации, не заливают все фото и продолжают списывать после отмены.",
+   "demand": "Боль повторяется у Etsy-продавцов; сторонние bulk-тулы существуют, но с низкими рейтингами из-за глюков синхронизации — спрос на надёжную альтернативу.",
+   "existing": "Vela (2.6/5 на Trustpilot: ломает синхронизацию, биллинг), Evlista, Sale Samurai, Alura — глючная синхронизация, перепутанный порядок фото, недозалив изображений, неполный охват полей.",
+   "idea": "Bulk-редактор на Etsy API с предпросмотром diff перед публикацией, гарантией сохранения порядка/остатков, откатом и прозрачной отменой подписки. Дифференциатор — «safe sync» с верификацией каждого листинга после записи.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 3,
+    "trend": 3,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "super frustrating to constantly check all products if the sync messed up anything",
+     "u": "https://www.trustpilot.com/review/app.getvela.com",
+     "t": "отзыв"
+    },
+    {
+     "q": "you cannot bulk-change titles, tags, descriptions, or images natively",
+     "u": "https://www.insightagent.app/tools/etsy-bulk-editing-guide",
+     "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "niche": "хобби/креаторы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Сплит-шит, который подписывают в комнате: фиксация долей сразу после сессии",
+   "segment": "Независимые музыканты, битмейкеры и сонграйтеры, пишущие в коллаборациях",
+   "jtbd": "Когда мы вместе написали трек на сессии, я хочу зафиксировать и подписать доли всех соавторов до того, как все разойдутся, чтобы при выходе релиза роялти не заморозили из-за неполного/спорного сплита.",
+   "pain": "Доли обсуждают на словах, сплит-шит не подписывают или теряют; при неполной/спорной регистрации в PRO роялти замораживают и никто не получает выплат. Шаблоны-PDF не решают подпись и регистрацию вовремя.",
+   "demand": "Тема стабильно болезненна в музыкальном сообществе; гайды лейблов и дистрибьюторов настойчиво напоминают подписывать сплит до выхода — повторяющийся сигнал.",
+   "existing": "PDF-шаблоны (Songtrust, LANDR), приложение SPLITS, RouteNote auto-payout — статичные шаблоны без принуждения к подписи в моменте, нет связки «подпись -> регистрация в PRO/дистрибьютор».",
+   "idea": "Мобильный сплит-шит «подпиши до выхода из студии»: QR-инвайт соавторов, e-подпись на месте, фиксация вклада и долей, экспорт в дистрибьютор/PRO.",
+   "s": {
+    "severity": 5,
+    "frequency": 3,
+    "wtp": 3,
+    "reach": 3,
+    "gap": 4,
+    "trend": 3,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "If the split agreement and registration of the song with your Performing Rights Organisation (ASCAP/BMI/SOCAN/PRS etc) is incomplete or under dispute, no one will get paid",
+     "u": "https://blog.landr.com/songwriting-splits-explained/",
+     "t": "статья"
+    },
+    {
+     "q": "ideally everyone will sign a split sheet for the songs created during that session before leaving the room",
+     "u": "https://blog.beatstars.com/posts/what-is-a-split-sheet-beatstars-world",
+     "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "niche": "малый бизнес",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Отбор и выдача фото клиенту съедают полдня работы фотографа",
+   "segment": "Фотографы-фрилансеры (РФ)",
+   "jtbd": "Когда я отснял сотни кадров, я хочу быстро отбраковать дубли/брак и отдать клиенту красивую галерею с выбором, чтобы не терять полдня на рутину и не платить за дорогие облачные галереи.",
+   "pain": "Отбор (куллинг) — самый недооценённый и самый времязатратный этап пост-продакшна; готовые галереи платные, с лимитом места и сроком хранения около года, а бесплатные облака неудобны для клиента.",
+   "existing": "Lite Gallery/Pixieset/Vigbo/Wfolio (платные, лимит ГБ/срок); Photo Mechanic/FastRawViewer (просмотр, без выдачи и без ИИ-отбраковки); Я.Диск/Google (неудобно). Связки «ИИ-куллинг + галерея + дешёвое хранение» для соло-РФ нет.",
+   "idea": "ИИ-отбраковка (закрытые глаза/смаз/дубли) + клиентская галерея с выбором; экспорт отметок в Lightroom; оплата за съёмку, а не подписка за ГБ.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 3,
+    "gap": 4,
+    "trend": 3,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "Отбор фотографий — этап пост-продакшна, которому уделяется меньше всего внимания. А зря — тут мы тратим уйму времени, и хорошая прога тут критична.",
+     "u": "https://elizarev.ru/5-prilozheniy-dlya-otbora-i-upravleniya-fotografiyami",
+     "t": "статья"
+    },
+    {
+     "q": "За 9000 рублей в год доступно 100 Гб для загрузки фото. ... Минус платформы заключается в том, что долго хранить фотографии там не получается, потому что объем памяти ограничен, за увеличение Гб нужно платить, что невыгодно.",
+     "u": "https://www.kadr.cc/tpost/2ac8spp6g1-fotografi-delyatsya-opitom-instrumenti-p",
+     "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "niche": "малый бизнес",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Расходники у мастера маникюра кончаются посреди приёма клиента",
+   "segment": "Мастера маникюра/педикюра (РФ)",
+   "jtbd": "Когда у меня плотная запись, я хочу заранее знать, что перчатки/крафт-пакеты/база скоро кончатся, чтобы вовремя дозаказать и не срывать приём при клиенте.",
+   "pain": "Расходка кончается в самый неподходящий момент; учёт ведут в тетради/таблице вручную, при росте записи или втором мастере схема разваливается; расход на клиента и точку дозаказа никто не считает.",
+   "existing": "Тетрадь/Excel вручную; складские модули YCLIENTS/RO App (тяжёлые ERP, не под соло-мастера). Нет дешёвого «счётчик расхода на услугу + минимальный остаток + напоминание о дозаказе».",
+   "idea": "Мобильный мини-трекер: расход на услугу списывается по записям, показывает остаток в днях и пушит «пора заказать»; шаблоны для маникюра/педикюра.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 2,
+    "reach": 4,
+    "gap": 4,
+    "trend": 2,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "Середина дня, запись плотная, клиент уже на месте, а перчатки закончились. Или внезапно ушли все крафт-пакеты, и стерилизацию просто некуда упаковывать.",
+     "u": "https://sinail.ru/news/kak-vesti-uchet-raskhodnikov-v-manikiurnom-kabinete-i-nikogda-ne-ostatsya-bez-perchatok",
+     "t": "статья"
+    },
+    {
+     "q": "Как только запись становится плотнее или появляется второй мастер, такой подход быстро дает трещину.",
+     "u": "https://sinail.ru/news/kak-vesti-uchet-raskhodnikov-v-manikiurnom-kabinete-i-nikogda-ne-ostatsya-bez-perchatok",
+     "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "niche": "малый бизнес",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Списания и порча съедают до половины маржи маленькой кофейни",
+   "segment": "Владельцы маленьких кофеен (РФ)",
+   "jtbd": "Когда я владею маленькой кофейней, я хочу видеть, где утекают деньги (переливы, порча, ошибки порций), чтобы держать фудкост под контролем без бухгалтерской возни.",
+   "pain": "Списания — это переливы, неверные порции, ошибки приёмки, скидки, воровство и порча скоропорта; при слабом контроле теряется до 30–50% маржи по напиткам, а соло-владелец узнаёт о дыре только по инвентаризации.",
+   "existing": "Quick Resto/iiko/СБИС — тяжёлые и дорогие для одной точки; журнал списаний в Excel ведут нерегулярно. Лёгкого «лог списаний + контроль сроков + быстрый фудкост» для микро-кофейни нет.",
+   "idea": "Мобильный лог списаний за 5 сек (фото+причина+вес), напоминания по срокам (FEFO), авто-фудкост по дням, алерты «потери выше нормы» без ERP.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 3,
+    "gap": 3,
+    "trend": 2,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "В кофейне это не только «порча» продукта: это переливы, неверные порции, ошибки при приемке, возвраты, скидки без контроля и воровство.",
+     "u": "https://coffeestate.ru/info/articles/spisaniya_kofe_i_drugikh_produktov_v_kofeyne_kak_ikh_sokratit_i_gde_chashche_vsego_teryayutsya_dengi/",
+     "t": "статья"
+    },
+    {
+     "q": "Бой, лом, порча. Случаи, когда продукт испортился, например, истёк срок годности, нарушены условия хранения или повредилась тара. Недостача по итогам инвентаризации.",
+     "u": "https://kurs.alfabank.ru/articles/spisaniya-v-obshchepite-kak-snizit-poteri-i-navesti-poryadok-v-uchyote/",
+     "t": "статья"
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "niche": "малый бизнес",
+   "method": "боль",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Соло-мастеру неявки клиентов жгут до трети окон, а CRM с депозитами он не ставит",
+   "segment": "Частные мастера на самозанятости (РФ)",
+   "jtbd": "Когда клиент записался, но не пришёл и не предупредил, я хочу подстраховать окно предоплатой/депозитом, но без громоздкой салонной CRM.",
+   "pain": "No-show 10–30% записей; депозиты снижают вдвое, но собрать их умеет только тяжёлая салонная CRM, а соло-мастер ведёт запись в Telegram/блокноте и предоплату взять нечем.",
+   "existing": "YCLIENTS/EasyWeek/BookNow — депозиты есть, но это салонные CRM (дорого, навязчивые менеджеры, реклама в уведомлениях, под салон). Лёгкой «ссылка на запись с депозитом» для самозанятого нет.",
+   "idea": "Одна ссылка/бот: бронь окна + предоплата через СБП; неявка — депозит мастеру, ранняя отмена — возврат. Без CRM и тарифа за софт, комиссия с депозита.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 3,
+    "trend": 3,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "Средний показатель no-show для салонов красоты обычно варьируется от 10% до 30%.",
+     "u": "https://easyweek.ru/kak-vesti-uchyot-noushou-v-salone-krasoty.html",
+     "t": "статья"
+    },
+    {
+     "q": "yclients заточена под салоны красоты, и использовать ее как сервис бронирования любых услуг с почасовой оплатой невозможно.",
+     "u": "https://crmindex.ru/products/yclients/reviews",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 54,
+   "niche": "2D-игры",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Премиальный мобильный рогалик-декбилдер без gacha/p2w",
+   "segment": "Игроки в рогалик-декбилдеры (фанаты Slay the Spire / Balatro) на iOS/Android, готовые платить разово",
+   "jtbd": "Когда я хочу глубокий рогалик-декбилдер на телефоне в коротких сессиях, я хочу заплатить один раз и владеть полной игрой — без рекламы, энергии и gacha.",
+   "pain": "На мобильных доминируют gacha-кардбатлеры «по мотивам Slay the Spire» с pity-системами, фармом, дорогими ивентами и p2w; честных премиальных рогалик-декбилдеров почти нет, а нативный Slay the Spire 2 на мобильных ещё не вышел.",
+   "demand": "Жанр взрывной: Balatro — 101 722 отзыва на Steam (98% «Крайне положительные») и 5 млн проданных копий; Slay the Spire — 75 907 отзывов (97%); Slay the Spire 2 — уже 62 358 отзывов (92%) в раннем доступе.",
+   "existing": "Хищные gacha-клоны: Morimens, Chaos Zero Nightmare (pity/фарм/дорогие ивенты, p2w). Чистые премиум-порты: Balatro (разовая оплата, без рекламы/IAP), порт Slay the Spire; нативного Slay the Spire 2 на мобильных пока нет.",
+   "idea": "Выпустить премиальный (paid, без рекламы/энергии/gacha) мобильный рогалик-декбилдер с короткими сессиями и тач-управлением, заняв нишу честной монетизации против gacha-клонов.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 4,
+    "trend": 5,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "having recently reached the 5 million copies sold mark, and for now its lead developer isn't rushing to move on",
+     "u": "https://steamstore-a.akamaihd.net/news/externalpost/VG247/1790848102715652",
+     "t": "новости"
+    },
+    {
+     "q": "500 bucks for event. The anniversary is for spenders 250 pull of 60 dollars. This events are pay heavy. ... Morimens sucks and probably one of the worst gacha games out",
+     "u": "https://apps.apple.com/us/app/morimens/id6447354150",
+     "t": "отзыв"
+    },
+    {
+     "q": "The game is literally unplayable without S+ tier DPS. ... Even when you get the characters you have a less than 1% chance to get the exact deck you're farming.",
+     "u": "https://apps.apple.com/us/app/chaos-zero-nightmare/id6502326151",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "niche": "2D-игры",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Merge-игра без энергии и таймеров (премиум / честная)",
+   "segment": "Взрослые казуальные merge-игроки (Merge Mansion, Merge Dragons, EverMerge), уставшие от энергобаров и часовых перезарядок",
+   "jtbd": "Когда я хочу спокойно мёрджить и проходить контент в своём темпе, я хочу не упираться в «энергия кончилась» и не доплачивать за каждый ход.",
+   "pain": "Доминирующие merge-хиты построены на энергии (~100 ед.), генераторах с перезарядкой в часы и геммах за тайм-скип; 100 энергии хватает на ~15-20 минут, дальше — ждать или платить. Лояльные платящие игроки жалуются, что апдейты сделали игру money grab.",
+   "demand": "Puzzle — 2-я по выручке категория мобильных игр; IAP жанра +14% YoY в 2025, и Merge дал ~60% этого прироста (Sensor Tower via Naavik). Gossip Harbor — более $650M за 2025; Merge Mansion — более $120M в 2024.",
+   "existing": "Merge Mansion (Metacore), Merge Dragons / Merge Magic (Zynga), EverMerge (Big Fish), Gossip Harbor, Travel Town — все на энергии + таймерах + геммах. Чистого премиум-merge без гейтинга нет.",
+   "idea": "Премиум/честный merge без энергии и таймеров: разовая покупка либо косметика/контент-DLC; прогресс ограничен мастерством и контентом, а не кулдаунами.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "While Merge (mostly Gossip Harbor) contributed to 60% of the YoY genre growth",
+     "u": "https://naavik.co/digest/what-leading-match-3-and-merge-games-do-differently/",
+     "t": "отчёт"
+    },
+    {
+     "q": "The only thing I don't like about it is the cool down time for items. Some things take like 6+ hours before you can click them again. So it takes foreverrrrr to merge up",
+     "u": "https://apps.apple.com/us/app/merge-mansion/id1484442152",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 56,
+   "niche": "2D-игры",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Match-3 без жизней/энергии и доната за ходы (честная модель)",
+   "segment": "Массовые казуальные match-3 игроки (Candy Crush, Royal Match, Homescapes, Toon Blast), упирающиеся в 5 жизней и «купи ходы»",
+   "jtbd": "Когда я хочу решать пазлы и расслабляться сколько хочу, я хочу не ждать восстановления жизней и не чувствовать, что уровень специально сделан непроходимым ради продажи бустеров.",
+   "pain": "Стандарт жанра — 5 жизней (восстановление по 30 мин), монеты за лишние ходы, платные бустеры; игроки в 1★ массово пишут, что уровни rigged под трату денег. Прямой сигнал готовности платить: «я бы лучше заплатил $5 за игру без рекламы и с безлимитом жизней».",
+   "demand": "Candy Crush Saga: более $20 млрд lifetime-выручки (сен 2023) и более 2.73 млрд загрузок серии. Match-3 — крупнейший подсегмент Puzzle, стабильный лидер мобильного гейминга.",
+   "existing": "Candy Crush Saga (King), Royal Match (Dream Games), Homescapes/Gardenscapes (Playrix), Toon Blast (Peak) — все на жизнях + монеты/бустеры. Крупного match-3 без энергогейта нет.",
+   "idea": "Match-3 с честной монетизацией: без жизней/энергии, без «купи ходы», без искусственных стен; разовая покупка или косметика.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 5,
+    "gap": 4,
+    "trend": 3,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "As of September 2023, it had reached over $20 billion in lifetime revenue, making it one of the highest-grossing media franchises of all time.",
+     "u": "https://en.wikipedia.org/wiki/Candy_Crush_Saga",
+     "t": "статья"
+    },
+    {
+     "q": "This game is totally rigged and just designed to take your money",
+     "u": "https://apps.apple.com/us/app/royal-match/id1482155847",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 57,
+   "niche": "2D-игры",
+   "method": "спрос",
+   "conf": "medium",
+   "kano": "delight",
+   "status": "NEW",
+   "title": "Touch-native пиксельная метроидвания на мобиле (премиум)",
+   "segment": "Фанаты Hollow Knight / Silksong / Dead Cells, ищущие хорошую метроидванию на телефоне",
+   "jtbd": "Когда я хочу полноценную метроидванию на телефоне, я хочу управление, заточенное под тач, а не порт «под геймпад» и не рекламный клон.",
+   "pain": "Официального мобильного Hollow Knight нет; порты (Dead Cells, SOTN) на высоких сложностях требуют геймпада, тач-управление называют слабым местом. Жалобы на тач, вылеты, потерю прогресса и freemium-гейт.",
+   "demand": "Hollow Knight — ~15M копий (12M после анонса Silksong). Silksong — самый вишлистнутый тайтл в истории Steam (4.8M), Steam GOTY 2025, 5M игроков за 3 дня. Dead Cells — 5M проданных копий на мобиле.",
+   "existing": "Достойных нативных мало: Grimvalor (без рекламы/IAP, MFi), Dead Cells, Dandara. Большинство — порты «под геймпад» или рекламные клоны; Hollow Knight на мобиле официально отсутствует.",
+   "idea": "Премиум пиксельная метроидвания, спроектированная вокруг тач-управления (а не порт), с поддержкой геймпада как опции; разовая цена.",
+   "s": {
+    "severity": 2,
+    "frequency": 3,
+    "wtp": 4,
+    "reach": 3,
+    "gap": 4,
+    "trend": 5,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "Hollow Knight has sold around 15 million copies since it launched back in 2017. 2.8 million of these sales came before Silksong was announced in 2019, and an additional 12 million have come in the years since, the devs stated.",
+     "u": "https://www.nintendolife.com/news/2025/08/hollow-knight-has-now-sold-almost-15-million-copies",
+     "t": "новости"
+    },
+    {
+     "q": "The steady sales growth and substantial reach of Dead Cells in China, followed by Europe and the USA, proves that console-like paid games can have great success technically and financially on mobile.",
+     "u": "https://playdigious.com/dead-cells-mobile-5-million-units-sold/",
+     "t": "отчёт"
+    }
+   ]
+  },
+  {
+   "id": 58,
+   "niche": "простые продукты",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Надёжный OCR: текст с картинки/скриншота без пэйволла",
+   "segment": "Студенты, офисные работники, переводчики — те, кто часто перепечатывают текст с картинок, сканов и скриншотов",
+   "jtbd": "Когда я вижу текст внутри картинки/скриншота/PDF, я хочу одним кликом получить его как редактируемый текст, чтобы не перепечатывать вручную.",
+   "pain": "Топовые расширения либо внезапно вводят платную стену за базовое распознавание, либо просто не работают (0 результатов по клику), либо медленные и режут бесплатные лимиты.",
+   "demand": "OCR — растущая категория 2026 (multimodal LLM); «Copy Text from Picture» — 70 000 пользователей, «Screenshot to Text (OCR)» — 10 000 пользователей при рейтинге всего 3.3.",
+   "existing": "Copy Text from Picture (70k польз., 4.0, свежие оценки 2.3 после ввода оплаты), Screenshot to Text OCR (10k, 3.3), Fast OCR (жалобы на VIP/оплату и баги), Copyfish (бесплатный, но устаревает).",
+   "idea": "Лёгкое расширение: выдели область экрана/правый клик по картинке -> мгновенный локальный OCR (Tesseract.js) без отправки на сервер, без лимитов и без подписки за базу; монетизация — батч/экспорт в таблицы и многоязычные модели.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "The extension is super slow, and not free.",
+     "u": "https://chromewebstore.google.com/detail/copy-text-from-picture/lejhbacckkdpjnllmefhlinigbngpibl/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "It does not work ! Click the icon = 0 result",
+     "u": "https://chromewebstore.google.com/detail/screenshot-to-textocr-ima/mpfhimfooelblffmiddjmpnpndeldikg/reviews",
+     "t": "отзыв"
+    }
+   ]
+  },
+  {
+   "id": 59,
+   "niche": "простые продукты",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Экспорт HTML-таблиц в Excel/CSV без лимита строк",
+   "segment": "Аналитики, маркетологи, рисёрчеры, бухгалтеры — те, кто регулярно вытаскивают табличные данные с веб-страниц",
+   "jtbd": "Когда на сайте есть таблица, я хочу одним кликом выгрузить её целиком в Excel/Google Sheets/CSV, чтобы дальше с ней работать.",
+   "pain": "Самое популярное расширение бьёт жёстким лимитом 250 строк на бесплатном тарифе — и лимит всплывает прямо посреди выгрузки, заставляя платить за любой приличный экспорт.",
+   "demand": "Table Capture — 200 000 пользователей и 600 оценок (рейтинг 4.3), стабильный многолетний спрос на «таблица -> Excel»; конкуренты без лимита крошечные по аудитории.",
+   "existing": "Table Capture (200k польз., лимит 250 строк бесплатно, Pro $12–120/год), Data Miner (500 страниц/мес, от $19.99/мес); бесплатные без лимита (HTML Table Exporter, CopyCol) почти без аудитории.",
+   "idea": "Простое расширение «правый клик по таблице -> выгрузить всю в XLSX/CSV/Sheets» без лимита строк и без подписки за базу; монетизация — авто-детект пагинации/бесконечной прокрутки и склейка многостраничных таблиц.",
+   "s": {
+    "severity": 3,
+    "frequency": 3,
+    "wtp": 4,
+    "reach": 3,
+    "gap": 4,
+    "trend": 3,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "Wasted my time. Makes you pay for any decent sized download. Look elsewhere.",
+     "u": "https://chromewebstore.google.com/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "The free tier has a 250-row limit ... this isn't obvious until you hit the limit mid-export.",
+     "u": "https://gauchogrid.com/blog/entries/2026/2/html-table-exporter-vs-table-capture",
+     "t": "обзор"
     }
    ]
   }

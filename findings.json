@@ -7,6 +7,26 @@
   "учёт бюджета"
  ],
  "count": 59,
+ "runs": [
+  {
+   "id": "2026-06-22",
+   "date": "2026-06-22",
+   "label": "Стартовый набор",
+   "count": 22
+  },
+  {
+   "id": "2026-06-27a",
+   "date": "2026-06-27",
+   "label": "Питомцы и продавцы маркетплейсов",
+   "count": 3
+  },
+  {
+   "id": "2026-06-27b",
+   "date": "2026-06-27",
+   "label": "Широкий веер: 8 ниш",
+   "count": 34
+  }
+ ],
  "findings": [
   {
    "id": 1,
@@ -36,7 +56,9 @@
      "u": "https://www.rustore.ru/catalog/app/com.tasager.health/reviews",
      "t": "стор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 2,
@@ -66,7 +88,9 @@
      "u": "https://www.rustore.ru/catalog/app/site.tarelka/reviews",
      "t": "стор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 3,
@@ -96,7 +120,9 @@
      "u": "https://a2is.ru/catalog/crm-sistemy-vse/1ccrm/reviews-1ccrm",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 4,
@@ -126,7 +152,9 @@
      "u": "https://habr.com/ru/companies/ru_mts/articles/1044216/",
      "t": "форум"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 5,
@@ -156,7 +184,9 @@
      "u": "https://vc.ru/services/2143998-analogi-getcourse-luchshie-platformy-dlya-onlajn-obucheniya",
      "t": "форум"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 6,
@@ -186,7 +216,9 @@
      "u": "https://appvisor.ru/app/ios/moy-avto-raskhod-topliva-2290/",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 7,
@@ -216,7 +248,9 @@
      "u": "https://vraki.net/otzyvy/mobilnye-prilozheniya/kids360-detskiy-rezhim-i-roditelskiy-kontrol.html",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 8,
@@ -246,7 +280,9 @@
      "u": "https://www.mk.ru/social/2023/02/22/uchitelya-vskryli-nedostatki-elektronnykh-shkolnykh-dnevnikov-i-potrebovali-izmeneniy.html",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 9,
@@ -276,7 +312,9 @@
      "u": "https://apps.apple.com/ru/app/donationalerts-studio/id1510321392",
      "t": "стор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 10,
@@ -312,7 +350,9 @@
      "u": "https://www.thegamer.com/vampire-survivors-rip-off-survivor-io-mobile-clone-copy-cat/",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 11,
@@ -343,7 +383,9 @@
      "u": "https://dataintelo.com/report/idle-games-market",
      "t": "отчёт"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 12,
@@ -374,7 +416,9 @@
      "u": "https://www.playnforge.com/best-farming-games-mobile/",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 13,
@@ -405,7 +449,9 @@
      "u": "https://www.quora.com/I-ve-been-scammed-into-playing-the-stupid-zombie-game",
      "t": "обсуждение"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 14,
@@ -441,7 +487,9 @@
      "u": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1576",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 15,
@@ -472,7 +520,9 @@
      "u": "https://github.com/NousResearch/hermes-agent/issues/501",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 16,
@@ -503,7 +553,9 @@
      "u": "https://github.com/pydantic/pydantic-ai/issues/921",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 17,
@@ -534,7 +586,9 @@
      "u": "https://news.ycombinator.com/item?id=46917293",
      "t": "форум"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 18,
@@ -565,7 +619,9 @@
      "u": "https://apps.apple.com/us/app/heic-to-jpeg-image-converter/id1529664827",
      "t": "стор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 19,
@@ -601,7 +657,9 @@
      "u": "https://chrome-stats.com/d/cdcpabkolgalpgeingbdcebojebfelgb/reviews",
      "t": "стор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 20,
@@ -632,7 +690,9 @@
      "u": "https://www.snaprecorder.org/blog/best-free-chrome-screen-recorder-extension/",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 21,
@@ -663,7 +723,9 @@
      "u": "https://9to5google.com/2025/12/31/honey-chrome-users-fraud/",
      "t": "новости"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 22,
@@ -699,7 +761,9 @@
      "u": "https://skillsmp.com/",
      "t": "маркетплейс"
     }
-   ]
+   ],
+   "run": "2026-06-22",
+   "added": "2026-06-22"
   },
   {
    "id": 23,
@@ -734,7 +798,9 @@
      "u": "https://www.banki.ru/insurance/responses/company/response/89579/",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27a",
+   "added": "2026-06-27"
   },
   {
    "id": 24,
@@ -770,7 +836,9 @@
      "u": "https://www.kommersant.ru/doc/8740518",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27a",
+   "added": "2026-06-27"
   },
   {
    "id": 25,
@@ -805,7 +873,9 @@
      "u": "https://vc.ru/marketplace/1801103-chto-delat-v-sluchae-poteri-tovara-na-wildberries-poshagovoe-rukovodstvo-dlya-sellerov",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27a",
+   "added": "2026-06-27"
   },
   {
    "id": 26,
@@ -846,7 +916,9 @@
      "u": "https://chromewebstore.google.com/detail/pdf-editor-for-chromeedit/gphandlahdpffmccakmbngmbjnjiiahp/reviews",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 27,
@@ -887,7 +959,9 @@
      "u": "https://addons.mozilla.org/en-US/firefox/addon/toby-for-tabs/",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 28,
@@ -923,7 +997,9 @@
      "u": "https://coldiq.com/tools/tactiqio",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 29,
@@ -964,7 +1040,9 @@
      "u": "https://github.com/medartus/mailtrack-signature-remover",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 30,
@@ -1000,7 +1078,9 @@
      "u": "https://github.com/r-huijts/mcp-server-tester",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 31,
@@ -1036,7 +1116,9 @@
      "u": "https://github.com/mem0ai/mem0/issues/3697",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 32,
@@ -1072,7 +1154,9 @@
      "u": "https://github.com/pipecat-ai/pipecat",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 33,
@@ -1108,7 +1192,9 @@
      "u": "https://github.com/lastmile-ai/mcp-eval",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 34,
@@ -1144,7 +1230,9 @@
      "u": "https://www.acefitness.org/continuing-education/certified/june-2025/8892/glp-1s-and-lean-mass-what-the-research-shows/",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 35,
@@ -1185,7 +1273,9 @@
      "u": "https://www.cdc.gov/nchs/pressroom/releases/20260108.html",
      "t": "отчёт"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 36,
@@ -1226,7 +1316,9 @@
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12884231/",
      "t": "отчёт"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 37,
@@ -1262,7 +1354,9 @@
      "u": "https://justuseapp.com/en/app/1527399597/plantin-plant-identifier/reviews",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 38,
@@ -1303,7 +1397,9 @@
      "u": "https://www.epa.gov/land-research/estimating-cost-food-waste-american-consumers",
      "t": "отчёт"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 39,
@@ -1339,7 +1435,9 @@
      "u": "https://homebeacon.app/alternatives/centriq-alternative",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 40,
@@ -1375,7 +1473,9 @@
      "u": "https://www.rubyhome.com/blog/moving-stats/",
      "t": "отчёт"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 41,
@@ -1411,7 +1511,9 @@
      "u": "https://www.businesswire.com/news/home/20260602772531/en/Airalo-Surpasses-30-Million-Customers-as-Global-eSIM-Adoption-Accelerates",
      "t": "новости"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 42,
@@ -1447,7 +1549,9 @@
      "u": "https://beyondbaggage.com/2026/02/24/best-offline-maps-apps-travel-2026/",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 43,
@@ -1483,7 +1587,9 @@
      "u": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1457309557/sortby=mostrecent/json",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 44,
@@ -1519,7 +1625,9 @@
      "u": "https://tripstone.app/blog/wanderlog-vs-tripit",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 45,
@@ -1555,7 +1663,9 @@
      "u": "https://bedroomproducersblog.com/2026/04/02/tuva-app/",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 46,
@@ -1596,7 +1706,9 @@
      "u": "https://github.com/xenova/commentblock",
      "t": "github"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 47,
@@ -1632,7 +1744,9 @@
      "u": "https://opusclip.canny.io/feature-requests/p/captions-missing-problem",
      "t": "форум"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 48,
@@ -1668,7 +1782,9 @@
      "u": "https://www.insightagent.app/tools/etsy-bulk-editing-guide",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 49,
@@ -1704,7 +1820,9 @@
      "u": "https://blog.beatstars.com/posts/what-is-a-split-sheet-beatstars-world",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 50,
@@ -1739,7 +1857,9 @@
      "u": "https://www.kadr.cc/tpost/2ac8spp6g1-fotografi-delyatsya-opitom-instrumenti-p",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 51,
@@ -1774,7 +1894,9 @@
      "u": "https://sinail.ru/news/kak-vesti-uchet-raskhodnikov-v-manikiurnom-kabinete-i-nikogda-ne-ostatsya-bez-perchatok",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 52,
@@ -1809,7 +1931,9 @@
      "u": "https://kurs.alfabank.ru/articles/spisaniya-v-obshchepite-kak-snizit-poteri-i-navesti-poryadok-v-uchyote/",
      "t": "статья"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 53,
@@ -1844,7 +1968,9 @@
      "u": "https://crmindex.ru/products/yclients/reviews",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 54,
@@ -1885,7 +2011,9 @@
      "u": "https://apps.apple.com/us/app/chaos-zero-nightmare/id6502326151",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 55,
@@ -1921,7 +2049,9 @@
      "u": "https://apps.apple.com/us/app/merge-mansion/id1484442152",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 56,
@@ -1957,7 +2087,9 @@
      "u": "https://apps.apple.com/us/app/royal-match/id1482155847",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 57,
@@ -1993,7 +2125,9 @@
      "u": "https://playdigious.com/dead-cells-mobile-5-million-units-sold/",
      "t": "отчёт"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 58,
@@ -2029,7 +2163,9 @@
      "u": "https://chromewebstore.google.com/detail/screenshot-to-textocr-ima/mpfhimfooelblffmiddjmpnpndeldikg/reviews",
      "t": "отзыв"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   },
   {
    "id": 59,
@@ -2065,7 +2201,9 @@
      "u": "https://gauchogrid.com/blog/entries/2026/2/html-table-exporter-vs-table-capture",
      "t": "обзор"
     }
-   ]
+   ],
+   "run": "2026-06-27b",
+   "added": "2026-06-27"
   }
  ]
 }

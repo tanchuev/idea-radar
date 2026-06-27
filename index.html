@@ -25,6 +25,7 @@ h1{font-size:22px;margin:0 0 2px;letter-spacing:-.2px}
 .controls input{flex:1;min-width:150px}
 .btn{font:inherit;padding:8px 14px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:9px;cursor:pointer;font-weight:600}
 .btn.ghost{background:#fff;color:var(--accent)}
+.btn.ghost.on2{background:var(--accent);color:#fff}
 .btn:active{transform:translateY(1px)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(335px,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:9px}
@@ -38,6 +39,9 @@ h1{font-size:22px;margin:0 0 2px;letter-spacing:-.2px}
 .chip{font-size:11px;background:var(--chip);color:#3a4252;border-radius:20px;padding:3px 9px;font-weight:600}
 .chip.niche{background:#e7ecfb;color:#2a3f9e}
 .chip.method{background:#eee9fb;color:#6a3fb0}
+.chip.new{background:#e3f4ec;color:var(--hi);border:1px solid #bfe6d2}
+.card.isnew{border-left:4px solid var(--hi)}
+.seenb{font:inherit;font-size:13px;border:1px solid var(--line)!important;background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer;color:var(--muted)}
 .chip.hi{background:#e3f4ec;color:var(--hi)}
 .chip.mid{background:#fbf1dd;color:var(--mid)}
 .chip.lo{background:#eef0f2;color:var(--lo)}
@@ -76,6 +80,7 @@ svg{width:100%;height:auto;display:block}
 
   <div class="controls">
     <input id="q" type="text" placeholder="Поиск по тексту…">
+    <select id="frun"></select>
     <select id="fniche"></select>
     <select id="fmethod">
       <option value="">Все методы</option>
@@ -95,6 +100,8 @@ svg{width:100%;height:auto;display:block}
       <option value="reach">Сорт.: охват</option>
       <option value="fav">Сорт.: избранное</option>
     </select>
+    <button class="btn ghost" id="newbtn" title="Показать только непросмотренные идеи">Только новые</button>
+    <button class="btn ghost" id="seenbtn" title="Отметить показанные идеи как просмотренные">✓ Отметить просмотренными</button>
     <button class="btn ghost" id="runbtn" title="Открыть Routines и запустить прогон вручную (Run now)">↻ Прогон</button>
   </div>
 
@@ -112,6 +119,7 @@ svg{width:100%;height:auto;display:block}
 
 <script>
 let RAW = [];
+let RUNS = [];
 
 // ---- Diamond Score ----
 const W={gap:.18,reach:.16,trend:.16,wtp:.16,ease:.14,severity:.12,frequency:.08};
@@ -125,13 +133,19 @@ let niches=[];
 let palette={};const cols=['#3b5bdb','#1e9e6a','#d9920a','#b0468c','#2aa1b3','#8a5cf0','#d95a3b','#5a8a3b','#c0392b','#0a7d8c','#7d5a2b'];
 
 
-const PK='idearadar2_prefs', FB='idearadar2_fb';
-let prefs={q:'',niche:'',method:'',conf:'',sort:'score'};
+const PK='idearadar2_prefs', FB='idearadar2_fb', SK='idearadar2_seen';
+let prefs={q:'',niche:'',method:'',conf:'',sort:'score',run:'',onlyNew:false};
 let fb={};
+let seen=new Set();
 try{const s=localStorage.getItem(PK);if(s)prefs={...prefs,...JSON.parse(s)};}catch(e){}
 try{const s=localStorage.getItem(FB);if(s)fb=JSON.parse(s)||{};}catch(e){}
+try{const s=localStorage.getItem(SK);if(s)seen=new Set(JSON.parse(s)||[]);}catch(e){}
 function savePrefs(){try{localStorage.setItem(PK,JSON.stringify(prefs));}catch(e){}}
 function saveFb(){try{localStorage.setItem(FB,JSON.stringify(fb));}catch(e){}}
+function saveSeen(){try{localStorage.setItem(SK,JSON.stringify([...seen]));}catch(e){}}
+const isNew=d=>!seen.has(String(d.id));
+function markSeen(id){seen.add(String(id));saveSeen();}
+function syncNewBtn(){const b=$('#newbtn');if(!b)return;b.classList.toggle('on2',!!prefs.onlyNew);b.textContent=prefs.onlyNew?'● Только новые':'Только новые';}
 
 function init(){
   try{
@@ -139,10 +153,19 @@ function init(){
     niches.forEach((n,i)=>palette[n]=cols[i%cols.length]);
     const fn=$('#fniche');
     fn.innerHTML='<option value="">Все ниши</option>'+niches.map(n=>'<option value="'+n+'">'+n+'</option>').join('');
-    $('#q').value=prefs.q; fn.value=prefs.niche; $('#fmethod').value=prefs.method; $('#fconf').value=prefs.conf; $('#sort').value=prefs.sort;
+    // прогоны: из реестра runs, иначе вывести из данных
+    let runList=RUNS&&RUNS.length?RUNS.slice():[...new Set(RAW.map(d=>d.run).filter(Boolean))].map(id=>({id,date:id,label:id,count:RAW.filter(d=>d.run===id).length}));
+    runList.sort((a,b)=>(a.date<b.date?1:a.date>b.date?-1:(a.id<b.id?1:-1)));
+    const fr=$('#frun');
+    fr.innerHTML='<option value="">Все прогоны</option>'+runList.map(r=>'<option value="'+r.id+'">'+r.date+' · '+r.label+' ('+r.count+')</option>').join('');
+    $('#q').value=prefs.q; fn.value=prefs.niche; fr.value=prefs.run; $('#fmethod').value=prefs.method; $('#fconf').value=prefs.conf; $('#sort').value=prefs.sort;
+    syncNewBtn();
     $('#legend').innerHTML=niches.map(n=>'<span><i class="dot" style="background:'+palette[n]+'"></i>'+n+'</span>').join('');
     $('#q').addEventListener('input',e=>{prefs.q=e.target.value;savePrefs();render();});
     fn.addEventListener('change',e=>{prefs.niche=e.target.value;savePrefs();render();});
+    fr.addEventListener('change',e=>{prefs.run=e.target.value;savePrefs();render();});
+    $('#newbtn').addEventListener('click',()=>{prefs.onlyNew=!prefs.onlyNew;savePrefs();syncNewBtn();render();});
+    $('#seenbtn').addEventListener('click',()=>{filtered().forEach(d=>seen.add(String(d.id)));saveSeen();statbar();render();});
     $('#fmethod').addEventListener('change',e=>{prefs.method=e.target.value;savePrefs();render();});
     $('#fconf').addEventListener('change',e=>{prefs.conf=e.target.value;savePrefs();render();});
     $('#sort').addEventListener('change',e=>{prefs.sort=e.target.value;savePrefs();render();});
@@ -159,8 +182,10 @@ function statbar(){
   const avg=Math.round(RAW.reduce((a,d)=>a+d.score,0)/n);
   const dia=RAW.filter(d=>d.score>=80).length;
   const favs=Object.values(fb).filter(v=>v==='up').length;
+  const unseen=RAW.filter(isNew).length;
   $('#statbar').innerHTML=
     '<div class="stat"><div class="n">'+n+'</div><div class="l">возможностей в базе</div></div>'+
+    '<div class="stat"><div class="n" style="color:'+(unseen?'var(--hi)':'inherit')+'">'+unseen+'</div><div class="l">новых (не просмотрено)</div></div>'+
     '<div class="stat"><div class="n">'+dia+'</div><div class="l">«алмазов» (score ≥ 80)</div></div>'+
     '<div class="stat"><div class="n">'+avg+'</div><div class="l">средний Diamond Score</div></div>'+
     '<div class="stat"><div class="n">'+favs+'</div><div class="l">в избранном (👍)</div></div>';
@@ -168,6 +193,8 @@ function statbar(){
 
 function filtered(){
   let arr=RAW.filter(d=>{
+    if(prefs.run&&d.run!==prefs.run)return false;
+    if(prefs.onlyNew&&!isNew(d))return false;
     if(prefs.niche&&d.niche!==prefs.niche)return false;
     if(prefs.method&&d.method!==prefs.method)return false;
     if(prefs.conf&&d.conf!==prefs.conf)return false;
@@ -191,9 +218,10 @@ function render(){
   g.innerHTML=arr.map(d=>{
     const f=fb[d.id];
     const demandBlock=d.demand?'<div class="demand"><div class="lbl">Сигнал спроса</div>'+d.demand+'</div>':'';
-    return '<div class="card'+(f==='up'?' fav':'')+(f==='down'?' down':'')+'">'+
+    const nu=isNew(d);
+    return '<div class="card'+(nu?' isnew':'')+(f==='up'?' fav':'')+(f==='down'?' down':'')+'">'+
       '<div class="ctop"><h3 class="title">'+d.title+'</h3><div class="score" style="background:'+scoreColor(d.score)+'">'+d.score+'<small>DIAMOND</small></div></div>'+
-      '<div class="chips"><span class="chip niche">'+d.niche+'</span><span class="chip method">метод: '+d.method+'</span><span class="chip '+confClass(d.conf)+'">доверие: '+d.conf+'</span><span class="chip">Kano: '+d.kano+'</span><span class="chip">'+d.status+'</span></div>'+
+      '<div class="chips">'+(nu?'<span class="chip new">● новое</span>':'')+'<span class="chip niche">'+d.niche+'</span><span class="chip method">метод: '+d.method+'</span><span class="chip '+confClass(d.conf)+'">доверие: '+d.conf+'</span><span class="chip">Kano: '+d.kano+'</span><span class="chip">'+d.status+'</span></div>'+
       '<div class="jtbd">'+d.jtbd+'</div>'+
       '<div><div class="lbl">Сегмент</div><div class="txt">'+d.segment+'</div></div>'+
       '<div><div class="lbl">Боль</div><div class="txt">'+d.pain+'</div></div>'+
@@ -202,13 +230,17 @@ function render(){
       '<div class="idea"><div class="lbl">Гипотеза продукта</div>'+d.idea+'</div>'+
       '<div class="bars">'+bar('боль',d.s.severity)+bar('частота',d.s.frequency)+bar('плата',d.s.wtp)+bar('охват',d.s.reach)+bar('слаб.реш.',d.s.gap)+bar('тренд',d.s.trend)+bar('простота',d.s.ease)+'</div>'+
       '<div class="ev"><details><summary>Доказательства ('+d.ev.length+')</summary>'+d.ev.map(e=>'<blockquote>«'+e.q+'»<br><a href="'+e.u+'" target="_blank" rel="noopener">'+e.t+' →</a></blockquote>').join('')+'</details></div>'+
-      '<div class="fb"><button class="'+(f==='up'?'on':'')+'" data-id="'+d.id+'" data-v="up">👍 алмаз</button><button class="dn '+(f==='down'?'on dn':'')+'" data-id="'+d.id+'" data-v="down">👎 мимо</button></div>'+
+      '<div class="fb"><button class="'+(f==='up'?'on':'')+'" data-id="'+d.id+'" data-v="up">👍 алмаз</button><button class="dn '+(f==='down'?'on dn':'')+'" data-id="'+d.id+'" data-v="down">👎 мимо</button>'+(nu?'<button class="seenb" data-seen="'+d.id+'">✓ просмотрено</button>':'')+'</div>'+
     '</div>';
   }).join('');
-  g.querySelectorAll('.fb button').forEach(b=>b.addEventListener('click',()=>{
+  g.querySelectorAll('.fb button[data-v]').forEach(b=>b.addEventListener('click',()=>{
     const id=b.getAttribute('data-id'),v=b.getAttribute('data-v');
     fb[id]=(fb[id]===v)?undefined:v; if(!fb[id])delete fb[id];
+    markSeen(id);
     saveFb();statbar();render();
+  }));
+  g.querySelectorAll('button[data-seen]').forEach(b=>b.addEventListener('click',()=>{
+    markSeen(b.getAttribute('data-seen'));statbar();render();
   }));
   $('#foot').textContent='Показано '+arr.length+' из '+RAW.length+'. Метки 👍/👎 запоминаются и подсказывают оркестратору твой вкус на «алмазы».';
 }
@@ -243,7 +275,7 @@ function drawMap(arr){
 
 function boot(){
   fetch('findings.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
-    RAW=(j.findings||j); RAW.forEach(d=>{d.score=diamond(d.s);}); init();
+    RAW=(j.findings||j); RUNS=(j.runs||[]); RAW.forEach(d=>{d.score=diamond(d.s);}); init();
   }).catch(e=>{var g=document.getElementById('grid');if(g)g.innerHTML='<div class="empty">Не удалось загрузить findings.json ('+e+'). На GitHub Pages работает; локально откройте через http-сервер, не file://.</div>';});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();

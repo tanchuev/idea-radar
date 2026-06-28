@@ -6,7 +6,7 @@
   "личные финансы",
   "учёт бюджета"
  ],
- "count": 62,
+ "count": 65,
  "runs": [
   {
    "id": "2026-06-22",
@@ -42,6 +42,12 @@
    "id": "2026-06-28c",
    "date": "2026-06-28",
    "label": "Продуктивность: time-blocking / focus time",
+   "count": 3
+  },
+  {
+   "id": "2026-06-28d",
+   "date": "2026-06-28",
+   "label": "Питомцы: аллергия на корм и дрессировка",
    "count": 3
   }
  ],
@@ -2344,6 +2350,133 @@
     }
    ],
    "run": "2026-06-28c",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 60,
+   "niche": "авто",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "EV-зарядка: приложение показывает «доступна», а зарядка сломана — 14% поездок зря",
+   "segment": "Владельцы электромобилей, использующие публичные зарядки (не Tesla Supercharger)",
+   "jtbd": "Когда я еду к публичной зарядке, я хочу заранее знать, что она реально работает и свободна, чтобы не приезжать зря и не застрять без заряда.",
+   "pain": "14% публичных EV-зарядок заканчиваются неудачей (J.D. Power 2025): зарядка выглядит доступной в приложении, но на месте оказывается сломанной. Только 34% станций передают real-time статус в PlugShare — 66% данных устаревшие. В Сиэтле и Лос-Анджелесе неудачи достигают 24–25%. Пользователи описывают 45-минутные «квесты» со сбоями оплаты, выходами из аккаунта и мёртвой картой внутри приложения.",
+   "existing": "PlugShare (краудсорс-данные, только 34% реального статуса), ABRP (не знает SoC точно, слабое планирование), ChargePoint/EVgo/EA — каждый только свою сеть. Нет агрегатора с верифицированным реальным статусом по всем сетям.",
+   "idea": "Агрегатор EV-зарядок с «честным статусом»: машинное агрегирование real-time API всех сетей + краудсорс верификация последней минуты + предупреждение «станция часто сломана» по истории. Монетизация — premium подписка с гарантией «первая рабочая зарядка по пути».",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 4,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "failed charging attempts dropped to 14% in 2025 from 19% in 2024 ... about 60%—come from chargers being out of service or malfunctioning",
+     "u": "https://evcharging.blog/how-reliable-are-public-ev-chargers/",
+     "t": "отчёт"
+    },
+    {
+     "q": "only 34% of charging stations provide real-time status data to PlugShare ... data deserts of up to 1,308 miles",
+     "u": "https://www.brookings.edu/articles/charger-data-transparency/",
+     "t": "отчёт"
+    },
+    {
+     "q": "the map simply didn't work ... the transaction failed after I attempted to pay for 15kWh ... an app just logged me out from an account",
+     "u": "https://medium.com/extrawest/using-ev-charging-apps-my-failed-experience-173a3e70a687",
+     "t": "обзор"
+    }
+   ],
+   "run": "2026-06-28d",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 61,
+   "niche": "авто",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "EV-зарядка требует 5–20 разных приложений: app fatigue убивает опыт владения электромобилем",
+   "segment": "Владельцы электромобилей (не Tesla), использующие публичную зарядку в поездках",
+   "jtbd": "Когда я еду в другой город, я хочу зарядиться где угодно — одним приложением с одной картой, без создания нового аккаунта на каждой заправке.",
+   "pain": "Норвежское исследование: EV-водитель вынужден работать с 20 операторами, 20–30 приложениями и 13 платёжными системами — система названа «дисфункциональной». Европейский опрос 2022: 90% считают зарядку сложной из-за множества приложений (75% годом ранее). Каждый новый аккаунт — отдельный пароль, предавторизация, неясный тариф, ещё одна квитанция в почте.",
+   "existing": "Octopus Electroverse, Chargeway, Plugsurfing — агрегаторы есть, но малоизвестны и покрывают не все сети. PlugShare — только карта, не оплата. Нет доминирующего «единого пульта» для зарядки как Google Pay для оплаты.",
+   "idea": "«Супер-приложение» EV-зарядки: единый аккаунт, единая карта, покрытие всех крупных сетей через роуминговые протоколы (OCPI), реальный статус станции, маршрутное планирование с учётом SoC автомобиля. Монетизация — небольшая транзакционная комиссия поверх тарифа сети.",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 3,
+    "trend": 5,
+    "ease": 2
+   },
+   "ev": [
+    {
+     "q": "users of EVs must deal with up to 20 different operators, 20-30 apps and 13 payment systems to access all charging infrastructure in Norway, with the report characterizing the system as dysfunctional",
+     "u": "https://www.mckinsey.com/industries/automotive-and-assembly/our-insights/what-norways-experience-reveals-about-the-ev-charging-market",
+     "t": "отчёт"
+    },
+    {
+     "q": "90 percent of respondents in the Association's annual survey think that charging is complex, with many apps and operators, significantly higher than 75 percent the previous year",
+     "u": "https://www.rolandberger.com/en/Insights/Publications/EV-Charging-Index-Expert-insight-from-Norway-2024.html",
+     "t": "отчёт"
+    },
+    {
+     "q": "Today, there are hundreds of EV-only apps across Europe alone ... Consumers want one simple interface. They expect charging to be as seamless as buying petrol once was.",
+     "u": "https://emabler.com/resource/the-end-of-ev-charging-apps",
+     "t": "статья"
+    }
+   ],
+   "run": "2026-06-28d",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 62,
+   "niche": "авто",
+   "method": "спрос",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "EV-роутпланировщик с реальным состоянием зарядок и учётом кривой заряда конкретного авто",
+   "segment": "Владельцы EV (не Tesla), планирующие поездки длиннее запаса хода",
+   "jtbd": "Когда я планирую дальнюю поездку на электромобиле, я хочу маршрут с остановками на реально рабочих зарядках, с учётом моего конкретного авто и реального заряда, чтобы не застрять и не угадывать.",
+   "pain": "ABRP — лидер планировщиков, но: не знает реального SoC автомобиля, занижает расход на 1–12%, предпочтения по сетям игнорируются, иногда предлагает несуществующие зарядки. Пользователи форумов описывают «ABRP против реальности» — огромный разрыв между планом и жизнью на холоде или в гору.",
+   "demand": "Рынок EV-планировщиков растёт вместе с флотом электромобилей (в США +26% год к году в 2025). J.D. Power 2025: 4 из 5 причин отказа от EV связаны с зарядкой — это системный барьер принятия.",
+   "existing": "ABRP (неточен, игнорирует предпочтения), встроенная навигация Tesla (только Supercharger), Google Maps EV (не учитывает кривую заряда конкретной модели). Нет open-агрегатора с точной моделью конкретного авто + реальный статус всех сетей.",
+   "idea": "Маршрутный планировщик с точной физической моделью расхода (по модели авто, температуре, рельефу, загрузке), агрегацией реального статуса зарядок через API, учётом кривой DC-заряда и фильтром «только рабочие сети». Интеграция с OBD/авто-API для реального SoC.",
+   "s": {
+    "severity": 4,
+    "frequency": 3,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 3,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "ABRP ignores your preferred chargers ... the route planner does not recognize that users want to charge at those locations",
+     "u": "https://www.equinoxevforum.com/threads/abrp-ignores-your-preferred-chargers.2371/",
+     "t": "форум"
+    },
+    {
+     "q": "ABRP underestimated electricity needs by 1-12% on one trip ... some of the suggested stops don't exist",
+     "u": "https://www.chevybolt.org/threads/a-better-route-planner-abrp-vs-reality.56753/",
+     "t": "форум"
+    },
+    {
+     "q": "four of the top five reasons why drivers rejected EVs were related to charging",
+     "u": "https://www.jdpower.com/business/press-releases/2025-us-electric-vehicle-experience-evx-public-charging-study",
+     "t": "отчёт"
+    }
+   ],
+   "run": "2026-06-28d",
    "added": "2026-06-28"
   }
  ]

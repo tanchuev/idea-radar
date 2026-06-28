@@ -101,6 +101,7 @@ svg{width:100%;height:auto;display:block}
       <option value="fav">Сорт.: избранное</option>
     </select>
     <button class="btn ghost" id="newbtn" title="Показать только непросмотренные идеи">Только новые</button>
+    <button class="btn ghost" id="favbtn" title="Показать только идеи, отмеченные 👍">★ Только избранное</button>
     <button class="btn ghost" id="seenbtn" title="Отметить показанные идеи как просмотренные">✓ Отметить просмотренными</button>
     <button class="btn ghost" id="runbtn" title="Открыть Routines и запустить прогон вручную (Run now)">↻ Прогон</button>
   </div>
@@ -134,7 +135,7 @@ let palette={};const cols=['#3b5bdb','#1e9e6a','#d9920a','#b0468c','#2aa1b3','#8
 
 
 const PK='idearadar2_prefs', FB='idearadar2_fb', SK='idearadar2_seen';
-let prefs={q:'',niche:'',method:'',conf:'',sort:'score',run:'',onlyNew:false};
+let prefs={q:'',niche:'',method:'',conf:'',sort:'score',run:'',onlyNew:false,onlyFav:false};
 let fb={};
 let seen=new Set();
 try{const s=localStorage.getItem(PK);if(s)prefs={...prefs,...JSON.parse(s)};}catch(e){}
@@ -146,6 +147,7 @@ function saveSeen(){try{localStorage.setItem(SK,JSON.stringify([...seen]));}catc
 const isNew=d=>!seen.has(String(d.id));
 function markSeen(id){seen.add(String(id));saveSeen();}
 function syncNewBtn(){const b=$('#newbtn');if(!b)return;b.classList.toggle('on2',!!prefs.onlyNew);b.textContent=prefs.onlyNew?'● Только новые':'Только новые';}
+function syncFavBtn(){const b=$('#favbtn');if(!b)return;b.classList.toggle('on2',!!prefs.onlyFav);b.textContent=prefs.onlyFav?'● Только избранное':'★ Только избранное';}
 
 function init(){
   try{
@@ -159,12 +161,13 @@ function init(){
     const fr=$('#frun');
     fr.innerHTML='<option value="">Все прогоны</option>'+runList.map(r=>'<option value="'+r.id+'">'+r.date+' · '+r.label+' ('+r.count+')</option>').join('');
     $('#q').value=prefs.q; fn.value=prefs.niche; fr.value=prefs.run; $('#fmethod').value=prefs.method; $('#fconf').value=prefs.conf; $('#sort').value=prefs.sort;
-    syncNewBtn();
+    syncNewBtn();syncFavBtn();
     $('#legend').innerHTML=niches.map(n=>'<span><i class="dot" style="background:'+palette[n]+'"></i>'+n+'</span>').join('');
     $('#q').addEventListener('input',e=>{prefs.q=e.target.value;savePrefs();render();});
     fn.addEventListener('change',e=>{prefs.niche=e.target.value;savePrefs();render();});
     fr.addEventListener('change',e=>{prefs.run=e.target.value;savePrefs();render();});
     $('#newbtn').addEventListener('click',()=>{prefs.onlyNew=!prefs.onlyNew;savePrefs();syncNewBtn();render();});
+    $('#favbtn').addEventListener('click',()=>{prefs.onlyFav=!prefs.onlyFav;savePrefs();syncFavBtn();render();});
     $('#seenbtn').addEventListener('click',()=>{filtered().forEach(d=>seen.add(String(d.id)));saveSeen();statbar();render();});
     $('#fmethod').addEventListener('change',e=>{prefs.method=e.target.value;savePrefs();render();});
     $('#fconf').addEventListener('change',e=>{prefs.conf=e.target.value;savePrefs();render();});
@@ -195,6 +198,7 @@ function filtered(){
   let arr=RAW.filter(d=>{
     if(prefs.run&&d.run!==prefs.run)return false;
     if(prefs.onlyNew&&!isNew(d))return false;
+    if(prefs.onlyFav&&fb[d.id]!=='up')return false;
     if(prefs.niche&&d.niche!==prefs.niche)return false;
     if(prefs.method&&d.method!==prefs.method)return false;
     if(prefs.conf&&d.conf!==prefs.conf)return false;

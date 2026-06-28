@@ -65,6 +65,9 @@ h1{font-size:22px;margin:0 0 2px;letter-spacing:-.2px}
 .fb button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}
 .fb button.on{background:#e3f4ec;border-color:#1e9e6a}
 .fb button.on.dn{background:#fdeaea;border-color:#c0392b}
+.why{font:inherit;font-size:12px;width:100%;margin-top:6px;padding:5px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.why::placeholder{color:#aab1bd}
+.why.saved{border-color:#1e9e6a;background:#fafffb}
 .foot{color:var(--muted);font-size:12px;margin-top:18px;text-align:center}
 .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
 svg{width:100%;height:auto;display:block}
@@ -103,6 +106,7 @@ svg{width:100%;height:auto;display:block}
     <button class="btn ghost" id="newbtn" title="Показать только непросмотренные идеи">Только новые</button>
     <button class="btn ghost" id="favbtn" title="Показать только идеи, отмеченные 👍">★ Только избранное</button>
     <button class="btn ghost" id="seenbtn" title="Отметить показанные идеи как просмотренные">✓ Отметить просмотренными</button>
+    <button class="btn ghost" id="exportbtn" title="Выгрузить твои отметки 👍/👎 и причины в JSON — прогон разбирает их и подстраивает поиск под твой вкус">⬇ Экспорт вкуса</button>
     <button class="btn ghost" id="runbtn" title="Открыть Routines и запустить прогон вручную (Run now)">↻ Прогон</button>
   </div>
 
@@ -128,21 +132,25 @@ function diamond(s){return Math.round((s.gap*W.gap+s.reach*W.reach+s.trend*W.tre
 
 
 const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const scoreColor=v=>v>=82?'#1e9e6a':v>=74?'#3b5bdb':v>=68?'#d9920a':'#9aa1ad';
 const confClass=c=>c==='high'?'hi':c==='medium'?'mid':'lo';
 let niches=[];
 let palette={};const cols=['#3b5bdb','#1e9e6a','#d9920a','#b0468c','#2aa1b3','#8a5cf0','#d95a3b','#5a8a3b','#c0392b','#0a7d8c','#7d5a2b'];
 
 
-const PK='idearadar2_prefs', FB='idearadar2_fb', SK='idearadar2_seen';
+const PK='idearadar2_prefs', FB='idearadar2_fb', SK='idearadar2_seen', WK='idearadar2_why';
 let prefs={q:'',niche:'',method:'',conf:'',sort:'score',run:'',onlyNew:false,onlyFav:false};
 let fb={};
+let fbWhy={};
 let seen=new Set();
 try{const s=localStorage.getItem(PK);if(s)prefs={...prefs,...JSON.parse(s)};}catch(e){}
 try{const s=localStorage.getItem(FB);if(s)fb=JSON.parse(s)||{};}catch(e){}
+try{const s=localStorage.getItem(WK);if(s)fbWhy=JSON.parse(s)||{};}catch(e){}
 try{const s=localStorage.getItem(SK);if(s)seen=new Set(JSON.parse(s)||[]);}catch(e){}
 function savePrefs(){try{localStorage.setItem(PK,JSON.stringify(prefs));}catch(e){}}
 function saveFb(){try{localStorage.setItem(FB,JSON.stringify(fb));}catch(e){}}
+function saveWhy(){try{localStorage.setItem(WK,JSON.stringify(fbWhy));}catch(e){}}
 function saveSeen(){try{localStorage.setItem(SK,JSON.stringify([...seen]));}catch(e){}}
 const isNew=d=>!seen.has(String(d.id));
 function markSeen(id){seen.add(String(id));saveSeen();}
@@ -176,6 +184,7 @@ function init(){
       window.open('https://claude.ai/code/routines','_blank','noopener');
       $('#runbtn').textContent='↗ Routines';setTimeout(()=>{$('#runbtn').textContent='↻ Прогон';},4000);
     });
+    $('#exportbtn').addEventListener('click',exportTaste);
     statbar();render();
   }catch(e){document.getElementById('grid').innerHTML='<div class="empty">Ошибка инициализации: '+e.message+'</div>';}
 }
@@ -235,6 +244,7 @@ function render(){
       '<div class="bars">'+bar('боль',d.s.severity)+bar('частота',d.s.frequency)+bar('плата',d.s.wtp)+bar('охват',d.s.reach)+bar('слаб.реш.',d.s.gap)+bar('тренд',d.s.trend)+bar('простота',d.s.ease)+'</div>'+
       '<div class="ev"><details><summary>Доказательства ('+d.ev.length+')</summary>'+d.ev.map(e=>'<blockquote>«'+e.q+'»<br><a href="'+e.u+'" target="_blank" rel="noopener">'+e.t+' →</a></blockquote>').join('')+'</details></div>'+
       '<div class="fb"><button class="'+(f==='up'?'on':'')+'" data-id="'+d.id+'" data-v="up">👍 алмаз</button><button class="dn '+(f==='down'?'on dn':'')+'" data-id="'+d.id+'" data-v="down">👎 мимо</button>'+(nu?'<button class="seenb" data-seen="'+d.id+'">✓ просмотрено</button>':'')+'</div>'+
+      (f?'<input class="why'+(fbWhy[d.id]?' saved':'')+'" data-id="'+d.id+'" placeholder="почему '+(f==='up'?'«алмаз»':'«мимо»')+'? (необязательно — помогает прогону понять причину)" value="'+esc(fbWhy[d.id]||'')+'">':'')+
     '</div>';
   }).join('');
   g.querySelectorAll('.fb button[data-v]').forEach(b=>b.addEventListener('click',()=>{
@@ -246,7 +256,12 @@ function render(){
   g.querySelectorAll('button[data-seen]').forEach(b=>b.addEventListener('click',()=>{
     markSeen(b.getAttribute('data-seen'));statbar();render();
   }));
-  $('#foot').textContent='Показано '+arr.length+' из '+RAW.length+'. Метки 👍/👎 запоминаются и подсказывают оркестратору твой вкус на «алмазы».';
+  g.querySelectorAll('input.why').forEach(inp=>inp.addEventListener('change',()=>{
+    const id=inp.getAttribute('data-id'),v=inp.value.trim();
+    if(v)fbWhy[id]=v;else delete fbWhy[id];
+    saveWhy();inp.classList.toggle('saved',!!v);
+  }));
+  $('#foot').textContent='Показано '+arr.length+' из '+RAW.length+'. Метки 👍/👎 и причины запоминаются локально (в браузере). Кнопка «⬇ Экспорт вкуса» выгружает их в JSON — прогон разбирает паттерны/причины и подстраивает поиск под твой вкус.';
 }
 
 function drawMap(arr){
@@ -275,6 +290,34 @@ function drawMap(arr){
   });
   g+='</svg>';
   $('#map').innerHTML=g;
+}
+
+function exportTaste(){
+  const byId={};RAW.forEach(d=>byId[String(d.id)]=d);
+  const marks=Object.keys(fb).map(id=>{
+    const d=byId[id]||{};
+    return {id:Number(id),vote:fb[id],why:fbWhy[id]||'',title:d.title||'',niche:d.niche||'',
+      method:d.method||'',kano:d.kano||'',conf:d.conf||'',run:d.run||'',
+      score:(d.score!=null?d.score:null),s:(d.s||null)};
+  }).sort((a,b)=>(a.vote===b.vote?0:a.vote==='up'?-1:1));
+  const up=marks.filter(m=>m.vote==='up').length,down=marks.filter(m=>m.vote==='down').length;
+  const out={
+    schema:'idea-radar-taste-export-v1',
+    note:'Экспорт вкуса из дашборда Idea Radar. vote: up=«алмаз», down=«мимо». why — причина пользователя (если указал). Скорми этот JSON скиллу idea-radar-taste или прогону: он разберёт паттерны и причины и обновит preferences.json.',
+    exported:new Date().toISOString().slice(0,10),
+    up:up,down:down,count:marks.length,marks:marks
+  };
+  const text=JSON.stringify(out,null,2);
+  try{
+    const blob=new Blob([text],{type:'application/json'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='idea-radar-taste.json';
+    document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }catch(e){}
+  const btn=$('#exportbtn');const done=msg=>{btn.textContent=msg;setTimeout(()=>{btn.textContent='⬇ Экспорт вкуса';},2500);};
+  if(!marks.length){done('нет отметок');return;}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>done('✓ в буфере + файл')).catch(()=>done('✓ файл скачан'));
+  }else{done('✓ файл скачан');}
 }
 
 function boot(){

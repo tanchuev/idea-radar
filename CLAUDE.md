@@ -29,7 +29,8 @@ GitHub Pages пересобирает сайт → index.html подтягива
 |------|------|-----------|
 | `findings.json` | данные находок (schema `idea-radar-findings-v2`) | **только** Routine / ресёрч-прогон |
 | `index.html` | дашборд, читает findings.json | человек, редко; схему данных НЕ менять |
-| `preferences.json` | петля вкуса (👍/👎 → ниши/методы) | оркестратор / ручной экспорт |
+| `preferences.json` | петля вкуса v2 (👍/👎 + причины → аттракторы/репеллеры/гео) | скилл `idea-radar-taste` / прогон |
+| `idea-radar-taste.json` | экспорт отметок из дашборда (`idea-radar-taste-export-v1`), вход для разбора вкуса | дашборд (кнопка «⬇ Экспорт вкуса»), временный |
 | `ROUTINE_PROMPT.md` | промпт для облачного Routine | человек |
 | `README.md` | инструкция по развёртыванию | человек |
 
@@ -43,6 +44,9 @@ GitHub Pages пересобирает сайт → index.html подтягива
   `diamond()`: веса `gap .18 / reach .16 / trend .16 / wtp .16 / ease .14 / severity .12 / frequency .08`, ×20).
   Проставляй только оси 1–5.
 - **Коммитить только `findings.json` в `main`** (Pages обслуживает main / root). → `git-deploy-rules.md`
+- **Петля вкуса:** отметки 👍/👎 + причины из дашборда выгружаются кнопкой «⬇ Экспорт вкуса», скилл
+  `idea-radar-taste` превращает их в аттракторы/репеллеры/гео в `preferences.json`, прогон ими управляет.
+  Гео по умолчанию — РФ ИЛИ локацио-независимое; вкус без реальных отметок НЕ выдумывать. → `taste-loop-rules.md`
 
 ## Схема находки (`findings.json`)
 
@@ -86,4 +90,5 @@ Top-level: `schema`, `updated` (YYYY-MM-DD), `excluded_niches`, `count`, `findin
 ## Skills
 
 - `idea-radar-research` — запуск ресёрч-прогона (оркестрация саб-агентов → находки → коммит).
+- `idea-radar-taste` — разбор вкуса: экспорт 👍/👎 + причины из дашборда → аттракторы/репеллеры/гео → `preferences.json`.
 - `findings-validate` — валидация и безопасное редактирование `findings.json`.

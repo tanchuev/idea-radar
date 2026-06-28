@@ -6,7 +6,7 @@
   "личные финансы",
   "учёт бюджета"
  ],
- "count": 73,
+ "count": 76,
  "runs": [
   {
    "id": "2026-06-22",
@@ -2795,6 +2795,128 @@
     }
    ],
    "run": "2026-06-28e",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 74,
+   "niche": "питомцы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Элиминационная диета для собаки-аллергика: 75% владельцев нарушают протокол и месяцами не могут найти виновный ингредиент",
+   "segment": "Владельцы собак с пищевой аллергией (зуд, ушные инфекции, кожные высыпания)",
+   "jtbd": "Когда моей собаке поставили подозрение на пищевую аллергию, я хочу провести элиминационную диету правильно — с трекером ингредиентов, симптомов и напоминаниями, — чтобы наконец найти виновный продукт и не тратить ещё полгода вслепую.",
+   "pain": "Диагноз «пищевая аллергия» требует 8–12 недель строгой диеты — без лакомств, жевательных игрушек и ароматизированных лекарств. Но 75% владельцев дают собаке человеческую еду во время теста, 51% — посторонние лакомства, только 10% доводят до стадии реинтродукции. Расходы $200–500 на ненадёжные анализы крови (точность 0–10%) — деньги на ветер.",
+   "existing": "allergic.pet — в разработке, только вайтлист. PawDiet, Pet Allergy Log — базовые логгеры без протокола. PDF-трекеры на Etsy. Мобильного приложения с полным протоколом элиминации + реинтродукции нет.",
+   "idea": "Мобильный гид по элиминационной диете: пошаговый 12-недельный протокол, трекер ингредиентов и симптомов, ежедневные напоминания, встроенная база скрытых источников аллергенов (лакомства, жевательные игрушки, ароматизированные таблетки), PDF-отчёт для ветеринара. Каналы первых 100: Facebook-группы владельцев собак-аллергиков, ветеринарные дерматологи.",
+   "s": {
+    "severity": 4,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 5,
+    "trend": 4,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "75% of owners gave their dogs human foods during elimination trials. 51% provided additional treat sources like dental chews and rawhides. Only 10% of owners actually performed re-challenge testing to confirm the diagnosis.",
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6380261/",
+     "t": "отчёт"
+    },
+    {
+     "q": "Blood tests claiming to detect food allergies show 0-10% accuracy — results are no better than random guessing. Vets and online companies charge $200-500 for these tests.",
+     "u": "https://www.dermavet.com/why-we-dont-use-blood-tests-for-food-allergies-in-dogs-and-cats/",
+     "t": "статья"
+    },
+    {
+     "q": "Food allergies are the third most common allergy affecting dogs and cats, now accounting for at least 30% of all allergy cases.",
+     "u": "https://southernoceananimalhospital.com/services/full-list-of-services/specialized-care-diagnostics/general-dermatology/food-elimination-diets/",
+     "t": "статья"
+    }
+   ],
+   "run": "2026-06-28d",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 75,
+   "niche": "питомцы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "Приложения дрессировки собак: скрытые подписки и контент, не решающий реальных проблем поведения",
+   "segment": "Новые и опытные владельцы собак, которые не могут позволить себе регулярного тренера (350+ долларов за курс из 6 сессий)",
+   "jtbd": "Когда у моей собаки поведенческая проблема (лай, агрессия к другим собакам, тяга на поводке), я хочу пройти структурированный курс дрессировки самостоятельно — без тренера и без скрытых списаний через неделю после триала.",
+   "pain": "Лидер Woofz берёт $6.99 за триал, а через 7 дней без предупреждения снимает $39.99/мес; отписаться невозможно через интерфейс приложения — только через настройки Apple/Google. Конкуренты PawChamp и Zigzag поступают аналогично. Контент обобщённый, не учитывает специфику породы, серьёзные проблемы поведения (агрессия, тревожность) приложения не закрывают.",
+   "existing": "Woofz (2.7 звезды Trustpilot, агрессивный биллинг), Zigzag (курс для щенков до 12 нед., дорогой), PawChamp (AI-компаньон, 4.1 звезды, жалобы на биллинг), Puppr (трюки/команды). Все монетизированы агрессивной подпиской без честного бесплатного ядра.",
+   "idea": "Приложение дрессировки с прозрачной монетизацией: щедрый бесплатный уровень (30+ уроков, базовые команды), подписка только за продвинутые курсы по конкретным проблемам поведения, без авто-списания после триала. Видео-демонстрации, порода-специфичные адаптации, прогресс-трекер. Монетизация — единоразовая покупка курса под конкретную проблему.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 5,
+    "gap": 3,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "They don't even have an option to cancel the subscription from the app. They take your money and don't issue refunds even when you explain and have proof.",
+     "u": "https://www.producthunt.com/products/woofz/reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "Cancelled subscription prior to January 2026 due to app locking up. Received a charge to my card in January. Contacted woofz cancelled and received a refund. Now received another charge to my account.",
+     "u": "https://discussions.apple.com/thread/255112359",
+     "t": "форум"
+    },
+    {
+     "q": "The global dog training apps market size is estimated at USD 1.17 billion in 2026, set to expand to USD 3.66 billion by 2035, growing at a CAGR of 13.5%",
+     "u": "https://www.cognitivemarketresearch.com/dog-training-apps-market-report",
+     "t": "отчёт"
+    }
+   ],
+   "run": "2026-06-28d",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 76,
+   "niche": "питомцы",
+   "method": "спрос",
+   "conf": "medium",
+   "kano": "delight",
+   "status": "NEW",
+   "title": "Персонализированный подбор корма для собаки-аллергика: рынок $132 млрд, бесплатного фильтратора по составу нет",
+   "segment": "Владельцы собак с пищевыми аллергиями и чувствительным ЖКТ, ищущие корм самостоятельно",
+   "jtbd": "Когда у моей собаки аллергия и ветеринар сказал попробуй гипоаллергенный корм, я хочу быстро найти корм без куриного белка или без злаков среди готовых вариантов в магазине — не переплачивая за доставку кастомной еды от 100 долларов в месяц.",
+   "demand": "Глобальный рынок корма для питомцев — $132.4 млрд в 2025 г., прогноз $247.7 млрд к 2035 г. Персонализированный сегмент — CAGR 9.6% (2025–2034). 30% всех случаев аллергии у собак — пищевого происхождения.",
+   "pain": "Персонализированные сервисы (Nom Nom, The Farmer's Dog) стоят от $100 в месяц и не решают задачу найти правильный готовый корм в магазине. Бесплатных инструментов фильтрации корма по аллергенам нет — только рекламные рейтинги без персонализации.",
+   "existing": "Nom Nom, The Farmer's Dog, JustFoodForDogs (дорогая доставка кастомной еды). Рейтинги гипоаллергенных кормов (KP.ru, petobzor.com) — редакционные, не персонализированные. PawDiet App — базовый логгер без подбора корма.",
+   "idea": "Бесплатный инструмент подбора корма: вводишь аллергены и непереносимые ингредиенты собаки, получаешь список подходящих готовых кормов (Royal Canin, Hills, Grandorf) с сравнением состава, цены и доступности. Монетизация — партнёрские ссылки на зоомагазины. Дополнительно: трекер реакции после смены корма.",
+   "s": {
+    "severity": 3,
+    "frequency": 3,
+    "wtp": 2,
+    "reach": 4,
+    "gap": 4,
+    "trend": 5,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "Global pet food market valued at USD 132.4 billion in 2025, projected to reach USD 247.7 billion by 2035. Growth driven by personalized nutrition and formulations designed for specific health needs.",
+     "u": "https://www.prnewswire.com/news-releases/global-pet-food-market-size-to-hit-usd-247-7-billion-by-2035-on-premium-and-personalized-nutrition-demand-302696908.html",
+     "t": "отчёт"
+    },
+    {
+     "q": "Personalized Pet Food Market is predicted to develop a 9.6% CAGR during the forecast period for 2025-2034. Dog segment expected to achieve highest growth rate, with increased diagnoses of obesity, arthritis, and food allergies driving personalized diet demand.",
+     "u": "https://www.insightaceanalytic.com/report/personalized-pet-food-market/3026",
+     "t": "отчёт"
+    }
+   ],
+   "run": "2026-06-28d",
    "added": "2026-06-28"
   }
  ]

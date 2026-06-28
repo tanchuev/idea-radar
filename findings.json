@@ -1,12 +1,12 @@
 {
  "schema": "idea-radar-findings-v2",
- "updated": "2026-06-27",
+ "updated": "2026-06-28",
  "excluded_niches": [
   "финтех",
   "личные финансы",
   "учёт бюджета"
  ],
- "count": 59,
+ "count": 62,
  "runs": [
   {
    "id": "2026-06-22",
@@ -25,6 +25,24 @@
    "date": "2026-06-27",
    "label": "Широкий веер: 8 ниш",
    "count": 34
+  },
+  {
+   "id": "2026-06-28a",
+   "date": "2026-06-28",
+   "label": "Питомцы: страхование и хронические болезни",
+   "count": 3
+  },
+  {
+   "id": "2026-06-28b",
+   "date": "2026-06-28",
+   "label": "e-commerce: отзывы, возвраты, реклама, мультиканал",
+   "count": 5
+  },
+  {
+   "id": "2026-06-28c",
+   "date": "2026-06-28",
+   "label": "Продуктивность: time-blocking / focus time",
+   "count": 3
   }
  ],
  "findings": [
@@ -2204,6 +2222,129 @@
    ],
    "run": "2026-06-27b",
    "added": "2026-06-27"
+  },
+  {
+   "id": 60,
+   "niche": "продуктивность",
+   "method": "спрос",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "AI-планировщик фокус-времени без мобильного приложения — рынок $1.2 млрд в ловушке desktop-only",
+   "segment": "Фрилансеры, удалёнщики и небольшие команды, использующие AI-планировщики типа Reclaim.ai",
+   "jtbd": "Когда я за пределами компьютера и мне нужно скорректировать приоритет задачи или добавить блок фокус-времени в расписание, я хочу делать это с телефона, чтобы AI-планировщик реально управлял моим днём, а не только когда я за ноутбуком.",
+   "pain": "Самый популярный AI-планировщик фокус-времени Reclaim.ai полностью отсутствует в мобильном App Store. Нет push-уведомлений об изменении расписания, нет быстрого добавления задач на ходу, нет офлайн-доступа. Единственное решение — PWA без нативных функций. При этом рынок time-blocking app вырос до $1.2 млрд в 2025 при CAGR 16.5%. Второй по популярности AI-шедулер Motion имеет мобильное приложение, но только для просмотра — редактировать расписание с телефона нельзя.",
+   "demand": "Рынок time-blocking app: $1.2 млрд в 2025, прогноз $4.5 млрд к 2034, CAGR 16.5%. 35% людей используют task management ПО; только 11.6% тратят более 70% времени задач на продуктивную, сфокусированную работу.",
+   "existing": "Reclaim.ai (без нативного мобильного приложения, только PWA), Motion ($19-29/мес, мобильный только просмотр), Clockwise (только Google Calendar, нет мобильного редактирования). Ни один AI-шедулер фокус-времени не даёт полноценного мобильного опыта.",
+   "idea": "Mobile-first AI-планировщик фокус-времени: нативное iOS/Android приложение с офлайн-доступом, push-уведомлениями при смещении блоков, быстрым добавлением задачи голосом/текстом, синхронизацией с Google Calendar и Outlook. Прозрачность решений AI ('почему этот блок здесь?').",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 4,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "No iOS or Android app, so you can't manage schedules or urgent tasks on the go.",
+     "u": "https://kripeshadwani.com/reclaim-ai-review/",
+     "t": "обзор"
+    },
+    {
+     "q": "The complete lack of a native mobile app is a major failing in 2025. This is the single biggest complaint I found in user reviews.",
+     "u": "https://workflowautomation.net/reviews/reclaim-ai",
+     "t": "обзор"
+    },
+    {
+     "q": "Time Blocking App Market was valued at USD 1.2 billion in 2025 and is estimated to reach USD 4.5 billion by 2034, exhibiting a CAGR of 16.5% from 2026-2034.",
+     "u": "https://www.verifiedmarketreports.com/product/time-blocking-app-market/",
+     "t": "отчёт"
+    }
+   ],
+   "run": "2026-06-28c",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 61,
+   "niche": "продуктивность",
+   "method": "боль",
+   "conf": "medium",
+   "kano": "performance",
+   "status": "NEW",
+   "title": "AI-шедулер ставит deep work в 16:45 и дробит задачи — пользователи теряют контроль над расписанием",
+   "segment": "Индивидуалы и фрилансеры на AI-планировщиках (Motion, Reclaim.ai), переходящие на автоматическое расписание",
+   "jtbd": "Когда AI строит моё расписание, я хочу понимать, почему задача поставлена именно сейчас, и легко объяснять системе мои предпочтения, чтобы расписание реально мне подходило, а не вызывало тревогу.",
+   "pain": "AI-планировщики принимают непрозрачные решения: делят 2-часовой deep work блок на два 30-минутных куска с разрывом в несколько дней, ставят концентрированную работу поздно вечером, добавляют привычки в календарь без запроса. Пользователи тратят первые 3 недели на постоянную ручную коррекцию. При отмене подписки привычки продолжают появляться в Google Calendar. Motion стоит $29/мес ($348/год), что очень дорого при слабом AI и плохом мобильном UX.",
+   "existing": "Motion ($29/мес, крутой маркетинг, плохой мобильный, AI в черном ящике), Reclaim.ai (без мобильного, AI тоже непрозрачный), Clockwise (только команды, нет соло). Все строят расписание без объяснений — нельзя сказать 'не ставь deep work после 15:00'.",
+   "idea": "AI-планировщик с 'белым ящиком': каждый блок показывает причину размещения, пользователь задаёт правила в человекочитаемом формате ('глубокая работа только утром', 'встречи не раньше 10:00'), AI учится на корректировках и визуализирует, почему выбрал именно это время. Mobile-first с нативными push-уведомлениями.",
+   "s": {
+    "severity": 3,
+    "frequency": 4,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 3,
+    "trend": 5,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "putting deep work at 4:45 PM or splitting a 2-hour task into two 30-minute blocks days apart",
+     "u": "https://workflowautomation.net/reviews/reclaim-ai",
+     "t": "обзор"
+    },
+    {
+     "q": "automatically added 3 Daily Items...which I did not want",
+     "u": "https://www.producthunt.com/products/reclaim/reviews",
+     "t": "обзор"
+    },
+    {
+     "q": "The price point is high for an individual productivity tool",
+     "u": "https://workflowautomation.net/reviews/motion",
+     "t": "обзор"
+    }
+   ],
+   "run": "2026-06-28c",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 62,
+   "niche": "продуктивность",
+   "method": "спрос",
+   "conf": "medium",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Браузерные блокеры сайтов тайно экфильтруют URL и мониторят AI-чаты при 700k+ пользователей",
+   "segment": "Пользователи Chrome, использующие расширения для блокировки сайтов ради фокусировки (StayFocusd и аналоги)",
+   "jtbd": "Когда я устанавливаю блокер сайтов для фокуса, я хочу, чтобы расширение только блокировало сайты и не передавало мои данные третьим сторонам без ведома.",
+   "pain": "StayFocusd — самый популярный блокер сайтов (700k пользователей, 8K+ оценок) — документально экфильтрирует URL каждого посещения пользователей, содержит инфраструктуру для мониторинга AI-чатов (активируется удалённо без уведомления), при этом одновременно заявляет на той же странице Chrome Web Store 'не собираем личные данные'. Рейтинг за последние 100 отзывов упал с 4.45 до 3.89. Пользователи, платящие за продуктивность, получают слежку.",
+   "demand": "StayFocusd: 700 000 установок в Chrome, 8K+ отзывов. Весь рынок блокеров-для-фокуса активно растёт вместе с тематикой digital wellbeing. Рынок time blocking apps $1.2 млрд в 2025, CAGR 16.5%.",
+   "existing": "StayFocusd (слежка, рейтинг падает), Freedom ($6.99/мес), Cold Turkey (платный), FocusMe. Нет широко известного бесплатного блокера с открытым кодом и честным privacy-first позиционированием с большой аудиторией.",
+   "idea": "Open-source блокер сайтов с нулевым сбором данных: 100% client-side без серверных запросов, публичный аудит кода, privacy-бейдж. Дифференциатор — anti-StayFocusd позиционирование. Монетизация — one-time Pro за расширенные расписания и статистику.",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 3,
+    "reach": 4,
+    "gap": 4,
+    "trend": 4,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "exfiltrate[s] almost every URL you visit, subject to a filter protecting only US-based personally identifiable information",
+     "u": "https://consumerrights.wiki/w/StayFocusd",
+     "t": "статья"
+    },
+    {
+     "q": "StayFocusd has 700,000 downloads and a 4.45-star rating on the Chrome Web Store (with 8K+ reviews), though the rating for the last 100 reviews shows a concerning 3.89 rating, indicating ongoing quality concerns",
+     "u": "https://tooltivity.com/extensions/stayfocusd-website-blocker-and-focus-timer",
+     "t": "обзор"
+    }
+   ],
+   "run": "2026-06-28c",
+   "added": "2026-06-28"
   }
  ]
 }

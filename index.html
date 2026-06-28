@@ -202,7 +202,7 @@ function filtered(){
     return true;
   });
   const k=prefs.sort;
-  if(k==='fav') arr.sort((a,b)=>(fb[b.id]==='up'?1:0)-(fb[a.id]==='up'?1:0)||b.score-a.score);
+  if(k==='fav'){const rk=d=>fb[d.id]==='up'?2:fb[d.id]==='down'?0:1;arr.sort((a,b)=>rk(b)-rk(a)||b.score-a.score);}
   else if(k==='score') arr.sort((a,b)=>b.score-a.score);
   else arr.sort((a,b)=>b.s[k]-a.s[k]);
   return arr;

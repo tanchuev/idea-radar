@@ -6,7 +6,7 @@
   "личные финансы",
   "учёт бюджета"
  ],
- "count": 65,
+ "count": 68,
  "runs": [
   {
    "id": "2026-06-22",
@@ -2353,7 +2353,7 @@
    "added": "2026-06-28"
   },
   {
-   "id": 60,
+   "id": 63,
    "niche": "авто",
    "method": "боль",
    "conf": "high",
@@ -2395,7 +2395,7 @@
    "added": "2026-06-28"
   },
   {
-   "id": 61,
+   "id": 64,
    "niche": "авто",
    "method": "боль",
    "conf": "high",
@@ -2437,7 +2437,7 @@
    "added": "2026-06-28"
   },
   {
-   "id": 62,
+   "id": 65,
    "niche": "авто",
    "method": "спрос",
    "conf": "medium",
@@ -2477,6 +2477,122 @@
     }
    ],
    "run": "2026-06-28d",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 66,
+   "niche": "питомцы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Страховщики питомцев отказывают по любому прошлому визиту как по «pre-existing condition»",
+   "segment": "Владельцы кошек и собак с активным полисом pet insurance (США); рынок 7.6 млн застрахованных питомцев в 2025",
+   "jtbd": "Когда моя собака или кошка заболела и я подаю страховой иск, я хочу получить честное рассмотрение без произвольной трактовки каждого прошлого визита как «предшествующего условия», чтобы не оказаться с многотысячным счётом после лет оплаты страховки.",
+   "pain": "Страховщики (Trupanion, Embrace, Lemonade, AKC) систематически маркируют любую болезнь «pre-existing», ссылаясь на прошлые визиты по несвязанным поводам. Медицинские записи интерпретируются в пользу отказа; waiting period применяется даже к острым травмам. Владельцы остаются с $2000–$10 000+ счётов после лет оплаты премий.",
+   "existing": "Pawlicy Advisor, Policygenius, ManyPets, MetLife Pet — сравнивают условия при покупке, но ни один не помогает документировать здоровье питомца проактивно до страхового случая и не помогает оспорить отказ. Юридические сервисы дорогие.",
+   "idea": "Сервис «ветеринарное досье питомца»: систематическая документация здоровья (симптомы, осмотры, вакцины) со структурированными записями — чтобы при иске чётко разграничить «текущая болезнь» vs «прошлая». Плюс гайд по апелляции и автогенерация письма-возражения на отказ страховщика.",
+   "s": {
+    "severity": 5,
+    "frequency": 4,
+    "wtp": 4,
+    "reach": 4,
+    "gap": 3,
+    "trend": 4,
+    "ease": 3
+   },
+   "ev": [
+    {
+     "q": "Every single thing that you file they label it as a pre-existing condition... they cover nothing and will claim pre-existing in everything you submit.",
+     "u": "https://www.bbb.org/us/wa/seattle/profile/insurance-companies/trupanion-1296-22429232/customer-reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "theyll gaslight you saying your puppys condition is pre-existing even if its their first vet visit.",
+     "u": "https://www.bbb.org/us/oh/cleveland/profile/pet-insurance/embrace-pet-insurance-0312-20004030/customer-reviews",
+     "t": "отзыв"
+    },
+    {
+     "q": "Only 4.27% of US pets hold insurance policies ... more than 96% of America's pets still have no coverage.",
+     "u": "https://www.insurancebusinessmag.com/us/news/breaking-news/naphia-only-4-27-of-us-pets-insured-despite-decade-of-doubledigit-growth-580314.aspx",
+     "t": "отчёт"
+    }
+   ],
+   "run": "2026-06-28a",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 67,
+   "niche": "питомцы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Трекер приступов для питомцев с эпилепсией: единственное приложение заброшено и теряет годы данных",
+   "segment": "Владельцы собак и кошек с эпилепсией, ведущие журнал приступов для ветеринара",
+   "jtbd": "Когда у моего питомца эпилепсия, я хочу надёжно фиксировать каждый приступ (время, длительность, тяжесть, триггеры) и показать динамику ветеринару, чтобы скорректировать дозу препарата и не потерять годы записей из-за сбоя приложения.",
+   "pain": "Единственное нишевое приложение — RVC Pet Epilepsy Tracker (Royal Veterinary College) — не обновлялось с 2017, рейтинг 1.2/5 из 6 отзывов. Пользователи теряют 4.5 года данных из-за краша. Сброс пароля не работает, поддержки нет. Кошки не поддерживаются вообще. Владельцы ведут журнал на бумаге или в Excel.",
+   "existing": "RVC Pet Epilepsy Tracker (App Store id992917809, рейтинг 1.2/5, последнее обновление 2017) — фактически единственное нишевое приложение. Общие журналы здоровья питомца (PetDesk, Rover) не специализированы на неврологии и не строят графики частоты и тяжести приступов.",
+   "idea": "Специализированный трекер приступов: быстрый лог (кнопка «начался приступ» → таймер → детали после окончания), надёжный облачный бэкап, график динамики для ветеринара с PDF-экспортом, поддержка и кошек, и собак, напоминания о приёме антиконвульсантов. Offline-first.",
+   "s": {
+    "severity": 5,
+    "frequency": 5,
+    "wtp": 4,
+    "reach": 3,
+    "gap": 5,
+    "trend": 3,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "This has been my record keeper for YEARS! I have lost 4.5 years of data and my seizure tracking because the app will no longer open. It just sits there and thinks about it and does nothing. I have tried to get support, but I cannot even seem to connect for that.",
+     "u": "https://apps.apple.com/us/app/rvc-pet-epilepsy-tracker/id992917809",
+     "t": "стор"
+    },
+    {
+     "q": "I would like to give this app a higher review but I have a cat that has seizures. The app is centered around dogs I can't even select feline or a feline breed.",
+     "u": "https://apps.apple.com/us/app/rvc-pet-epilepsy-tracker/id992917809",
+     "t": "стор"
+    }
+   ],
+   "run": "2026-06-28a",
+   "added": "2026-06-28"
+  },
+  {
+   "id": 68,
+   "niche": "питомцы",
+   "method": "боль",
+   "conf": "high",
+   "kano": "basic",
+   "status": "NEW",
+   "title": "Трекер глюкозы для диабетического питомца: оба приложения заброшены с 2017, баги с датами и ретровводом",
+   "segment": "Владельцы кошек и собак с сахарным диабетом, измеряющие глюкозу каждые 2–4 часа",
+   "jtbd": "Когда я каждые 2–4 часа измеряю глюкозу у диабетического питомца и вожу его к ветеринару, я хочу надёжно фиксировать показания, строить кривую гликемии и делиться ею с врачом, чтобы не вести 10 бумажных таблиц и не тратить полдня на отчёт.",
+   "pain": "RVC Pet Diabetes App (последнее обновление ноябрь 2017) — рейтинг 3.3/5, 12 отзывов. Баги: даты не совпадают с днями недели, удаление одной записи случайно удаляет другие, нельзя ввести пропущенное показание задним числом, нет смены часового пояса. Pet Diabetes Tracker — крашится при сохранении и не поддерживает смену мест инъекций. Пользователи возвращаются к бумажному календарю.",
+   "existing": "RVC Pet Diabetes App (App Store id1095999436, не обновлялся с 2017, только iOS), Pet Diabetes Tracker (id1055356950, крашится при сохранении). Нет современного кросс-платформенного приложения с надёжным логом, ретроспективным вводом и экспортом кривой для ветеринара.",
+   "idea": "Мобильный журнал диабетического питомца: быстрый ввод показания глюкозы + дозы инсулина + еды, кривая гликемии за сутки и неделю, ретроспективный ввод, экспорт PDF/CSV для ветеринара, напоминания об измерениях, смена мест инъекций. Offline-first, облачный бэкап.",
+   "s": {
+    "severity": 4,
+    "frequency": 5,
+    "wtp": 4,
+    "reach": 3,
+    "gap": 4,
+    "trend": 3,
+    "ease": 4
+   },
+   "ev": [
+    {
+     "q": "Taking BG levels every 2-4 hours, making charts and graphs to send the vet was taking up half of my day. This is simple, initiative and does almost everything i need. But the calendar is wrong - day of the week and date doesn't match up and if you need to delete an entry by swiping left and then X. It appears to delete the other entries",
+     "u": "https://apps.apple.com/us/app/rvc-pet-diabetes-app/id1095999436",
+     "t": "стор"
+    },
+    {
+     "q": "You cannot enter historical data, for example if you miss entering a reading from the day before. Also, no ability to change timezone, so the entries are always a day ahead in the US.",
+     "u": "https://apps.apple.com/us/app/rvc-pet-diabetes-app/id1095999436",
+     "t": "стор"
+    }
+   ],
+   "run": "2026-06-28a",
    "added": "2026-06-28"
   }
  ]

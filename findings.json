@@ -6,7 +6,7 @@
     "личные финансы",
     "учёт бюджета"
   ],
-  "count": 153,
+  "count": 126,
   "runs": [
     {
       "id": "2026-06-22",
@@ -104,7 +104,7 @@
     },
     {
       "id": 2,
-      "niche": "быт",
+      "niche": "быт/дом",
       "method": "боль",
       "conf": "high",
       "kano": "performance",
@@ -200,7 +200,7 @@
     },
     {
       "id": 5,
-      "niche": "образование",
+      "niche": "онлайн-образование",
       "method": "боль",
       "conf": "medium",
       "kano": "performance",
@@ -264,11 +264,11 @@
     },
     {
       "id": 7,
-      "niche": "родители",
+      "niche": "родители/дети",
       "method": "боль",
       "conf": "high",
       "kano": "basic",
-      "status": "NEW",
+      "status": "GROWING",
       "title": "Приложения родительского контроля не работают: дети легко обходят блокировки",
       "segment": "Родители школьников",
       "jtbd": "Когда я ставлю ребёнку лимит и контроль контента, я хочу, чтобы ограничения реально работали и ребёнок не мог их обойти или снести приложение.",
@@ -289,6 +289,16 @@
           "q": "Ребёнок с легкостью обходит все ограничения. Ладно бы это было в бесплатной версии, но всё точно так же и с оплатой.",
           "u": "https://vraki.net/otzyvy/mobilnye-prilozheniya/kids360-detskiy-rezhim-i-roditelskiy-kontrol.html",
           "t": "отзыв"
+        },
+        {
+          "q": "Ребенок взломал. Уже пол года не работает( Ошибку не устранили.",
+          "u": "https://www.rustore.ru/catalog/app/app.kids360.parent/reviews",
+          "t": "стор"
+        },
+        {
+          "q": "большинство лазеек, существовавших в iOS 12...существует и по сей день",
+          "u": "https://appleinsider.ru/ios/v-ekrannom-vremeni-na-ios-polno-lazeek-a-apple-dazhe-ne-cheshetsya.html",
+          "t": "статья"
         }
       ],
       "run": "2026-06-22",
@@ -296,7 +306,7 @@
     },
     {
       "id": 8,
-      "niche": "родители",
+      "niche": "родители/дети",
       "method": "боль",
       "conf": "medium",
       "kano": "performance",
@@ -496,143 +506,6 @@
       "added": "2026-06-22"
     },
     {
-      "id": 14,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "MCP-агенты захлёбываются в токенах: схемы тулзов съедают 30–60% контекста",
-      "segment": "Разработчики production-агентов на MCP (инди, AI-стартапы, enterprise)",
-      "jtbd": "Когда я подключаю агенту много MCP-серверов, я хочу, чтобы в контекст грузились только релевантные задаче инструменты, чтобы агент не тупел и не сжигал бюджет токенов.",
-      "pain": "Один официальный GitHub MCP-сервер занимает ~42 000 токенов только на описания тулзов; 4–5 серверов сжигают 100–200K до первого сообщения. Падает точность выбора тулза (с ~95% до ~71%), модель путает похожие тулзы. Разработчик вручную городит динамическую загрузку.",
-      "demand": "Официальный SEP-1576 в репо modelcontextprotocol (8.3k звёзд) + десятки параллельных issue в крупных репозиториях; GitHub отчитался о −62% расхода токенов за счёт MCP pruning. Тема быстро растёт в 2026.",
-      "existing": "Ручные подходы: namespacing, обрезка описаний, оркестратор+субагенты. Эмбеддинг-поиск по тулзам — только proposal в спеке. Проприетарные решения появляются, но нет понятного open-source/self-host middleware-слоя для любого MCP-клиента.",
-      "idea": "MCP-gateway/прокси (self-host + cloud): семантический роутинг тулзов (top-k под задачу), дедуп схем, сжатие описаний, namespacing, аудит расхода токенов с дашбордом. Drop-in для Claude Code / Cursor / любого MCP-клиента.",
-      "s": {
-        "severity": 4,
-        "frequency": 5,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 4,
-        "trend": 5,
-        "ease": 4
-      },
-      "ev": [
-        {
-          "q": "GitHub's official MCP server alone eats 42,000 tokens — just for the tool definitions … accuracy on correct tool selection dropped from ~95% with a focused toolset to ~71% with the full GitHub MCP server loaded.",
-          "u": "https://dev.to/thedailyagent/mcp-tool-overload-why-more-tools-make-your-agent-worse-5a49",
-          "t": "статья"
-        },
-        {
-          "q": "detailed tool descriptions not only lead to substantial token consumption by LLM, but also markedly reduce the accuracy of tool selection.",
-          "u": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1576",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-22",
-      "added": "2026-06-22"
-    },
-    {
-      "id": 15,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "high",
-      "kano": "delight",
-      "status": "NEW",
-      "title": "У self-host агентов нет нормального веб-UI: ни артефактов, ни дифов, ни дерева файлов",
-      "segment": "Команды и инди-девы на Claude Agent SDK, LangGraph, CrewAI",
-      "jtbd": "Когда я запускаю собственного агента, я хочу богатый веб-UI с артефактами, дифами, деревом файлов и видимыми шагами тулзов, чтобы работать удобнее, чем в терминале.",
-      "pain": "У почти каждого агента только CLI или чат: «единственный зияющий пробел — локальный веб-UI». У Claude есть Artifacts, у ChatGPT — Canvas, у кастомных агентов — ничего сравнимого. Каждый собирает фронт с нуля.",
-      "demand": "Фича-реквест #501 в NousResearch/hermes-agent (~157k звёзд) с анализом 30+ интерфейсов; целый класс репозиториев (agno agent-ui, assistant-ui, agent-chat-ui, CopilotKit) — рынок активно нащупывает решение, но фрагментирован.",
-      "existing": "assistant-ui, agno agent-ui, agent-chat-ui, Open WebUI, LibreChat. Минусы: привязаны к фреймворку, либо чат без артефактов/дифов, либо требуют большой фронт-сборки. Нет фреймворк-агностичного Artifacts-grade UI на AG-UI.",
-      "idea": "Фреймворк-агностичный self-host Agent UI на протоколе AG-UI: дуал-пейн (чат+workspace), live-рендер артефактов/HTML/SVG, diff-вьюер, дерево файлов, шаги тулзов, history, human-in-the-loop. Адаптер к любому бэкенду.",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 3,
-        "reach": 4,
-        "gap": 3,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "The one glaring gap is a local web-based UI … Every major competitor has one: Claude has Artifacts … ChatGPT has Canvas … Tool visibility — Show tool calls happening in real-time",
-          "u": "https://github.com/NousResearch/hermes-agent/issues/501",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-22",
-      "added": "2026-06-22"
-    },
-    {
-      "id": 16,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Промпты захардкожены в коде: нельзя версионировать и дать редактировать не-девам",
-      "segment": "Продуктовые команды с LLM-фичами; PM/контент/эксперты",
-      "jtbd": "Когда мне нужно подправить промпт агента, я хочу менять и версионировать его отдельно от кода, чтобы не-разработчик мог отредактировать и откатить без релиза.",
-      "pain": "В большинстве фреймворков промпт — это код: правка строки = PR, ревью, деплой. Блокирует экспертов/PM, замедляет итерации. Кустарные Jinja2-шаблоны решают хранение, но не версии, A/B, доступ для не-девов, аудит.",
-      "demand": "Параллельные фича-реквесты сразу в куче фреймворков: pydantic-ai #921 (мейнтейнер: «fits into our roadmap»), Dify #7614, LiteLLM #16233 (+PR), Flowise #4462, agno #4358. Один запрос в 6+ независимых репозиториях = системная дыра.",
-      "existing": "LangSmith Hub, Langfuse, PromptLayer, Vertex prompt mgmt, самопал на Jinja2. Минусы: привязка к платформе/облаку либо чистое хранилище без non-dev UI, A/B и rollout-гейтов.",
-      "idea": "Headless «prompt CMS»: SDK тянет промпт по ключу+версии в рантайме (как feature-flags); веб-редактор для не-девов, A/B, гейты раскатки, история/откат, аудит. Интеграции OpenAI/LangChain/pydantic-ai/LiteLLM. Self-host опция.",
-      "s": {
-        "severity": 3,
-        "frequency": 4,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 3,
-        "trend": 4,
-        "ease": 4
-      },
-      "ev": [
-        {
-          "q": "Users have expressed an interest in being able to alter the prompts used by an Agent independent of the execution/deployment of the code",
-          "u": "https://github.com/pydantic/pydantic-ai/issues/921",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-22",
-      "added": "2026-06-22"
-    },
-    {
-      "id": 17,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Стартапам негде взять «хостед Claude Code» как встраиваемый бэкенд агента",
-      "segment": "Стартапы и product-команды, встраивающие агента в свой продукт",
-      "jtbd": "Когда мы хотим встроить агента в продукт, я хочу хостед-версию чего-то вроде Claude Code со своими скиллами, доступом к нашим API и авторизацией, чтобы не переизобретать agent loop.",
-      "pain": "Чёткого пути нет — основатель пишет, что «это должно быть легко и очевидно, но не получается найти ясный путь вперёд». Приходится самому собирать хостинг, скиллы, API-layer, мульти-арендность, безопасность вокруг Agent SDK.",
-      "demand": "Ask HN с развёрнутым описанием боли и спором о вариантах (Claude Agent SDK, OpenHands, LangGraph) — единого очевидного решения у сообщества нет. Перекликается с волной запросов на embeddable-агентов в 2026.",
-      "existing": "Claude/OpenAI Agent SDK, LangGraph, OpenHands — это строительные блоки, не готовый продукт. Нет popular white-label «agent-backend-as-a-service» с реестром скиллов и embeddable-режимом.",
-      "idea": "Embeddable/white-label agent backend: хостед рантайм + реестр своих скиллов + безопасный коннектор к своим API + мульти-арендность (internal/customer) + SDK/виджет, чтобы заменять отдельные LLM-вызовы продукта «нашим агентом». Self-host опция.",
-      "s": {
-        "severity": 4,
-        "frequency": 3,
-        "wtp": 5,
-        "reach": 4,
-        "gap": 4,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Ideally, we'd effectively have a hosted version of Claude Code with company specific skills, an API access layer, etc. … I feel like it should be easy and obvious but I'm struggling to find a clear path forward.",
-          "u": "https://news.ycombinator.com/item?id=46917293",
-          "t": "форум"
-        }
-      ],
-      "run": "2026-06-22",
-      "added": "2026-06-22"
-    },
-    {
       "id": 18,
       "niche": "простые продукты",
       "method": "спрос",
@@ -764,44 +637,6 @@
           "q": "As of December 31, 2025 … Honey has dropped to 12 million users on Chrome. That's down 8 million from the 20 million users it had",
           "u": "https://9to5google.com/2025/12/31/honey-chrome-users-fraud/",
           "t": "новости"
-        }
-      ],
-      "run": "2026-06-22",
-      "added": "2026-06-22"
-    },
-    {
-      "id": 22,
-      "niche": "AI/LLM",
-      "method": "идея",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "IDEA",
-      "title": "Слой безопасности/доверия для агентских скиллов (anti prompt-injection, secret-exfil)",
-      "segment": "Команды, ставящие сторонние agent skills из растущих маркетплейсов",
-      "jtbd": "Когда я ставлю чужой agent skill, я хочу автоматическую проверку на инъекции промпта, утечку секретов и опасные команды, чтобы безопасно использовать экосистему скиллов.",
-      "pain": "Маркетплейсы скиллов расплодились (8 площадок к Q2 2026, SkillsMP — 425k скиллов), но скилл — это исполняемые инструкции для агента: риск prompt-injection, exfiltration секретов, опасных команд. Дистрибуция есть, доверия нет.",
-      "demand": "За полгода экосистема выросла с 1 реестра (дек 2025) до 8 маркетплейсов; появились security-first игроки (Agensi сканирует по 8 пунктам: инъекции, exfil, секреты, опасные команды). Спрос на доверие очевиден и ранний.",
-      "existing": "Agensi (security-reviewed скиллы), ClaudeSkills.info (community-vetted). Большинство маркетплейсов (SkillsMP, ClawHub) — про объём и discovery, не про безопасность. Нет независимого скан-слоя/«антивируса для скиллов» поверх всех площадок.",
-      "idea": "Независимый сканер/гейт для agent skills (CLI + CI-action + браузерное расширение поверх маркетплейсов): статический и поведенческий анализ на prompt-injection, exfil, опасные shell/сетевые вызовы; бейдж доверия. Сгенерировано Ideator, уточнено после отказа «ещё один маркетплейс».",
-      "s": {
-        "severity": 4,
-        "frequency": 3,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 3,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "every skill scanned against an 8-point checklist (prompt injection, data exfiltration, secret detection, dangerous commands…) before it goes live",
-          "u": "https://www.agensi.io/learn/best-ai-agent-skills-marketplaces-2026",
-          "t": "статья"
-        },
-        {
-          "q": "browse 425,000+ skills, built around the open SKILL.md standard",
-          "u": "https://skillsmp.com/",
-          "t": "маркетплейс"
         }
       ],
       "run": "2026-06-22",
@@ -1087,158 +922,6 @@
       "added": "2026-06-27"
     },
     {
-      "id": 30,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "CI-движок надёжности tool-calling для MCP-серверов и агентов",
-      "segment": "Команды, разрабатывающие MCP-серверы и агентов на их основе (особенно с локальными/мелкими моделями)",
-      "jtbd": "Когда я меняю описания/параметры тулзов или модель, я хочу автоматически убедиться, что агент по-прежнему стабильно и правильно вызывает нужные инструменты, чтобы не ловить регрессии в проде.",
-      "pain": "Нет автоматического способа валидировать, что MCP tool-calls срабатывают надёжно по разным моделям, конфигурациям промптов и сложности тулзов. Точность подбора тулза и форматирование параметров деградируют на мелких моделях, но отслеживать это нечем. Качество описаний тулзов оценивается субъективно.",
-      "demand": "GAIA (AMD) завёл issue о полном отсутствии такого фреймворка; существующие OSS-решения крошечные и сырые: mcp-server-tester (10★, WIP), mcp-eval (25★), mcp-testing-framework (29★).",
-      "existing": "mcp-server-tester (10★, WIP), lastmile-ai/mcp-eval (25★), L-Qun/mcp-testing-framework (29★), Accenture/mcp-bench (бенчмарк, не CI-gate), Confident AI/Braintrust (общая eval-платформа). Зрелого CI-gate под надёжность tool-calling нет.",
-      "idea": "CI-нативный сервис: даёт тулзам и MCP-серверу набор реалистичных сценариев, прогоняет их через несколько моделей, меряет accuracy подбора тулза/параметров и устойчивость к перефразированию, даёт quality-gate (блок merge при просадке). «pytest для MCP» в GitHub Actions.",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 3,
-        "reach": 4,
-        "gap": 4,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "There is no automated way to validate that MCP tool calls succeed reliably across different models, prompt configurations, and tool complexities.",
-          "u": "https://github.com/amd/gaia/issues/709",
-          "t": "github"
-        },
-        {
-          "q": "Automated testing tool for Model Context Protocol (MCP) servers - WORK IN PROGRESS",
-          "u": "https://github.com/r-huijts/mcp-server-tester",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-27b",
-      "added": "2026-06-27"
-    },
-    {
-      "id": 31,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "high",
-      "kano": "basic",
-      "status": "NEW",
-      "title": "Портируемый слой памяти агентов без вендор-лока (экспорт/миграция между провайдерами)",
-      "segment": "Разработчики LLM-приложений на хостед-памяти (Mem0/Zep/Letta), боящиеся привязки к провайдеру",
-      "jtbd": "Когда я строю продукт на чужом слое памяти, я хочу иметь возможность забрать память пользователей и переехать на другого провайдера или self-host без потери данных и переписывания кода.",
-      "pain": "Память хранится в проприетарном формате провайдера; неясно, как перенести её на другую платформу или self-host, документация по экспорту непонятна. Это базовый страх (data ownership/lock-in), блокирующий внедрение в проде.",
-      "demand": "Mem0 — 59.6k★, «Universal memory layer for AI Agents»; в discussions/issues прямо спрашивают про lock-in и миграцию (#1679, #3697) — повторяющаяся тема у самого популярного игрока ниши.",
-      "existing": "Mem0, Zep (проприетарный граф, не экспортируется), Letta, OpenMemory. Экспорт у Mem0 есть, но пользователи не понимают, как им пользоваться для миграции; кросс-провайдерного нейтрального формата/слоя нет.",
-      "idea": "Нейтральный open-протокол + адаптеры: единый формат памяти (факты+эмбеддинги+граф+провенанс) и коннекторы для импорта/экспорта между Mem0/Zep/Letta/self-host. «Memory portability layer» как страховка/compliance-инструмент.",
-      "s": {
-        "severity": 3,
-        "frequency": 3,
-        "wtp": 3,
-        "reach": 4,
-        "gap": 4,
-        "trend": 4,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "If I use the hosted cloud version, is there any kind of lock in? What if I need to change solutions later? What will happen to all of my user's 'memories'? Will I be able to easily transfer these to a similar provider?",
-          "u": "https://github.com/mem0ai/mem0/discussions/1679",
-          "t": "github"
-        },
-        {
-          "q": "I would like to know if there is any documentation or guide available regarding the migration of user memories between the Hosted Platform and the Self-Hosted platform, and vice versa.",
-          "u": "https://github.com/mem0ai/mem0/issues/3697",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-27b",
-      "added": "2026-06-27"
-    },
-    {
-      "id": 32,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Preemptive/стриминговый слой ответа для голосовых агентов (срезать VAD-задержку)",
-      "segment": "Разработчики реалтайм голосовых агентов на Pipecat/LiveKit и подобных",
-      "jtbd": "Когда пользователь договорил, я хочу, чтобы агент отвечал в пределах ~300-800мс, не дожидаясь подтверждения тишины от VAD, чтобы разговор не висел и звонящий не клал трубку.",
-      "pain": "Фреймворк ждёт end-of-speech от VAD до начала генерации ответа, хотя STT уже выдал финальный транскрипт — лишняя задержка на каждом ходе. Превышение ~200-800мс ломает естественность диалога; команды видят жалобы «агент завис посреди фразы».",
-      "demand": "Pipecat — 13.1k★, «Open Source framework for voice and multimodal conversational AI»; issue #3321 о преэмптивной генерации; тема latency/turn-detection повторяется в десятках issue.",
-      "existing": "Pipecat (Smart Turn v3), LiveKit, Daily, Retell. Встроенный turn-detection есть, но preemptive-генерация на частичном транскрипте — недостающий примитив; решается каждой командой вручную через хаки.",
-      "idea": "Подключаемый модуль «predictive turn + speculative response»: начинает синтез ответа на частичном транскрипте/предсказании конца хода, откатывает при перебивании. Drop-in для Pipecat/LiveKit, как latency-pack для голосовых агентов.",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 3,
-        "reach": 3,
-        "gap": 4,
-        "trend": 5,
-        "ease": 2
-      },
-      "ev": [
-        {
-          "q": "Pipecat waits for the user to complete their turn (end of speech detected by VAD) before starting response generation. This creates a noticeable delay between when users finish speaking and when they hear the agent's response.",
-          "u": "https://github.com/pipecat-ai/pipecat/issues/3321",
-          "t": "github"
-        },
-        {
-          "q": "Open Source framework for voice and multimodal conversational AI",
-          "u": "https://github.com/pipecat-ai/pipecat",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-27b",
-      "added": "2026-06-27"
-    },
-    {
-      "id": 33,
-      "niche": "AI/LLM",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Регресс-тесты для агентов: семантические assert'ы вместо exact-match в CI",
-      "segment": "QA-инженеры и LLM-разработчики, встраивающие проверку агентов/LLM-выводов в CI/CD",
-      "jtbd": "Когда я меняю промпт/модель/тулзы, я хочу в CI ловить регрессии качества при недетерминированном выводе, без флака и без ручного просмотра прогонов.",
-      "pain": "LLM недетерминированы: exact-match assert'ы падают, тесты флакают. Нужны семантическая близость, статзначимость дельты и усреднение по N прогонам — но это не поддержано первоклассно в обычных тест-раннерах, каждый собирает велосипед.",
-      "demand": "Множество гайдов 2026 (TestQuality, Testriq, SitePoint, arxiv AgentAssay) описывают одну и ту же боль и одинаковый набор воркэраундов — признак неудовлетворённого спроса.",
-      "existing": "DeepEval/Confident AI, Braintrust, MLflow LLM eval, promptfoo — частично закрывают, но фокус на eval-дашбордах, а не на лёгком CI-gate с семантическими assert'ами и статзначимостью из коробки в pytest/jest.",
-      "idea": "Лёгкая тест-библиотека: assert_semantic_match / assert_no_regression со встроенной статистикой (N прогонов, порог значимости над шумом), нативно в pytest/jest и GitHub Actions. «Jest-matchers для LLM-выводов».",
-      "s": {
-        "severity": 3,
-        "frequency": 4,
-        "wtp": 2,
-        "reach": 4,
-        "gap": 3,
-        "trend": 4,
-        "ease": 4
-      },
-      "ev": [
-        {
-          "q": "MCP tool selection accuracy and parameter formatting degrade significantly on smaller models ... there exists no systematic framework to measure or track this degradation",
-          "u": "https://github.com/amd/gaia/issues/709",
-          "t": "github"
-        },
-        {
-          "q": "Lightweight eval framework for MCP servers, built on mcp-agent",
-          "u": "https://github.com/lastmile-ai/mcp-eval",
-          "t": "github"
-        }
-      ],
-      "run": "2026-06-27b",
-      "added": "2026-06-27"
-    },
-    {
       "id": 34,
       "niche": "здоровье",
       "method": "спрос",
@@ -1364,7 +1047,7 @@
     },
     {
       "id": 37,
-      "niche": "быт",
+      "niche": "быт/дом",
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
@@ -1402,7 +1085,7 @@
     },
     {
       "id": 38,
-      "niche": "быт",
+      "niche": "быт/дом",
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
@@ -1445,7 +1128,7 @@
     },
     {
       "id": 39,
-      "niche": "быт",
+      "niche": "быт/дом",
       "method": "спрос",
       "conf": "high",
       "kano": "basic",
@@ -1483,7 +1166,7 @@
     },
     {
       "id": 40,
-      "niche": "быт",
+      "niche": "быт/дом",
       "method": "боль",
       "conf": "medium",
       "kano": "performance",
@@ -1563,7 +1246,7 @@
       "method": "боль",
       "conf": "high",
       "kano": "basic",
-      "status": "NEW",
+      "status": "GROWING",
       "title": "Честные офлайн-карты для путешествий без подписки и поп-апов",
       "segment": "Путешественники без данных за границей, треккеры, бэкпекеры",
       "jtbd": "Когда я за границей без интернета, я хочу скачать карту и проложить маршрут офлайн, чтобы не заблудиться и не платить за роуминг.",
@@ -1590,6 +1273,21 @@
           "q": "In December 2025, Organic Maps reached 6M installs.",
           "u": "https://beyondbaggage.com/2026/02/24/best-offline-maps-apps-travel-2026/",
           "t": "обзор"
+        },
+        {
+          "q": "Скачивает карты регионов РФ только при включенном vpn. Не понятно в чём прикол.",
+          "u": "https://www.rustore.ru/catalog/app/com.mapswithme.maps.pro/reviews",
+          "t": "стор"
+        },
+        {
+          "q": "Офлайн пропал. Теперь это Mapbox демоприложение с неработающим поиском.",
+          "u": "https://vc.ru/services/189765-polzovateli-pozhalovalis-na-obnovlenie-mapsme-izmenilsya-istochnik-kart-slomalsya-poisk-i-ischez-oflain-dostup",
+          "t": "статья"
+        },
+        {
+          "q": "В бесплатной версии ограниченный функционал. Даже нет возможности посмотреть рельеф местности. Требует подписку, которую нельзя оформить. Интерфейс из 2000х гг",
+          "u": "https://www.rustore.ru/catalog/app/net.osmand/reviews",
+          "t": "стор"
         }
       ],
       "run": "2026-06-27b",
@@ -1639,7 +1337,7 @@
       "method": "спрос",
       "conf": "medium",
       "kano": "performance",
-      "status": "NEW",
+      "status": "GROWING",
       "title": "Планировщик маршрута с офлайн-картой и экспортом без подписки",
       "segment": "Самостоятельные путешественники и группы, планирующие роуд-трипы",
       "jtbd": "Когда я еду по плану без стабильного интернета, я хочу видеть маршрут офлайн и экспортировать его в Google Maps, чтобы не зависеть от связи и подписки.",
@@ -1666,6 +1364,16 @@
           "q": "Paywalled features include offline access (a major point of contention), export to Google Maps, and flight tracking.",
           "u": "https://tripstone.app/blog/wanderlog-vs-tripit",
           "t": "обзор"
+        },
+        {
+          "q": "Отмечалось некорректное построение маршрутов с включением закрытых или непроходимых участков дорог",
+          "u": "https://vc.ru/travel/1751882-otzyvy-o-yandeks-puteshestvyah-plyusy-minusy-realnye-istorii-klientov-i-sovety",
+          "t": "обзор"
+        },
+        {
+          "q": "Прерывается запись трека, записывает где-то метров 500-800 не больше и обрыв",
+          "u": "https://www.rustore.ru/catalog/app/net.osmand/reviews",
+          "t": "стор"
         }
       ],
       "run": "2026-06-27b",
@@ -1758,7 +1466,7 @@
       "method": "боль",
       "conf": "high",
       "kano": "performance",
-      "status": "NEW",
+      "status": "GROWING",
       "title": "AI-клипорезка, которая режет по смыслу: цельные мысли вместо рандомных 30 секунд",
       "segment": "Подкастеры и ютуберы с длинными выпусками, которые нарезают шортсы/Reels/TikTok",
       "jtbd": "Когда я выпускаю часовой подкаст и хочу нарезать короткие вертикальные клипы, я хочу, чтобы AI выбирал законченные мысли и ставил точные субтитры, чтобы не тратить на правку больше времени, чем заняла бы ручная нарезка.",
@@ -1785,6 +1493,11 @@
           "q": "when it comes to adding the missing captions, it's like pulling teeth trying to add them in ... the AI doesn't detect whole sections of videos (10+ seconds)",
           "u": "https://opusclip.canny.io/feature-requests/p/captions-missing-problem",
           "t": "форум"
+        },
+        {
+          "q": "OpusClip: из минусов, недоступен в локации РФ; Descript: бесполезный в России — среди поддерживаемых языков пока нет русского",
+          "u": "https://habr.com/ru/articles/970268/",
+          "t": "статья"
         }
       ],
       "run": "2026-06-27b",
@@ -2020,7 +1733,7 @@
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
-      "status": "NEW",
+      "status": "GROWING",
       "title": "Премиальный мобильный рогалик-декбилдер без gacha/p2w",
       "segment": "Игроки в рогалик-декбилдеры (фанаты Slay the Spire / Balatro) на iOS/Android, готовые платить разово",
       "jtbd": "Когда я хочу глубокий рогалик-декбилдер на телефоне в коротких сессиях, я хочу заплатить один раз и владеть полной игрой — без рекламы, энергии и gacha.",
@@ -2052,6 +1765,21 @@
           "q": "The game is literally unplayable without S+ tier DPS. ... Even when you get the characters you have a less than 1% chance to get the exact deck you're farming.",
           "u": "https://apps.apple.com/us/app/chaos-zero-nightmare/id6502326151",
           "t": "отзыв"
+        },
+        {
+          "q": "Steam's hottest new game isn't from a AAA studio - it hit 500k players in days with 94% positive reviews",
+          "u": "https://www.notebookcheck.net/Indie-roguelike-game-tops-Steam-charts-with-over-574-000-players-94-positive-reviews.1249048.0.html",
+          "t": "новости"
+        },
+        {
+          "q": "Roguelite games generated over $130 million in Steam revenue by 2026",
+          "u": "https://studio.antier.com/blogs/best-roguelite-games-2026/",
+          "t": "статья"
+        },
+        {
+          "q": "Cobalt Core is currently only available on PC and Nintendo Switch, indicating that some popular deckbuilders haven't yet received mobile ports",
+          "u": "https://rogueliker.com/roguelike-deckbuilders/",
+          "t": "статья"
         }
       ],
       "run": "2026-06-27b",
@@ -2937,7 +2665,7 @@
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
-      "status": "NEW",
+      "status": "GROWING",
       "run": "2026-06-28f",
       "added": "2026-06-28",
       "title": "OBD2-переводчик кодов ошибок для обычного водителя",
@@ -2966,6 +2694,16 @@
           "q": "The OBD2 diagnostic tool market was valued at approximately USD 800 million in 2024 and is expected to grow at a CAGR of 7.2%",
           "u": "https://www.growthmarketreports.com/report/obd2-diagnostic-tool-market",
           "t": "отчёт"
+        },
+        {
+          "q": "Часто водитель меняет деталь «наугад» — потому что в интернете написали, что это похоже на его проблему. При троении двигателя водители меняют свечи, хотя истинная причина может быть в неисправной катушке или датчике.",
+          "u": "https://baltautotrade.ru/novosti/2025-09-oshibki-pri-samostoyatelnom-remonte/",
+          "t": "статья"
+        },
+        {
+          "q": "Для чтения ошибок не обязательно ехать на диагностику, достаточно обычного сканера ELM327 и телефона.",
+          "u": "https://auto.ru/logbook/diagnostika-nissan-qashqai-j10-svoimi-rukami-obd-ii-elm327-i-tipichnye-oshibki_cd3ecdbd-0142-409f-804c-7037d73994b4/",
+          "t": "форум"
         }
       ]
     },
@@ -3119,231 +2857,8 @@
       ]
     },
     {
-      "id": 82,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "run": "2026-06-28f",
-      "added": "2026-06-28",
-      "title": "RAG-дебаггер чанкинга: разработчики теряют дни на «слепую» настройку",
-      "segment": "ML-инженеры и разработчики RAG-систем",
-      "jtbd": "Когда мой RAG выдаёт нерелевантные ответы, я хочу увидеть, как документы разбились на чанки и что попало в контекст, чтобы исправить это за часы, а не дни",
-      "pain": "Нет визуального инструмента для отладки чанкинга; разработчики логируют вручную и не видят, почему ответы нерелевантны",
-      "existing": "LangSmith (общий трейсинг, $39+/мес), Arize Phoenix (сложная настройка), нет специализированного RAG-дебаггера",
-      "idea": "GUI-инструмент: загрузи документ → увидь чанки, embeddings, Top-K результаты → сравни с «золотым» ответом → интерактивно меняй параметры",
-      "s": {
-        "severity": 5,
-        "frequency": 4,
-        "wtp": 5,
-        "reach": 3,
-        "gap": 5,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Chunk size and overlap parameters are notoriously difficult to tune; there is no standard tooling for visual inspection of RAG chunking behavior",
-          "u": "https://arxiv.org/html/2504.13587v1",
-          "t": "статья"
-        },
-        {
-          "q": "Developers spend days manually debugging why RAG pipelines return incorrect chunks; existing observability tools lack chunk-level inspection views",
-          "u": "https://lushbinary.com/rag-debugging-challenges/",
-          "t": "статья"
-        }
-      ]
-    },
-    {
-      "id": 83,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "run": "2026-06-28f",
-      "added": "2026-06-28",
-      "title": "RAG-evaluation без LLM-судьи: корреляция с человеком всего 0.55",
-      "segment": "ML-инженеры, строящие RAG-пайплайны в продакшне",
-      "jtbd": "Когда я хочу измерить качество RAG-системы, я хочу получить надёжную метрику без дорогого LLM-судьи, чтобы сравнивать версии объективно",
-      "pain": "RAGAS и другие LLM-based метрики имеют корреляцию с человеческой оценкой ~0.55; при этом стоят $0.01–0.05 за запрос и непредсказуемы",
-      "existing": "RAGAS ($0.01–0.05/запрос), DeepEval, Langfuse — все зависят от LLM-судьи; статистические метрики (BERTScore) не учитывают RAG-специфику",
-      "idea": "Детерминированный RAG-evaluator: semantic similarity + citation grounding + hallucination detection без вызова LLM-судьи; бенчмарк на реальных датасетах",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 5,
-        "reach": 3,
-        "gap": 5,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "LLM-based evaluation metrics for RAG show Pearson correlation of approximately 0.55 with human judgments, making automated benchmarking unreliable",
-          "u": "https://www.researchgate.net/publication/rag-evaluation-human-correlation",
-          "t": "статья"
-        },
-        {
-          "q": "RAGAS metrics show high variance between runs; costs can accumulate rapidly when evaluating production RAG systems at scale",
-          "u": "https://www.deepeval.com/blog/rag-evaluation-challenges",
-          "t": "статья"
-        }
-      ]
-    },
-    {
-      "id": 84,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "delight",
-      "status": "NEW",
-      "run": "2026-06-28f",
-      "added": "2026-06-28",
-      "title": "Agent Run Replay: отладка LLM-агентов без воспроизводимости",
-      "segment": "разработчики LLM-агентов (LangGraph, CrewAI, AutoGen)",
-      "jtbd": "Когда агент ведёт себя неожиданно в продакшне, я хочу воспроизвести точный прогон локально с теми же входными данными, чтобы найти баг без угадывания",
-      "pain": "LLM-агенты недетерминированы; нет инструмента для записи и воспроизведения точного trace с tool calls и состоянием памяти",
-      "existing": "LangSmith (трейсинг, нет replay), Weights & Biases (ML, не агенты), нет специализированного replay-дебаггера",
-      "idea": "Инструмент записи agent run → snapshot всех tool-вызовов, LLM-ответов, состояния памяти → детерминированный replay с подменой шагов для тестирования",
-      "s": {
-        "severity": 5,
-        "frequency": 4,
-        "wtp": 5,
-        "reach": 3,
-        "gap": 5,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "There's no way to replay an agent run deterministically — LangSmith shows you what happened but can't reproduce it; we waste hours re-running broken agents",
-          "u": "https://github.com/langchain-ai/langgraph/issues/7714",
-          "t": "github"
-        },
-        {
-          "q": "Debugging non-deterministic LLM agent behavior is one of the top pain points; developers need a 'time travel debugger' for agent runs",
-          "u": "https://hn.algolia.com/?query=llm+agent+debugging+replay",
-          "t": "форум"
-        }
-      ]
-    },
-    {
-      "id": 85,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "run": "2026-06-28f",
-      "added": "2026-06-28",
-      "title": "Self-hosted LLM observability: LangSmith стоит $500+/мес при масштабе",
-      "segment": "стартапы и ML-команды с >10K agent runs/день",
-      "jtbd": "Когда мои LLM-затраты растут, я хочу self-hosted observability с полными трассами, чтобы не платить $500+/мес LangSmith и держать данные у себя",
-      "pain": "LangSmith Pro: $39/мес за 5K трасс, Enterprise — от $500/мес; данные уходят в облако Anthropic/OpenAI; sampling вынужденный (до 0.1%)",
-      "existing": "LangSmith ($39–$500+/мес), Helicone (freemium), Langfuse (self-hosted, сложнее), Arize Phoenix",
-      "idea": "Одна Docker-команда → полный self-hosted OTel-native observability для LLM: трассы, стоимость, latency, evals — без вендор-lock-in",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 5,
-        "reach": 3,
-        "gap": 4,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "LangSmith Enterprise pricing starts at $500/month; teams with high trace volumes are forced to sample down to 0.1% losing visibility into production issues",
-          "u": "https://margindash.com/langsmith-pricing",
-          "t": "статья"
-        },
-        {
-          "q": "Self-hosted LLM observability is a top request from teams concerned about data privacy and unpredictable costs at scale",
-          "u": "https://digitalapplied.com/llm-observability-self-hosted",
-          "t": "статья"
-        }
-      ]
-    },
-    {
-      "id": 86,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "basic",
-      "status": "NEW",
-      "run": "2026-06-28f",
-      "added": "2026-06-28",
-      "title": "Multi-agent loop debugger: LangGraph/CrewAI зависают без объяснений",
-      "segment": "разработчики multi-agent систем",
-      "jtbd": "Когда мой мульти-агентный граф уходит в бесконечный цикл, я хочу увидеть, где именно зациклился агент и почему, чтобы исправить за минуты",
-      "pain": "LangGraph бросает GraphRecursionError после 25 шагов без указания узла; CrewAI зависает без timeout; отладка — ручной printf",
-      "existing": "LangGraph встроенный trace (базовый), LangSmith (дорогой), нет специализированного loop-детектора",
-      "idea": "Middleware для LangGraph/CrewAI: визуализация execution graph в реальном времени, детекция циклов, auto-breakpoint при повторе паттерна",
-      "s": {
-        "severity": 5,
-        "frequency": 4,
-        "wtp": 4,
-        "reach": 3,
-        "gap": 5,
-        "trend": 5,
-        "ease": 4
-      },
-      "ev": [
-        {
-          "q": "GraphRecursionError with no indication of which node is looping — debugging multi-agent graphs is a nightmare, we need visual loop detection",
-          "u": "https://github.com/langchain-ai/langgraph/issues/6731",
-          "t": "github"
-        },
-        {
-          "q": "CrewAI agents get stuck in loops with no timeout mechanism; there's no way to see which agent is causing the infinite recursion",
-          "u": "https://github.com/crewAIInc/crewAI/issues/2997",
-          "t": "github"
-        }
-      ]
-    },
-    {
-      "id": 87,
-      "niche": "AI/LLM-тулинг",
-      "method": "спрос",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "run": "2026-06-28f",
-      "added": "2026-06-28",
-      "title": "No-code LLM fine-tuning: малые команды не могут дообучить модель",
-      "segment": "нетехнические продуктовые команды и SMB с доменными данными",
-      "jtbd": "Когда мне нужно адаптировать LLM под нашу специфику, я хочу дообучить модель без ML-инженера, чтобы получить качественные ответы в домене за день",
-      "pain": "Fine-tuning требует GPU-инфры, Python-экспертизы и ML-знаний; OpenAI fine-tuning API сложен; нет no-code UI для нетехнических команд",
-      "demand": "Запросы «how to fine-tune LLM without coding» выросли 10x на Hacker News в 2024–2025; рынок LLM fine-tuning $1.5B к 2027",
-      "existing": "OpenAI Fine-tuning API (технический), Hugging Face AutoTrain (сложно), LlamaFactory, Together AI (дорого)",
-      "idea": "No-code платформа: загрузи CSV с примерами → выбери базовую модель → получи дообученный endpoint через 2 часа; автовалидация качества",
-      "s": {
-        "severity": 4,
-        "frequency": 3,
-        "wtp": 5,
-        "reach": 3,
-        "gap": 4,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Ask HN: How do I fine-tune an LLM without a dedicated ML engineer? — 312 comments, 847 upvotes, top request in 2024",
-          "u": "https://news.ycombinator.com/item?id=45634311",
-          "t": "форум"
-        },
-        {
-          "q": "Non-technical teams are asking for no-code fine-tuning that doesn't require GPU setup or Python — current tools are too complex",
-          "u": "https://news.ycombinator.com/item?id=44242737",
-          "t": "форум"
-        }
-      ]
-    },
-    {
       "id": 88,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "боль",
       "conf": "high",
       "kano": "performance",
@@ -3380,7 +2895,7 @@
     },
     {
       "id": 89,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "боль",
       "conf": "medium",
       "kano": "delight",
@@ -3677,7 +3192,7 @@
     },
     {
       "id": 97,
-      "niche": "e-commerce/продавцы",
+      "niche": "e-commerce",
       "method": "боль",
       "conf": "high",
       "kano": "basic",
@@ -3714,7 +3229,7 @@
     },
     {
       "id": 98,
-      "niche": "здоровье/питание",
+      "niche": "здоровье",
       "method": "идея",
       "conf": "medium",
       "kano": "performance",
@@ -3863,44 +3378,6 @@
       "run": "2026-06-30",
       "added": "2026-06-30",
       "demand": "Рынок Creator Economy $253 млрд (2025) → $748 млрд (2030). 76% серьёзных криаторов используют хотя бы один сторонний аналитический инструмент."
-    },
-    {
-      "id": 102,
-      "niche": "хобби/креаторы",
-      "method": "спрос",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "AI-нарезчик клипов для русскоязычных ютьюберов",
-      "segment": "Русскоязычные YouTube/TikTok/Reels-криаторы, перепаковывающие длинный контент в короткий",
-      "jtbd": "Когда я записал длинное видео на русском, я хочу автоматически нарезать лучшие моменты в вертикальные клипы с субтитрами, чтобы не тратить 2–3 часа на ручную нарезку каждого выпуска.",
-      "pain": "OpusClip недоступен из РФ. Descript не поддерживает русский язык. Repurpose.io форматирует, но лучшие моменты приходится выбирать вручную. Бесплатные версии всех инструментов имеют водяные знаки и лимиты.",
-      "existing": "OpusClip (заблокирован в РФ), Descript (нет русского), Repurpose.io (нет автовыбора моментов), CapCut (ручная нарезка), Vizard.ai (нет русского интерфейса и поддержки языка).",
-      "idea": "SaaS-инструмент с русским интерфейсом: загружаешь длинное видео → AI на основе громкости, смеха, пиков вовлечённости выбирает топ-5 моментов → автоматически кадрирует вертикально + добавляет субтитры на русском → экспорт в форматы для ВКонтакте, YouTube Shorts, Telegram.",
-      "s": {
-        "severity": 4,
-        "frequency": 5,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 4,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "OpusClip: из минусов, недоступен в локации РФ; Descript: бесполезный в России — среди поддерживаемых языков пока нет русского",
-          "u": "https://habr.com/ru/articles/970268/",
-          "t": "статья"
-        },
-        {
-          "q": "сервис хорошо форматирует видео и распространяет на разные площадки, но все же лучшие моменты вырезать вам",
-          "u": "https://habr.com/ru/articles/970268/",
-          "t": "статья"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30",
-      "demand": "Поиск 'YouTube Shorts нарезка' в рунете показывает десятки обзорных статей 2024–2025. Рынок коротких видео в РФ активно растёт: VK Клипы, YouTube Shorts, TikTok (через VPN)."
     },
     {
       "id": 103,
@@ -4202,54 +3679,6 @@
       "added": "2026-06-30"
     },
     {
-      "id": 111,
-      "niche": "родители/дети",
-      "method": "боль",
-      "conf": "high",
-      "kano": "basic",
-      "status": "NEW",
-      "title": "Дети легко обходят родительский контроль — подписка впустую",
-      "segment": "Родители детей 7–14 лет, использующие приложения Kids360/Google Family Link на Android",
-      "jtbd": "Когда я ставлю лимит на экранное время и плачу за подписку, я хочу быть уверен, что ребёнок не может его обойти, чтобы контроль реально работал, а деньги не уходили впустую",
-      "pain": "Дети элементарно обходят ограничения: клонируют заблокированные приложения, удаляют и переустанавливают их (счётчик времени сбрасывается), меняют часовой пояс. Лимиты «слетают сами». Родители платят 1000–2000 руб/мес за подписку и не получают обещанного результата. Kids360 в RuStore — рейтинг 3.7 из 5, 743 отзыва.",
-      "existing": "Kids360, Google Family Link, Kaspersky Safe Kids — все работают на уровне userspace Android, дети с минимальными знаниями обходят их. Никто не использует системный уровень Device Policy Controller для массового рынка.",
-      "idea": "Приложение родительского контроля на базе Android Device Policy Controller (корпоративный уровень изоляции) — ребёнок физически не может удалить агент или клонировать приложения. Алерт родителю при каждой попытке обхода с объяснением метода. Монетизация: подписка, позиционирование «невзламываемый контроль».",
-      "s": {
-        "severity": 4,
-        "frequency": 5,
-        "wtp": 4,
-        "reach": 5,
-        "gap": 4,
-        "trend": 4,
-        "ease": 2
-      },
-      "ev": [
-        {
-          "q": "Ребенок взломал. Уже пол года не работает( Ошибку не устранили.",
-          "u": "https://www.rustore.ru/catalog/app/app.kids360.parent/reviews",
-          "t": "стор"
-        },
-        {
-          "q": "Абсолютно бесполезное приложение для подростков. Ребенок легко обходит все запреты.",
-          "u": "https://www.rustore.ru/catalog/app/app.kids360.parent/reviews",
-          "t": "стор"
-        },
-        {
-          "q": "Лимиты слетают сами, не рекомендую",
-          "u": "https://www.rustore.ru/catalog/app/app.kids360.parent/reviews",
-          "t": "стор"
-        },
-        {
-          "q": "большинство лазеек, существовавших в iOS 12...существует и по сей день",
-          "u": "https://appleinsider.ru/ios/v-ekrannom-vremeni-na-ios-polno-lazeek-a-apple-dazhe-ne-cheshetsya.html",
-          "t": "статья"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30",
-      "demand": "Kids360 — 743+ отзывов в RuStore, рейтинг 3.7. Google Family Link — сотни тысяч установок. Запросы 'родительский контроль приложение' стабильно высоки в РФ."
-    },
-    {
       "id": 112,
       "niche": "родители/дети",
       "method": "боль",
@@ -4392,7 +3821,7 @@
       "method": "боль",
       "conf": "medium",
       "kano": "performance",
-      "status": "NEW",
+      "status": "GROWING",
       "title": "Приложения прикорма не работают технически и не учитывают аллергию",
       "segment": "Родители детей 4–12 месяцев, вводящие первый прикорм, особенно при аллергии или атопическом дерматите",
       "jtbd": "Когда я ввожу прикорм ребёнку-аллергику, я хочу иметь персональный трекер реакций с учётом исключённых продуктов, чтобы безопасно расширять рацион и не упустить аллерген",
@@ -4423,6 +3852,21 @@
           "q": "Пищевой дневник для мамы ребенка-аллергика — незаменимый блокнот, куда записывается, что и сколько ел ребенок в течение дня по часам",
           "u": "https://www.nestlebaby.ru/medical/instrumenty-dlya-pediatrov/dieta-kormyashchey-mamy-pri-abkm-u-rebyonka",
           "t": "статья"
+        },
+        {
+          "q": "Хотелось бы в приложении делать пометки, если у ребенка возникают аллергические реакции на какие-то вводимые продукты и заменять на что-то другое, так же можно было бы добавить список разрешенных продуктов в определённые месяцы",
+          "u": "https://www.rustore.ru/catalog/app/com.future.trybaby/reviews",
+          "t": "отзыв"
+        },
+        {
+          "q": "Реакция замедленного типа выражается в проявлениях различных симптомов спустя 24–72 часа после того, как в организм попадает аллерген. Это затрудняет выявление причинно-значимого продукта",
+          "u": "https://mamako.ru/blog/0-3-mes/kak-kormit-malysha-pri-pishchevoy-allergii/",
+          "t": "статья"
+        },
+        {
+          "q": "Заполнение дневника требует от мамы повышенного внимания... поэтому длительно вести дневник редко кто может; если в семье двое или трое детей, заполнять дневники питания тем более проблематично",
+          "u": "https://mamako.ru/blog/7-12-mes/pishchevoy-dnevnik-rebenka-s-allergiey/",
+          "t": "статья"
         }
       ],
       "run": "2026-06-30",
@@ -4430,7 +3874,7 @@
     },
     {
       "id": 116,
-      "niche": "здоровье/питание",
+      "niche": "здоровье",
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
@@ -4473,7 +3917,7 @@
     },
     {
       "id": 117,
-      "niche": "здоровье/питание",
+      "niche": "здоровье",
       "method": "боль",
       "conf": "high",
       "kano": "performance",
@@ -4516,7 +3960,7 @@
     },
     {
       "id": 118,
-      "niche": "здоровье/питание",
+      "niche": "здоровье",
       "method": "боль",
       "conf": "medium",
       "kano": "performance",
@@ -4558,7 +4002,7 @@
     },
     {
       "id": 119,
-      "niche": "здоровье/питание",
+      "niche": "здоровье",
       "method": "боль",
       "conf": "high",
       "kano": "basic",
@@ -4601,7 +4045,7 @@
     },
     {
       "id": 120,
-      "niche": "здоровье/питание",
+      "niche": "здоровье",
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
@@ -4674,49 +4118,6 @@
       "run": "2026-06-30",
       "added": "2026-06-30",
       "demand": "Топ idle-игры на Steam: IdleOn — $22M+ выручки, Spirit City: Lofi Sessions и Cast n Chill — $5.3M+, The Farmer Was Replaced — $4.5M+. Жанр устойчиво растёт. Глубокие idle с нарративом (Melvor Idle, NGU Idle) собирают сотни тысяч положительных отзывов."
-    },
-    {
-      "id": 122,
-      "niche": "2D-игры",
-      "method": "спрос",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Roguelite-deckbuilder для мобайла — ниша без качественных представителей",
-      "segment": "Мобильные геймеры 20–35 лет, знакомые с Slay the Spire на PC, ищущие качественный deckbuilder на телефон для сессий 10–15 минут",
-      "jtbd": "Когда я еду в метро или жду очереди, я хочу сыграть в тактически глубокий roguelite-deckbuilder на телефоне, чтобы получить тот же кайф что от Slay the Spire, но в формате 10-минутных сессий",
-      "pain": "Slay the Spire 2 запустился с 574 000 игроков и $130M+ выручки жанра на Steam, но качественных мобильных deckbuilder-roguelite крайне мало. Cobalt Core доступен только на PC/Switch. Мобильный порт STS1 есть, но STS2 на мобайле нет. Игроки активно ищут аналоги.",
-      "existing": "Slay the Spire (мобайл, есть), Monster Train (PC/Switch, нет мобайла), Cobalt Core (PC/Switch), Balatro (мобайл, есть но не deckbuilder-RPG). Качественных мобильных roguelite deckbuilder с глубиной и короткими сессиями почти нет.",
-      "idea": "2D roguelite deckbuilder для мобайла с явным акцентом на сессии 10–15 минут: автосохранение в любой точке, тактильный интерфейс под пальцы, 3 класса с уникальными колодами. F2P с косметикой или $3–5 без рекламы. Вдохновение: Slay the Spire × Card Crawl.",
-      "s": {
-        "severity": 3,
-        "frequency": 5,
-        "wtp": 4,
-        "reach": 5,
-        "gap": 4,
-        "trend": 5,
-        "ease": 2
-      },
-      "ev": [
-        {
-          "q": "Steam's hottest new game isn't from a AAA studio - it hit 500k players in days with 94% positive reviews",
-          "u": "https://www.notebookcheck.net/Indie-roguelike-game-tops-Steam-charts-with-over-574-000-players-94-positive-reviews.1249048.0.html",
-          "t": "новости"
-        },
-        {
-          "q": "Roguelite games generated over $130 million in Steam revenue by 2026",
-          "u": "https://studio.antier.com/blogs/best-roguelite-games-2026/",
-          "t": "статья"
-        },
-        {
-          "q": "Cobalt Core is currently only available on PC and Nintendo Switch, indicating that some popular deckbuilders haven't yet received mobile ports",
-          "u": "https://rogueliker.com/roguelike-deckbuilders/",
-          "t": "статья"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30",
-      "demand": "Slay the Spire 2 на Steam: пик 574 000 одновременных игроков за первые 2 дня, 41 000+ отзывов, 94% положительных (до апрельского обновления). Жанр roguelite deckbuilder сгенерировал $130M+ на Steam к 2026. Mewgenics (февраль 2026) — один из крупнейших roguelite-запусков за всё время."
     },
     {
       "id": 123,
@@ -4849,7 +4250,7 @@
     },
     {
       "id": 126,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "боль",
       "conf": "high",
       "kano": "performance",
@@ -4892,7 +4293,7 @@
     },
     {
       "id": 127,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "спрос",
       "conf": "high",
       "kano": "performance",
@@ -4940,7 +4341,7 @@
     },
     {
       "id": 128,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "боль",
       "conf": "high",
       "kano": "performance",
@@ -4988,7 +4389,7 @@
     },
     {
       "id": 129,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "боль",
       "conf": "medium",
       "kano": "delight",
@@ -5036,7 +4437,7 @@
     },
     {
       "id": 130,
-      "niche": "продуктивность/работа",
+      "niche": "продуктивность",
       "method": "боль",
       "conf": "high",
       "kano": "basic",
@@ -5289,53 +4690,6 @@
       "added": "2026-06-30"
     },
     {
-      "id": 136,
-      "niche": "путешествия",
-      "method": "боль",
-      "conf": "high",
-      "kano": "basic",
-      "status": "NEW",
-      "title": "Оффлайн-карты для путешествий по России не работают без VPN",
-      "segment": "Туристы, путешествующие по регионам России самостоятельно (Алтай, Байкал, Краснодарский край), активные туристы, походники",
-      "jtbd": "Когда я еду в отдалённый регион России без стабильного интернета, я хочу заранее скачать оффлайн-карту и нормально ориентироваться на месте, чтобы не потеряться и не зависеть от связи",
-      "pain": "Maps.me — главное приложение для оффлайн-карт — массово перестало скачивать карты регионов России: ни через мобильный интернет, ни через Wi-Fi, только через VPN. Навигация в движении нестабильна — теряет позицию каждые 20 метров. Альтернатива OsmAnd имеет интерфейс образца 2000-х, подписку невозможно оформить из России, а запись треков обрывается на 500–800 метрах.",
-      "existing": "Maps.me (сломан после смены владельца на корейскую компанию), OsmAnd (слишком сложный, нет нормальной оплаты из РФ), Яндекс Карты (требует интернета, плохо работает офлайн в глуши), 2GIS (городские карты, не туристические маршруты)",
-      "idea": "Туристическое оффлайн-навигационное приложение для России: карты регионов скачиваются без VPN, заточены под туристические маршруты (пешие треки, водные, авто), работают полностью автономно. Готовые маршруты по популярным направлениям (Алтай, Байкал, Карелия), запись и публикация треков, POI с отметками туристической инфраструктуры. Монетизация: разовая покупка пакетов регионов или подписка — оплата через российские платёжные системы.",
-      "s": {
-        "severity": 5,
-        "frequency": 4,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 4,
-        "trend": 3,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Скачивает карты регионов РФ только при включенном vpn. Не понятно в чём прикол.",
-          "u": "https://www.rustore.ru/catalog/app/com.mapswithme.maps.pro/reviews",
-          "t": "стор"
-        },
-        {
-          "q": "По навигатору просто нереально ехать. Каждые 20 метров теряется. Всё время что-то не так",
-          "u": "https://www.rustore.ru/catalog/app/com.mapswithme.maps.pro/reviews",
-          "t": "стор"
-        },
-        {
-          "q": "Офлайн пропал. Теперь это Mapbox демоприложение с неработающим поиском.",
-          "u": "https://vc.ru/services/189765-polzovateli-pozhalovalis-na-obnovlenie-mapsme-izmenilsya-istochnik-kart-slomalsya-poisk-i-ischez-oflain-dostup",
-          "t": "статья"
-        },
-        {
-          "q": "В бесплатной версии ограниченный функционал. Даже нет возможности посмотреть рельеф местности. Требует подписку, которую нельзя оформить. Интерфейс из 2000х гг",
-          "u": "https://www.rustore.ru/catalog/app/net.osmand/reviews",
-          "t": "стор"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
       "id": 137,
       "niche": "путешествия",
       "method": "спрос",
@@ -5426,48 +4780,6 @@
       "added": "2026-06-30"
     },
     {
-      "id": 139,
-      "niche": "путешествия",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Инструмент планирования маршрутов по регионам России с реальными данными о дорогах",
-      "segment": "Самостоятельные путешественники на автомобиле и пешие туристы, планирующие маршруты по регионам России (Алтай, Байкал, Кавказ, Карелия)",
-      "jtbd": "Когда я планирую маршрут по российской глубинке, я хочу заранее знать реальное состояние дорог, наличие мест ночёвки и топлива по маршруту, чтобы не попасть в беду на грунтовке в 200 км от цивилизации",
-      "pain": "Яндекс.Путешествия строит маршруты с включением закрытых или непроходимых участков дорог. Нет единого сервиса, где туристу доступны: актуальное состояние грунтовок, расположение кемпингов/глэмпингов/баз вдоль маршрута, заправки и магазины в глуши. Пользователи вынуждены собирать информацию из 5–7 разных источников (форумы, 2GIS, Яндекс, Maps.me, тематические группы ВКонтакте).",
-      "existing": "Яндекс.Путешествия (плохо строит офлайн-маршруты, нет туристической инфраструктуры), RUSSPASS (только достопримечательности, нет практических данных), туристические форумы Туристер.ру, Vinegret.ru (устаревшая информация вручную), Maps.me (сломан), OsmAnd (сложный)",
-      "idea": "Мобильное приложение для планирования авто- и пеших маршрутов по России: слой «туристическая инфраструктура» поверх карт (кемпинги, глэмпинги, заправки, магазины, точки связи), актуальные отчёты о состоянии дорог от сообщества, автоматическая проверка маршрута на проходимость по сезону. Интеграция с сервисами бронирования ночлега по маршруту.",
-      "s": {
-        "severity": 4,
-        "frequency": 3,
-        "wtp": 3,
-        "reach": 4,
-        "gap": 4,
-        "trend": 4,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Отмечалось некорректное построение маршрутов с включением закрытых или непроходимых участков дорог",
-          "u": "https://vc.ru/travel/1751882-otzyvy-o-yandeks-puteshestvyah-plyusy-minusy-realnye-istorii-klientov-i-sovety",
-          "t": "обзор"
-        },
-        {
-          "q": "Случилась неприятная ситуация с отелем, который я бронировала через этот сервис. Они не смогли решить эту ситуацию",
-          "u": "https://vc.ru/travel/1751882-otzyvy-o-yandeks-puteshestvyah-plyusy-minusy-realnye-istorii-klientov-i-sovety",
-          "t": "отзыв"
-        },
-        {
-          "q": "Прерывается запись трека, записывает где-то метров 500-800 не больше и обрыв",
-          "u": "https://www.rustore.ru/catalog/app/net.osmand/reviews",
-          "t": "стор"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
       "id": 140,
       "niche": "путешествия",
       "method": "боль",
@@ -5511,7 +4823,7 @@
     },
     {
       "id": 141,
-      "niche": "E-commerce/продавцы маркетплейсов",
+      "niche": "e-commerce",
       "method": "идея",
       "conf": "high",
       "kano": "performance",
@@ -5548,45 +4860,8 @@
       "demand": "По данным рынка, в 2025 году стабильную прибыль получают лишь 15–20% продавцов WB/Ozon; число активных селлеров впервые сократилось — с 1,28 млн до 1,26 млн."
     },
     {
-      "id": 142,
-      "niche": "Авто (техническое обслуживание, DIY-ремонт)",
-      "method": "идея",
-      "conf": "medium",
-      "kano": "delight",
-      "status": "NEW",
-      "title": "OBD-GPT: ИИ-объяснятор ошибок автомобиля для DIY-ремонтников",
-      "segment": "Владельцы авто (особенно ВАЗ, Nissan, Toyota, KIA), делающие ТО своими руками",
-      "jtbd": "Когда сканер ELM327 показывает код P0171, хочу понять не просто расшифровку, а что именно сломалось на моей конкретной машине и что проверить в первую очередь — чтобы не менять детали наугад.",
-      "pain": "Владельцы меняют деталь «наугад» — потому что в интернете написали, что это похоже на их проблему. При троении двигателя меняют свечи, хотя причина — неисправная катушка. «Нарушение технологии часто приводит к повторному ремонту, а иногда — к аварийным ситуациям.»",
-      "existing": "Torque Pro, Car Scanner ELM OBD2 — показывают коды и параметры, но не объясняют причину и план действий. Carly — западный ИИ-ассистент, слабая поддержка российских авто (ВАЗ, Газель). Форумы Drive2/auto.ru — ответы размазаны по тредам.",
-      "idea": "Мобильное приложение (Android): подключаешься через ELM327 → ИИ получает код ошибки + марку/модель/год + текущие показания датчиков → выдаёт: «Скорее всего — подсос воздуха после MAF, проверь патрубок. На твоём Qashqai J10 типичное место — хомут у турбины.» Пошаговый чеклист диагностики, оценка стоимости ремонта DIY vs СТО. База обогащается реальными кейсами пользователей Drive2-стиля.",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 3,
-        "reach": 4,
-        "gap": 4,
-        "trend": 3,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Часто водитель меняет деталь «наугад» — потому что в интернете написали, что это похоже на его проблему. При троении двигателя водители меняют свечи, хотя истинная причина может быть в неисправной катушке или датчике.",
-          "u": "https://baltautotrade.ru/novosti/2025-09-oshibki-pri-samostoyatelnom-remonte/",
-          "t": "статья"
-        },
-        {
-          "q": "Для чтения ошибок не обязательно ехать на диагностику, достаточно обычного сканера ELM327 и телефона.",
-          "u": "https://auto.ru/logbook/diagnostika-nissan-qashqai-j10-svoimi-rukami-obd-ii-elm327-i-tipichnye-oshibki_cd3ecdbd-0142-409f-804c-7037d73994b4/",
-          "t": "форум"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
       "id": 143,
-      "niche": "Недвижимость/ЖКХ (самозастройщики)",
+      "niche": "недвижимость/ЖКХ",
       "method": "идея",
       "conf": "medium",
       "kano": "performance",
@@ -5623,7 +4898,7 @@
     },
     {
       "id": 144,
-      "niche": "Онлайн-образование (взрослые, переквалификация)",
+      "niche": "онлайн-образование",
       "method": "идея",
       "conf": "medium",
       "kano": "delight",
@@ -5660,7 +4935,7 @@
     },
     {
       "id": 145,
-      "niche": "Питомцы (здоровье, груминг)",
+      "niche": "питомцы",
       "method": "идея",
       "conf": "medium",
       "kano": "performance",
@@ -5697,7 +4972,7 @@
     },
     {
       "id": 146,
-      "niche": "Недвижимость/ЖКХ (ТСЖ, аренда)",
+      "niche": "недвижимость/ЖКХ",
       "method": "идея",
       "conf": "medium",
       "kano": "performance",
@@ -5733,275 +5008,8 @@
       "added": "2026-06-30"
     },
     {
-      "id": 147,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "basic",
-      "status": "NEW",
-      "title": "LLM-агент «чёрный ящик»: нет трассировки шагов в multi-agent pipeline",
-      "segment": "AI-инженеры и разработчики, строящие multi-agent системы на LangChain/AutoGen/CrewAI",
-      "jtbd": "Когда агентный пайплайн ломается или даёт неверный ответ, я хочу видеть пошаговый лог решений каждого агента, чтобы понять, где именно произошёл сбой и быстро его исправить",
-      "pain": "62% команд имеют базовую трассировку, но лишь половина — детальную инспекцию шагов. 29.5% не оценивают агентов вообще. Когда агент цепочки из 5 узлов даёт неверный ответ, разработчику непонятно: ошибка в промпте, в tool-call, в routing или в данных. Debugging превращается в перебор гипотез вместо точечного исправления.",
-      "existing": "LangSmith (LangChain), Phoenix (Arize), Langfuse, Helicone — есть инструменты, но большинство требуют сложной интеграции; 38% команд всё ещё не имеют детальной трассировки по данным LangChain State of Agent Engineering 2025",
-      "idea": "Lightweight zero-config трассировщик: SDK-обёртка (pip install + 2 строки кода) для любого агентного фреймворка, которая автоматически захватывает все LLM-вызовы, tool-calls, решения роутера и diff состояния между шагами. Локальный UI с timeline, diff-просмотром и кнопкой «replay from step N».",
-      "s": {
-        "severity": 5,
-        "frequency": 5,
-        "wtp": 4,
-        "reach": 5,
-        "gap": 3,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "without visibility into how an agent reasons and acts, teams can't reliably debug failures, optimize performance, or build trust",
-          "u": "https://www.langchain.com/state-of-agent-engineering",
-          "t": "отчёт"
-        },
-        {
-          "q": "62% have detailed tracing allowing inspection of individual agent steps; 29.5% report not evaluating",
-          "u": "https://www.langchain.com/state-of-agent-engineering",
-          "t": "отчёт"
-        },
-        {
-          "q": "debugging turns from 'black box' to 'explainable system'",
-          "u": "https://news.ycombinator.com/item?id=45398467",
-          "t": "обсуждение"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
-      "id": 148,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Разрозненные стандарты LLM-observability: OpenTelemetry не понимает AI-семантику",
-      "segment": "Platform/DevOps инженеры и AI-инженеры, интегрирующие LLM-системы в корпоративный observability-стек",
-      "jtbd": "Когда я добавляю LLM-агентов в существующий мониторинг на OpenTelemetry/Grafana, я хочу получать осмысленные AI-специфичные метрики в стандартном формате, чтобы не поддерживать отдельный стек только для LLM",
-      "pain": "OpenTelemetry — стандарт для трассировки, но не понимает семантику LLM: спаны помечаются как «unknown», нет нативной поддержки prompt/completion/token_cost. Конкурирующие стандарты (OpenInference, OpenLLMetry) объявляют себя «OTel-совместимыми», но совместимость поверхностная. Команды вынуждены выбирать между vendor lock-in и самописными адаптерами.",
-      "existing": "OpenTelemetry (общий), OpenInference (Arize), OpenLLMetry (Traceloop), Semantic Conventions for GenAI (черновик OTel) — стандарт ещё не устоялся, фрагментация",
-      "idea": "OpenTelemetry-нативный коллектор для LLM: open-source библиотека, которая правильно маппит LLM-семантику (промпты, токены, модели, tool-calls) в стандартные OTel-спаны с официальными GenAI semantic conventions. Плагин к Grafana для AI-дашборда из коробки.",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 3,
-        "reach": 4,
-        "gap": 4,
-        "trend": 4,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "The tragic part? OpenInference claims to be 'OpenTelemetry compatible,' but...compatibility is shallow",
-          "u": "https://news.ycombinator.com/item?id=45398467",
-          "t": "обсуждение"
-        },
-        {
-          "q": "Spans labeled as 'unknown' when I definitely labeled them in the code is probably the most annoying part",
-          "u": "https://news.ycombinator.com/item?id=45398467",
-          "t": "обсуждение"
-        },
-        {
-          "q": "numerous open community standards for where to put llm information within otel spans",
-          "u": "https://news.ycombinator.com/item?id=45398467",
-          "t": "обсуждение"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
-      "id": 149,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "RAG без измерений: команды оценивают качество ответов «на глаз»",
-      "segment": "Разработчики и ML-инженеры, строящие RAG-системы для продакшн-приложений",
-      "jtbd": "Когда я итерирую RAG-пайплайн (меняю чанкинг, ретривер, промпт), я хочу автоматически измерять качество ответов по ключевым метрикам, чтобы знать, улучшилось ли оно, и не регрессировать при изменениях",
-      "pain": "47.6% команд не запускают offline-эвалюации на тест-сетах. Баг находят только когда пользователь жалуется на галлюцинацию, но воспроизвести и предотвратить рецидив нечем. При выходе новой модели (GPT-5, Claude 4) нет инфраструктуры для сравнения — команды принимают решения «на ощущениях».",
-      "existing": "RAGAS, DeepEval, TruLens, Promptfoo, Braintrust — инструменты есть, но требуют сборки pipeline: написать тест-сет, настроить судью, интегрировать в CI. Порог входа высок, большинство команд откладывают",
-      "idea": "RAG eval как GitHub Action: инструмент, который автоматически генерирует синтетические вопросы из вашего corpus, прогоняет их через RAG-пайплайн, оценивает faithfulness/relevance через LLM-as-judge и публикует отчёт-диффом в PR. Нулевая настройка тест-сета — corpus уже есть.",
-      "s": {
-        "severity": 4,
-        "frequency": 5,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 3,
-        "trend": 5,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "too many teams still rely on manual spot-checks and one-off experiments to validate answer quality",
-          "u": "https://www.braintrust.dev/articles/best-rag-evaluation-tools",
-          "t": "статья"
-        },
-        {
-          "q": "Too many teams are still operating on vibes and vibes alone.",
-          "u": "https://www.braintrust.dev/articles/best-rag-evaluation-tools",
-          "t": "статья"
-        },
-        {
-          "q": "A user reports a hallucination or irrelevant answer, you fix it, but nothing prevents the same failure pattern from recurring.",
-          "u": "https://www.braintrust.dev/articles/best-rag-evaluation-tools",
-          "t": "статья"
-        },
-        {
-          "q": "52.4% run offline evaluations on test sets; 29.5% don't evaluate agents at all",
-          "u": "https://www.langchain.com/state-of-agent-engineering",
-          "t": "отчёт"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
-      "id": 150,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Промпты в продакшне без версионирования: изменения неотслеживаемы и нет rollback",
-      "segment": "Команды разработчиков и product-менеджеры, совместно итерирующие промпты LLM-приложений в продакшне",
-      "jtbd": "Когда нетехнический коллега правит промпт в продакшне, а качество ответов деградирует, я хочу видеть историю изменений и одним кликом откатиться к прошлой версии, чтобы не разворачивать hotfix-релиз",
-      "pain": "Промпты меняются напрямую в коде или конфигах, без review и без тестов. Когда качество падает — непонятно, какое именно изменение виновато. Non-tech коллаборация (PM, копирайтеры) требует передеплоя кода при каждой правке. Откат невозможен без git blame + cherry-pick + деплоя.",
-      "existing": "PromptLayer, LangSmith Prompt Hub, Langfuse Prompt Management, Braintrust Prompts — есть решения, но они либо vendor lock-in к конкретной платформе, либо требуют полной миграции observability-стека",
-      "idea": "Git для промптов: легковесный open-source сервис с REST API и веб-UI. Промпты — это именованные версионированные артефакты с тегами (production/staging/canary), diff-просмотром, встроенным A/B-тестом и webhook на изменение. SDK для Python/TS в 1 строку: `prompt = registry.get('summarizer', tag='production')`.",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 3,
-        "trend": 4,
-        "ease": 4
-      },
-      "ev": [
-        {
-          "q": "When someone tweaks the prompt in production to fix edge cases, outputs change across the entire user base, and there's no idea why or how to roll back",
-          "u": "https://www.getmaxim.ai/articles/top-5-prompt-versioning-tools-for-reliable-ai-workflows/",
-          "t": "статья"
-        },
-        {
-          "q": "In systems where prompt templates are tightly coupled to application code, developers must redeploy or update code whenever non-technical collaborators make changes, slowing iteration and introducing cross-team dependencies",
-          "u": "https://mirascope.com/blog/prompt-management-system",
-          "t": "статья"
-        },
-        {
-          "q": "Many tools treat prompts as static text blobs rather than dynamic, testable code artifacts, leading to drift between what you test and what runs in production",
-          "u": "https://www.braintrust.dev/articles/best-prompt-versioning-tools-2025",
-          "t": "статья"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
-      "id": 151,
-      "niche": "AI/LLM-тулинг",
-      "method": "боль",
-      "conf": "high",
-      "kano": "basic",
-      "status": "NEW",
-      "title": "LLM cost monitoring: невидимые расходы по фичам и пользователям в продакшне",
-      "segment": "Технические основатели стартапов и engineering-лиды, масштабирующие LLM-приложения",
-      "jtbd": "Когда мой LLM-продукт растёт, я хочу видеть стоимость каждой фичи, endpoint и когорты пользователей в реальном времени, чтобы принимать решения о модели/кешировании до того, как счёт вырастет в 10 раз",
-      "pain": "Стоимость токенов непредсказуема на этапе прототипа. В продакшне видно только общий счёт от OpenAI/Anthropic, но непонятно, какая фича или пользователь генерирует 80% затрат. Команды узнают о проблеме по факту выставления счёта, а не заблаговременно. Большинство обходятся внутренним логированием, которое превращается в «внутреннюю платформу для поддержки».",
-      "existing": "Helicone, LangSmith, Langfuse, Porter (cost tracking) — есть решения, но большинство — часть более широкой observability-платформы. «Most teams we talk to still don't have anything in place, even when LLMs are core to the product»",
-      "idea": "LLM Cost Attribution Layer: middleware/прокси (совместимый с OpenAI API), который автоматически тегирует каждый запрос по фиче/пользователю/эксперименту через metadata, строит cost breakdown в реальном времени, настраивает budget alerts на уровне фичи и предсказывает счёт на конец месяца. Self-hosted или облачный.",
-      "s": {
-        "severity": 5,
-        "frequency": 4,
-        "wtp": 5,
-        "reach": 4,
-        "gap": 3,
-        "trend": 4,
-        "ease": 4
-      },
-      "ev": [
-        {
-          "q": "Token usage is hard to estimate early on, so pricing feels unpredictable",
-          "u": "https://news.ycombinator.com/item?id=46077450",
-          "t": "обсуждение"
-        },
-        {
-          "q": "Most teams we talk to still don't have anything in place, even when LLMs are core to the product",
-          "u": "https://news.ycombinator.com/item?id=46077450",
-          "t": "обсуждение"
-        },
-        {
-          "q": "Bootstrapping basic tracing/logging is straightforward and gives full ownership while teams iterate quickly on the core product",
-          "u": "https://news.ycombinator.com/item?id=46077450",
-          "t": "обсуждение"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
-      "id": 152,
-      "niche": "",
-      "method": "боль",
-      "conf": "medium",
-      "kano": "performance",
-      "status": "NEW",
-      "title": "Умный дневник прикорма с автоматическим выявлением аллергенов",
-      "segment": "Мамы детей 4–12 месяцев, вводящие прикорм, особенно с риском аллергии",
-      "jtbd": "Когда у ребёнка краснеют щёки после еды, я хочу быстро понять, какой именно продукт вызвал реакцию, чтобы не гадать неделями и не бояться каждого нового продукта",
-      "pain": "При введении прикорма аллергическая реакция может проявляться через 24–72 часа после еды — намного позже, чем введён продукт. Бумажный дневник не умеет анализировать задержанные реакции и пересечения продуктов, поэтому мамы месяцами не могут выявить аллерген. Приложение TryBaby (лидер рынка) имеет технические сбои (невозможно войти через соцсети, звонки не приходят — жалобы с 2022 по 2026 год в RuStore и App Store) и не умеет анализировать отсроченные реакции. Врачи советуют вести дневник 4–6 недель и потом показывать аллергологу — но анализ всё равно делает человек вручную.",
-      "existing": "TryBaby (не работает для многих пользователей, нет анализа задержанных реакций), бумажный дневник, таблицы Excel, приложение «Дневник пищевой аллергии» (примитивный трекер без анализа). Аллерголог стоит 2 000–5 000 руб./приём и записи на 2–4 недели вперёд.",
-      "idea": "Мобильный дневник прикорма, который фиксирует продукты и симптомы (сыпь, стул, сон) с временны́ми метками, автоматически ищет корреляции между едой и реакциями через 12/24/48/72 ч, строит «карту подозреваемых» аллергенов и формирует PDF-отчёт для аллерголога. AI-подсказки: «Сыпь появилась 36 часов после яйца — высокая корреляция».",
-      "s": {
-        "severity": 4,
-        "frequency": 4,
-        "wtp": 4,
-        "reach": 4,
-        "gap": 5,
-        "trend": 4,
-        "ease": 3
-      },
-      "ev": [
-        {
-          "q": "Хотелось бы в приложении делать пометки, если у ребенка возникают аллергические реакции на какие-то вводимые продукты и заменять на что-то другое, так же можно было бы добавить список разрешенных продуктов в определённые месяцы",
-          "u": "https://www.rustore.ru/catalog/app/com.future.trybaby/reviews",
-          "t": "отзыв"
-        },
-        {
-          "q": "Через соц.сети везде выдаёт ошибку; по номеру телефона написано 'у операторов временные сбои' и звонок с кодом так и не поступил",
-          "u": "https://www.rustore.ru/catalog/app/com.future.trybaby/reviews",
-          "t": "отзыв"
-        },
-        {
-          "q": "Реакция замедленного типа выражается в проявлениях различных симптомов спустя 24–72 часа после того, как в организм попадает аллерген. Это затрудняет выявление причинно-значимого продукта",
-          "u": "https://mamako.ru/blog/0-3-mes/kak-kormit-malysha-pri-pishchevoy-allergii/",
-          "t": "статья"
-        },
-        {
-          "q": "Заполнение дневника требует от мамы повышенного внимания... поэтому длительно вести дневник редко кто может; если в семье двое или трое детей, заполнять дневники питания тем более проблематично",
-          "u": "https://mamako.ru/blog/7-12-mes/pishchevoy-dnevnik-rebenka-s-allergiey/",
-          "t": "статья"
-        },
-        {
-          "q": "Ребенок кашлял 3 месяца, никакое лечение не помогало... Обратились снова, нас перенаправили к ЛОРу... сдали кучу дорогих анализов на аллергены — безрезультатно",
-          "u": "https://prodoctorov.ru/ufa/lpu/22471-klinika-allergologii-i-pediatrii/otzivi/",
-          "t": "отзыв"
-        }
-      ],
-      "run": "2026-06-30",
-      "added": "2026-06-30"
-    },
-    {
       "id": 153,
-      "niche": "",
+      "niche": "родители/дети",
       "method": "боль",
       "conf": "medium",
       "kano": "performance",

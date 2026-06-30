@@ -11,6 +11,18 @@ description: >-
 
 Перед коммитом любой правки `findings.json` прогнать проверки ниже. Полный контракт — `.claude/rules/findings-data-rules.md`.
 
+> **Правь через `radar.py`, а не руками.** `findings.json` большой (~120K токенов) — не загружай его в контекст
+> целиком. Все мутации делает служебный CLI `.claude/scripts/radar.py`, он же держит в синхроне производный
+> компактный индекс `findings-index.json` (внешняя память для дедупа) и блоклист `dismissed.json`:
+> - `radar.py add <new.json>` — дописать новые находки (id/run/added/count/runs/индекс — автоматически);
+> - `radar.py dismiss --ids .. --why ..` / `--taste ..` — перенести «мимо» в `dismissed.json` и убрать из данных;
+> - `radar.py merge --keep K --drop a,b` — слить дубли (оставить K→GROWING, вобрать ev);
+> - `radar.py set-status` / `set-niche` — сменить статус/нишу; `radar.py get <id>` — посмотреть находку;
+> - `radar.py index` — пересобрать индекс; **`radar.py validate`** — проверка ниже одной командой.
+>
+> Один прогон проверки: `python3 .claude/scripts/radar.py validate` (печатает `OK` или ошибки и согласованность
+> индекса). Ручной скрипт ниже оставлен как справочник того, что именно проверяется.
+
 ## Чек-лист
 
 1. **JSON валиден:** `python3 -m json.tool findings.json >/dev/null`.

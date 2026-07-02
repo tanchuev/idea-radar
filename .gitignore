@@ -1,0 +1,7 @@
+# Python (служебный CLI .claude/scripts/radar.py)
+__pycache__/
+*.pyc
+
+# Временные файлы прогона/вкуса (не данные репозитория)
+new-findings.json
+idea-radar-taste.json

@@ -4,11 +4,15 @@
 
 ## Правила
 
-- **В ресёрч-прогоне коммитить ТОЛЬКО `findings.json`.** Не тащить в коммит `index.html` / `README` / прочее без причины.
+- **В ресёрч-прогоне коммитить данные прогона:** `findings.json` + `findings-index.json` (производный индекс —
+  держать в синхроне, его регенерирует `radar.py`) + `dismissed.json` и `preferences.json`, **если менялись**.
+  Не тащить в коммит `index.html` / `README` / прочее без причины. (`findings-index.json`/`dismissed.json` для
+  Pages безвредны — статические файлы; дашборд читает только `findings.json`.)
+- **НЕ редактировать `findings.json` руками** — все правки через `radar.py` (синхронит индекс, не ломает схему).
 - **Пушить в `main`.** В Routine должно быть включено **Allow unrestricted branch pushes** — иначе пуш уйдёт
   в ветку `claude/…`, и Pages НЕ обновится.
 - **Сообщение коммита прогона:** `idea-radar: <YYYY-MM-DD> +N новых находок`.
-- **Перед коммитом** — валидный JSON (`python3 -m json.tool findings.json`).
+- **Перед коммитом** — `python3 .claude/scripts/radar.py validate` (схема + согласованность индекса → `OK`).
 
 ## Проверка деплоя
 

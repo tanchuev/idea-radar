@@ -8,10 +8,14 @@ description: >-
   экспорт вкуса, "почему мне нравятся эти идеи", настройка персонализации перед прогоном.
 ---
 
-# Idea Radar — разбор вкуса (👍/👎 → preferences.json)
+# Idea Radar — разбор вкуса (👍/👎 → preferences.json + dismissed.json)
 
 Замыкает петлю вкуса: клики в дашборде → паттерны/причины/гео → `preferences.json`, который читает прогон.
 Детали потока и формы элементов — `.claude/rules/taste-loop-rules.md`.
+
+> **Две судьбы отметок:** 👍«алмаз» → аттракторы/причины в `preferences.json` (находка остаётся в данных).
+> 👎«мимо» → (а) `dismissed.json` как ЖЁСТКИЙ блоклист «не предлагать снова» И (б) находка УДАЛЯЕТСЯ из
+> `findings.json`, чтобы не засоряла основной файл. Плюс из 👎 выводятся репеллеры/причины в `preferences.json`.
 
 ## Вход
 
@@ -25,8 +29,15 @@ description: >-
 
 ## Шаги
 
-**1. Сопоставь.** Для каждой отметки найди карточку в `findings.json` по `id`. Собери по каждой: `vote`, `why`,
-и контекст — `niche`, `method`, `kano`, `conf`, оси `s{}`, `title`, `idea`, `pain`, `segment`, `geo-пригодность`.
+**0. Перенеси 👎 в блоклист и убери из данных.** Сразу после получения экспорта:
+`python3 .claude/scripts/radar.py dismiss --taste idea-radar-taste.json`. Это переносит все `vote:"down"` из
+`findings.json` в `dismissed.json` (с причиной `why`), удаляет их из основного файла и пересобирает индекс.
+Дальше прогон их не предложит (ШАГ 4 `radar.py check` вернёт ⛔ DISMISSED → DROP). 👍 остаются в данных.
+
+**1. Сопоставь.** Для каждой отметки разбери контекст: `vote`, `why`, и поля карточки — `niche`, `method`,
+`kano`, `conf`, оси `s{}`, `title`, `idea`, `pain`, `segment`, `geo-пригодность`. Полную карточку по id бери
+`python3 .claude/scripts/radar.py get <id>` (не открывай весь `findings.json`). Для 👎, уже перенесённых в
+`dismissed.json` на ШАГ 0, контекст возьми из их записи (там есть `niche`/`title`/`why`) или из экспорта.
 
 **2. Выведи паттерны (поперёк категорий, не только ниша/метод).** Ищи, что повторяется в 👍 (аттракторы) и в 👎
 (репеллеры) по осям: ниша · метод · Kano · профиль осей (напр. высокий `ease`+`trend`) · тема (B2C-утилита,
@@ -48,14 +59,19 @@ description: >-
 
 ## Запись и коммит
 
-- Меняем **только `preferences.json`** (опц. — этот скилл/правила). `findings.json` и `index.html` НЕ трогаем.
-- `preferences.json` дашбордом не читается — в `main` его коммитить не обязательно ради Pages; коммить в рабочую
-  ветку. Если просят, чтобы прогон сразу подхватил — влей в ветку, с которой он стартует (обычно `main`).
+- Правим `preferences.json` (паттерны/причины/гео). 👎 дополнительно меняют `findings.json` (удаление) и
+  `dismissed.json` (блоклист) — это делает `radar.py dismiss` на ШАГ 0. `index.html` НЕ трогаем.
+- `dismissed.json` — это БЛОКЛИСТ (id/ниша/title/причина), не архив: полные данные удалённых находок остаются
+  в истории git, при желании восстанавливаются оттуда.
+- Если 👎 удаляли находки — закоммить `findings.json` + `findings-index.json` + `dismissed.json` в `main`
+  (дашборд читает `findings.json`, поэтому изменение должно попасть в `main`). `preferences.json` дашбордом не
+  читается, но коммить его вместе, чтобы прогон сразу подхватил вкус.
 
 ```bash
-python3 -m json.tool preferences.json >/dev/null && echo OK   # валидность перед коммитом
-git add preferences.json
-git commit -m "idea-radar: обновлён вкус (preferences v2) — +N отметок"
+python3 .claude/scripts/radar.py validate          # схема + согласованность индекса → OK
+python3 -m json.tool preferences.json >/dev/null && echo OK
+git add preferences.json findings.json findings-index.json dismissed.json   # что менялось
+git commit -m "idea-radar: обновлён вкус (preferences v2) — +N отметок, −M «мимо»"
 ```
 
 ## НИКОГДА
